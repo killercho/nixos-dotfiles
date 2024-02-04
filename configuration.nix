@@ -18,7 +18,7 @@
   # Define on which hard drive you want to install Grub.
   boot.loader.grub.device = "nodev"; # or "nodev" for efi only
 
-  networking.hostName = "NixosVirtual"; # Define your hostname.
+  networking.hostName = "nixos"; # Define your hostname.
   # Pick only one of the below networking options.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
@@ -62,9 +62,10 @@
 
   # Enable touchpad support (enabled default in most desktopManager).
   services.xserver.libinput.enable = true;
+  services.xserver.libinput.touchpad.naturalScrolling = false;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-   users.users.virtualka = {
+   users.users.AzSamSi = {
      isNormalUser = true;
      extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
      shell = pkgs.zsh;
@@ -81,14 +82,17 @@
      zsh 
      i3 polybar wmctrl picom
      rofi rofi-power-menu rofi-bluetooth
-     lightdm
+     lightdm light
      alacritty
      firefox
+     libinput-gestures
    ];
 
    programs.zsh = {
      enable = true;
    };
+
+   programs.light.enable = true;
 
    fonts.packages = with pkgs; [
      hackgen-nf-font
