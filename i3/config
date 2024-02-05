@@ -37,9 +37,13 @@ bindsym XF86AudioLowerVolume exec --no-startup-id amixer set Master 5%- && $refr
 bindsym XF86AudioMute exec --no-startup-id amixer set Master toggle && amixer set Speaker toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
-# function keys do not work atm
-bindsym XF86MonBrightnessUp exec --no-startup-id light -A 10
-bindsym XF86MonBrightnessDown exec --no-startup-id light -U 10
+# function keys do not work atm, but in an ideal world they would change the brightness with the LIGHT program
+#bindsym XF86MonBrightnessUp exec --no-startup-id light -A 10
+#bindsym XF86MonBrightnessDown exec --no-startup-id light -U 10
+
+# function keys to change brightness on OLED laptop
+bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set 5%+
+bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 5%-
 
 bindsym Control+F5 exec --no-startup-id light -U 10
 bindsym Control+F6 exec --no-startup-id light -A 10

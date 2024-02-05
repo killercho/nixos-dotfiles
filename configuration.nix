@@ -7,8 +7,8 @@
 {
   imports =
     [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-    ];
+    ./hardware-configuration.nix
+  ];
 
   # Use the GRUB 2 boot loader.
   boot.loader.grub.enable = true;
@@ -46,15 +46,15 @@
       windowManager.i3.enable = true;
       exportConfiguration = true;
       libinput = {
-          enable = true;
-          touchpad.tapping = true;
-          touchpad.naturalScrolling = true;
-        };
+        enable = true;
+        touchpad.tapping = true;
+        touchpad.naturalScrolling = true;
+      };
 
     };
   };
 
-  
+
 
   # Configure keymap in X11
   # services.xserver.xkb.layout = "us";
@@ -68,40 +68,36 @@
   hardware.pulseaudio.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-   users.users.AzSamSi = {
-     isNormalUser = true;
-     extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
-     shell = pkgs.zsh;
-   };
+  users.users.AzSamSi = {
+    isNormalUser = true;
+    extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
+    shell = pkgs.zsh;
+  };
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-   environment.systemPackages = with pkgs; [
-     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-     wget
-     neofetch
-     git gh
-     nodejs_21
-     zsh 
-     i3 polybar wmctrl picom
-     rofi rofi-power-menu rofi-bluetooth
-     lightdm light
-     alacritty
-     firefox
-     libinput libinput-gestures
-   ];
+  environment.systemPackages = with pkgs; [
+    vim-full # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    wget
+    neofetch
+    git gh
+    nodejs_21
+    zsh
+    i3 polybar wmctrl picom
+    rofi rofi-power-menu rofi-bluetooth
+    lightdm brightnessctl
+    alacritty
+    firefox
+    libinput libinput-gestures
+  ];
 
-   programs.zsh = {
-     enable = true;
-   };
+  programs.zsh.enable = true;
 
-   programs.light.enable = true;
-
-   fonts.packages = with pkgs; [
-     hackgen-nf-font
-     font-awesome
-     jetbrains-mono
-   ];
+  fonts.packages = with pkgs; [
+    hackgen-nf-font
+    font-awesome
+    jetbrains-mono
+  ];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
