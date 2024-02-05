@@ -44,6 +44,13 @@
     xserver = {
       enable = true;
       windowManager.i3.enable = true;
+      exportConfiguration = true;
+      libinput = {
+          enable = true;
+          touchpad.tapping = true;
+          touchpad.naturalScrolling = true;
+        };
+
     };
   };
 
@@ -59,10 +66,6 @@
   # Enable sound.
   sound.enable = true;
   hardware.pulseaudio.enable = true;
-
-  # Enable touchpad support (enabled default in most desktopManager).
-  services.xserver.libinput.enable = true;
-  services.xserver.libinput.touchpad.naturalScrolling = false;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
    users.users.AzSamSi = {
@@ -85,7 +88,7 @@
      lightdm light
      alacritty
      firefox
-     libinput-gestures
+     libinput libinput-gestures
    ];
 
    programs.zsh = {
