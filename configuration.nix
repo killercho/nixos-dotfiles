@@ -54,7 +54,8 @@
     };
   };
 
-
+  # Allows nix to install unfree applications
+  nixpkgs.config.allowUnfree = true;
 
   # Configure keymap in X11
   # services.xserver.xkb.layout = "us";
@@ -71,7 +72,7 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.AzSamSi = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "audio" ];
+    extraGroups = [ "wheel" "audio" "input" ];
     shell = pkgs.zsh;
   };
 
@@ -89,7 +90,7 @@
     pipewire pavucontrol pamixer bluez
     lightdm brightnessctl
     alacritty
-    firefox
+    firefox spotify
     libinput libinput-gestures
   ];
 
