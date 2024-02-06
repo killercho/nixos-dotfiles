@@ -63,9 +63,10 @@
   # Enable CUPS to print documents.
   # services.printing.enable = true;
 
-  # Enable sound.
-  #sound.enable = true;
-  #hardware.pulseaudio.enable = true;
+  # Enable bluetooth.
+  hardware.bluetooth.enable = true; # enables support for Bluetooth
+  hardware.bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
+  services.blueman.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.AzSamSi = {
@@ -85,7 +86,7 @@
     zsh
     i3 polybar wmctrl picom
     rofi rofi-power-menu rofi-bluetooth
-    pipewire pavucontrol pamixer
+    pipewire pavucontrol pamixer bluez
     lightdm brightnessctl
     alacritty
     firefox
@@ -109,6 +110,14 @@
     pulse.enable = true;
     # If you want to use JACK applications, uncomment this
     #jack.enable = true;
+  };
+
+  # Enable the buttons on the headset
+  systemd.user.services.mpris-proxy = {
+    description = "Mpris proxy";
+    after = [ "network.target" "sound.target" ];
+    wantedBy = [ "default.target" ];
+    serviceConfig.ExecStart = "${pkgs.bluez}/bin/mpris-proxy";
   };
 
   # Some programs need SUID wrappers, can be configured further or are
