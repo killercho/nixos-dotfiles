@@ -64,13 +64,13 @@
   # services.printing.enable = true;
 
   # Enable sound.
-  sound.enable = true;
-  hardware.pulseaudio.enable = true;
+  #sound.enable = true;
+  #hardware.pulseaudio.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.AzSamSi = {
     isNormalUser = true;
-    extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
+    extraGroups = [ "wheel" "audio" ];
     shell = pkgs.zsh;
   };
 
@@ -85,6 +85,7 @@
     zsh
     i3 polybar wmctrl picom
     rofi rofi-power-menu rofi-bluetooth
+    pipewire pavucontrol pamixer
     lightdm brightnessctl
     alacritty
     firefox
@@ -98,6 +99,17 @@
     font-awesome
     jetbrains-mono
   ];
+
+  security.rtkit.enable = true;
+
+  services.pipewire = {
+    enable = true;
+    alsa.enable = true;
+    alsa.support32Bit = true;
+    pulse.enable = true;
+    # If you want to use JACK applications, uncomment this
+    #jack.enable = true;
+  };
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
