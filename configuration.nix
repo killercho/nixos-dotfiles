@@ -90,7 +90,7 @@
     pipewire pavucontrol pamixer bluez
     lightdm brightnessctl
     alacritty
-    firefox spotify
+    firefox spotify bitwarden
     libinput libinput-gestures
   ];
 
