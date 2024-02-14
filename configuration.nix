@@ -88,10 +88,10 @@
     i3 polybar wmctrl picom
     rofi rofi-power-menu rofi-bluetooth
     pipewire pavucontrol pamixer bluez
-    lightdm brightnessctl
+    lightdm lightlocker brightnessctl
     alacritty
     firefox spotify bitwarden
-    libinput libinput-gestures
+    libinput libinput-gestures xdotool wmctrl
   ];
 
   programs.zsh.enable = true;
