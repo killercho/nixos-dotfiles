@@ -90,7 +90,7 @@
     pipewire pavucontrol pamixer bluez
     lightdm lightlocker brightnessctl
     alacritty
-    firefox spotify bitwarden
+    firefox spotify bitwarden discord
     libinput libinput-gestures xdotool wmctrl
   ];
 
