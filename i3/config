@@ -205,10 +205,10 @@ gaps outer 5
 smart_gaps on
 
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
-exec_always --no-startup-id pulseaudio --start
+#exec_always --no-startup-id pulseaudio --start
 exec_always --no-startup-id feh --bg-scale /usr/share/backgrounds/background.jpg
 exec_always --no-startup-id picom -b
-exec_always --no-startup-id libinput-gestures-setup start
+#exec_always --no-startup-id libinput-gestures-setup start
 
 # Add different keyboard layout
 exec_always --no-startup-id setxkbmap -option 'grp:win_space_toggle' -layout us,bg -variant ,phonetic

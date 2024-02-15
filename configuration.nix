@@ -81,7 +81,7 @@
   environment.systemPackages = with pkgs; [
     vim-full # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     wget
-    neofetch htop
+    neofetch htop flameshot
     git gh
     nodejs_21
     zsh
