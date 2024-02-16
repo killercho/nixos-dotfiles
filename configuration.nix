@@ -89,7 +89,7 @@
     rofi rofi-power-menu rofi-bluetooth
     pipewire pavucontrol pamixer bluez
     lightdm lightlocker brightnessctl
-    alacritty
+    alacritty libsForQt5.dolphin
     firefox spotify bitwarden discord telegram-desktop
     libinput libinput-gestures xdotool wmctrl
   ];
