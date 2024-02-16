@@ -55,6 +55,7 @@
         blur-background = false;
         blur-background-frame = true;
         blur-background-fixed = true;
+        corner-radius = 15;
       };
     };
     xserver = {
