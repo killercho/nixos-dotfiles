@@ -85,12 +85,12 @@
     git gh
     nodejs_21
     zsh
-    i3 polybar wmctrl picom pywal
+    i3 polybar wmctrl picom pywal feh
     rofi rofi-power-menu rofi-bluetooth
     pipewire pavucontrol pamixer bluez
     lightdm lightlocker brightnessctl
     alacritty
-    firefox spotify bitwarden discord
+    firefox spotify bitwarden discord telegram-desktop
     libinput libinput-gestures xdotool wmctrl
   ];
 

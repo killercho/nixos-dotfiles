@@ -211,4 +211,4 @@ exec_always --no-startup-id picom -b
 #exec_always --no-startup-id libinput-gestures-setup start
 
 # Add different keyboard layout
-exec_always --no-startup-id setxkbmap -option 'grp:win_space_toggle' -layout us,bg -variant ,phonetic
+exec_always --no-startup-id setxkbmap -option 'grp:alt_shift_toggle' -layout us,bg -variant ,phonetic
