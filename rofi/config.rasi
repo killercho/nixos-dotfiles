@@ -179,4 +179,11 @@ configuration {
 	me-accept-custom: "Control+MouseDPrimary";
 */
 }
+
+/* Dark theme. */
+@import "~/.cache/wal/colors-rofi-dark"
+
+/* Light theme. */
+@import "~/.cache/wal/colors-rofi-light"
+
 @theme "/nix/store/27fvjv5qqm8zhwkanv3a6lllh62xpzap-rofi-1.7.5/share/rofi/themes/android_notification.rasi"

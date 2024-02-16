@@ -40,7 +40,22 @@
 
   # Enable the X11 windowing system
   services = {
-    picom.enable = true;
+    picom = {
+      enable = true;
+      backend = "glx";
+      activeOpacity = 0.7;
+      inactiveOpacity = 0.7;
+      settings = {
+        blur = {
+          method = "dual_kawase";
+          strength = 12;
+          kern = "3x3box";
+        };
+        blur-background = false;
+        blur-background-frame = true;
+        blur-background-fixed = true;
+      };
+    };
     xserver = {
       enable = true;
       windowManager.i3.enable = true;

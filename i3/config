@@ -200,6 +200,15 @@ set_from_resource $fg i3wm.color1
 set_from_resource $bg i3wm.color2
 set_from_resource $ac i3wm.color3
 
+# class                 border  backgr. text indicator child_border
+client.focused          $bg     $bg     $fg  $bg       $bg
+client.focused_inactive $bg     $bg     $fg  $bg       $bg
+client.unfocused        $bg     $bg     $fg  $bg       $bg
+client.urgent           $bg     $bg     $fg  $bg       $bg
+client.placeholder      $bg     $bg     $fg  $bg       $bg
+
+client.background       $bg
+
 gaps inner 5
 gaps outer 5
 smart_gaps on
@@ -207,7 +216,7 @@ smart_gaps on
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 #exec_always --no-startup-id pulseaudio --start
 exec_always --no-startup-id feh --bg-scale /usr/share/backgrounds/background.jpg
-exec_always --no-startup-id picom -b
+exec_always --no-startup-id picom -CGb
 #exec_always --no-startup-id libinput-gestures-setup start
 
 # Add different keyboard layout
