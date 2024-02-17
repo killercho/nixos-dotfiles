@@ -108,7 +108,7 @@
     pipewire pavucontrol pamixer bluez
     lightdm lightlocker brightnessctl
     alacritty libsForQt5.dolphin
-    firefox spotify bitwarden discord telegram-desktop
+    firefox spotify bitwarden discord telegram-desktop vlc qbittorrent-qt5
     libinput libinput-gestures xdotool wmctrl
   ];
 
