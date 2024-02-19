@@ -106,7 +106,7 @@
     i3 polybar wmctrl picom pywal feh xorg.xprop
     rofi rofi-power-menu rofi-bluetooth
     pipewire pavucontrol pamixer bluez
-    lightdm lightlocker brightnessctl
+    lightdm lightlocker brightnessctl lightdm-gtk-greeter
     alacritty libsForQt5.dolphin
     firefox spotify bitwarden discord signal-desktop telegram-desktop vlc qbittorrent-qt5
     libinput libinput-gestures xdotool wmctrl
