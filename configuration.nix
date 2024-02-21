@@ -73,7 +73,10 @@
   };
 
   # Allows nix to install unfree applications
-  nixpkgs.config.allowUnfree = true;
+  nixpkgs.config = {
+    allowUnfree = true;
+  };
+
 
   # Configure keymap in X11
   # services.xserver.xkb.layout = "us";
@@ -102,17 +105,18 @@
     neofetch btop flameshot
     git gh
     nodejs_21
-    zsh
+    alacritty zsh
     i3 polybarFull wmctrl picom pywal feh xorg.xprop
     rofi rofi-power-menu rofi-bluetooth
     pipewire pavucontrol pamixer bluez
     lightdm lightlocker brightnessctl lightdm-gtk-greeter
-    alacritty libsForQt5.dolphin
+    xfce.thunar
     firefox spotify bitwarden discord signal-desktop telegram-desktop vlc qbittorrent-qt5
     libinput libinput-gestures xdotool wmctrl
   ];
 
   programs.zsh.enable = true;
+  programs.thunar.enable = true;
 
   fonts.packages = with pkgs; [
     hackgen-nf-font
