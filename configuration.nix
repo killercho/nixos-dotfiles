@@ -47,6 +47,7 @@
         "80:class_g = 'Alacritty'"
         "80:class_g = 'Polybar'"
       ];
+      shadow = true;
       settings = {
         blur = {
           method = "dual_kawase";
@@ -68,7 +69,18 @@
         touchpad.tapping = true;
         touchpad.naturalScrolling = true;
       };
-
+      displayManager.lightdm.greeters.gtk = {
+        enable = true;
+        theme.name = "ltheme";
+        extraConfig = ''
+            user-background = false
+        '';
+      };
+      displayManager.lightdm.background = "/usr/share/backgrounds/background.jpg";
+      #displayManager.lightdm.greeter.package = "lightdm-gtk-greeter";
+      #displayManager.lightdm.extraSeatDefaults = ''
+        #greeter-session=lightdm-gtk-greeter
+      #'';
     };
   };
 
@@ -107,8 +119,8 @@
     nodejs_21
     alacritty zsh
     i3 polybarFull wmctrl picom pywal feh xorg.xprop
-    rofi rofi-power-menu rofi-bluetooth
-    pipewire pavucontrol pamixer bluez
+    rofi rofi-bluetooth bluez
+    pipewire pavucontrol pamixer
     lightdm lightlocker brightnessctl lightdm-gtk-greeter
     xfce.thunar
     firefox spotify bitwarden discord signal-desktop telegram-desktop vlc qbittorrent-qt5
