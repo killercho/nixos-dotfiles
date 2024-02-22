@@ -124,7 +124,7 @@
     nodejs_21
     alacritty zsh
     i3 polybarFull wmctrl picom pywal feh xorg.xprop
-    rofi rofi-bluetooth bluez
+    rofi rofi-bluetooth bluez networkmanagerapplet
     pipewire pavucontrol pamixer
     lightdm lightlocker brightnessctl lightdm-gtk-greeter
     xfce.thunar
