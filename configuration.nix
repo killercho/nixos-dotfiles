@@ -96,8 +96,11 @@
   };
 
   # Configure keymap in X11
-  services.xserver.xkb.layout = "us,bg";
-  services.xserver.xkb.options = "grp:alt_shift_toggle";
+  services.xserver.xkb = {
+    layout = "us,bg";
+    variant = ",phonetic";
+    options = "grp:alt_shift_toggle";
+  };
 
   # Enable CUPS to print documents.
   # services.printing.enable = true;
