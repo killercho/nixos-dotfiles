@@ -130,10 +130,18 @@
     xfce.thunar
     firefox spotify bitwarden discord signal-desktop telegram-desktop vlc qbittorrent-qt5
     libinput libinput-gestures xdotool wmctrl
+
+    # Delete after this semester:
+    # End of deletion
+
+    # Game related
+    steam
+    # End of game related
   ];
 
   programs.zsh.enable = true;
   programs.thunar.enable = true;
+  programs.steam.enable = true;
 
   fonts.packages = with pkgs; [
     hackgen-nf-font
