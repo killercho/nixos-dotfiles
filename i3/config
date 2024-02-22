@@ -210,6 +210,3 @@ exec_always --no-startup-id wal -i /usr/share/backgrounds/background.jpg
 exec_always --no-startup-id picom -CGb
 exec_always --no-startup-id systemcl --user import-environment XAUTHORITY DISPLAY
 #exec_always --no-startup-id libinput-gestures-setup start
-
-# Add different keyboard layout
-exec_always --no-startup-id setxkbmap -option 'grp:alt_shift_toggle' -layout us,bg -variant ,phonetic
