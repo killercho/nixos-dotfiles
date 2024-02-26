@@ -204,9 +204,7 @@ gaps inner 7
 gaps outer 3
 
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
-#exec_always --no-startup-id pulseaudio --start
-#exec_always --no-startup-id feh --bg-scale /usr/share/backgrounds/background.jpg
 exec_always --no-startup-id wal -i /usr/share/backgrounds/background.jpg
 exec_always --no-startup-id picom -CGb
-exec_always --no-startup-id systemcl --user import-environment XAUTHORITY DISPLAY
-#exec_always --no-startup-id libinput-gestures-setup start
+exec_always --no-startup-id systemctl --user import-environment XAUTHORITY DISPLAY
+exec_always --no-startup-id systemctl --user restart libinput-gestures.service
