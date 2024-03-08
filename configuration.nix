@@ -142,9 +142,18 @@
     # End of game related
   ];
 
-  programs.zsh.enable = true;
-  programs.thunar.enable = true;
-  programs.steam.enable = true;
+  programs = {
+    zsh = {
+      enable = true;
+      autosuggestions.enable = true;
+      syntaxHighlighting.enable = true;
+      ohMyZsh.enable = true;
+      ohMyZsh.theme = "agnoster";
+      ohMyZsh.plugins = [ "git" "sudo" ];
+    };
+    thunar.enable = true;
+    steam.enable = true;
+  };
 
   fonts.packages = with pkgs; [
     hackgen-nf-font
