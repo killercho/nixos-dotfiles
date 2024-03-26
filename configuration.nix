@@ -6,9 +6,10 @@
 
 {
   imports =
-    [ # Include the results of the hardware scan.
-    ./hardware-configuration.nix
-  ];
+    [
+      ./hardware-configuration.nix # Include the results of the hardware scan.
+      ./temp.nix # Include the things that are just temporary but more permanent than nix-shell
+    ];
 
   # Use the GRUB 2 boot loader.
   boot.loader.grub.enable = true;
