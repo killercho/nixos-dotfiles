@@ -90,6 +90,11 @@
     allowUnfree = true;
   };
 
+  nix.optimise.automatic = true;
+  nix.optimise.dates = [ "03:45" ];
+
+  nix.settings.auto-optimise-store = true;
+
   nix.gc = {
     automatic = true;  # Enable the automatic garbage collector
     dates = "weekly";   # When to run the garbage collector
