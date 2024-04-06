@@ -137,7 +137,7 @@
     pipewire pavucontrol pamixer
     lightdm lightlocker brightnessctl lightdm-gtk-greeter
     xfce.thunar
-    firefox spotify bitwarden discord signal-desktop telegram-desktop vlc qbittorrent-qt5
+    firefox spotify bitwarden discord signal-desktop vlc qbittorrent-qt5
     libinput libinput-gestures xdotool wmctrl
 
     # Delete after this semester:
