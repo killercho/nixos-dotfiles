@@ -96,14 +96,6 @@
   ];
 
   programs = {
-    zsh = {
-      enable = true;
-      autosuggestions.enable = true;
-      syntaxHighlighting.enable = true;
-      ohMyZsh.enable = true;
-      ohMyZsh.theme = "agnoster";
-      ohMyZsh.plugins = [ "git" "sudo" ];
-    };
     thunar.enable = true;
     steam.enable = true;
   };
