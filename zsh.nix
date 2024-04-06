@@ -6,25 +6,22 @@
     zsh
   ];
 
+  #home.file.".zshrc".text = ''
+    #cat $HOME/.cache/wal/sequences
+  #''
+
   programs.zsh = {
     enable = true;
-    autosuggestions.enable = true;
     syntaxHighlighting.enable = true;
-    ohMyZsh.enable = true;
-    ohMyZsh.theme = "agnoster";
-    ohMyZsh.plugins = [ "git" "sudo" ];
-  };
-
-  home.file = {
-    # # Building this configuration will create a copy of 'dotfiles/screenrc' in
-    # # the Nix store. Activating the configuration will then make '~/.screenrc' a
-    # # symlink to the Nix store copy.
-    # ".screenrc".source = dotfiles/screenrc;
-
-    # # You can also set the file content immediately.
-    # ".gradle/gradle.properties".text = ''
-    #   org.gradle.console=verbose
-    #   org.gradle.daemon.idletimeout=3600000
-    # '';
+    zplug = {
+      plugins = [
+        { name = "zsh-users/zsh-autosuggestions"; }
+      ];
+    };
+    oh-my-zsh = {
+      enable = true;
+      theme = "agnoster";
+      plugins = [ "git" "sudo" ];
+    };
   };
 }
