@@ -19,7 +19,7 @@
 
       nixos = lib.nixosSystem {
         inherit system;
-        modules = [ ./configuration.nix ./machines/vivobook/hardware-configuration.nix ./temp.nix ];
+        modules = [ ./configuration.nix ];
       };
 
     };

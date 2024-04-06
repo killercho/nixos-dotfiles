@@ -9,6 +9,7 @@
     [
       ./machines/vivobook/hardware-configuration.nix # Include the results of the hardware scan.
       ./temp.nix # Include the things that are just temporary but more permanent than nix-shell
+      ./i3.nix # Include the i3 and X11 configuration
     ];
 
   # Use the GRUB 2 boot loader.
@@ -39,52 +40,6 @@
   #   useXkbConfig = true; # use xkb.options in tty.
   # };
 
-  # Enable the X11 windowing system
-  services = {
-    picom = {
-      enable = true;
-      backend = "glx";
-      opacityRules = [
-        "80:class_g = 'Alacritty'"
-        "80:class_g = 'Polybar'"
-      ];
-      shadow = true;
-      settings = {
-        blur = {
-          method = "dual_kawase";
-          strength = 12;
-          kern = "3x3box";
-        };
-        blur-background = false;
-        blur-background-frame = true;
-        blur-background-fixed = true;
-        corner-radius = 15;
-      };
-    };
-    xserver = {
-      enable = true;
-      windowManager.i3.enable = true;
-      exportConfiguration = true;
-      libinput = {
-        enable = true;
-        touchpad.tapping = true;
-        touchpad.naturalScrolling = true;
-      };
-      displayManager.lightdm.greeters.gtk = {
-        enable = true;
-        theme.name = "ltheme";
-        extraConfig = ''
-            user-background = false
-        '';
-      };
-      displayManager.lightdm.background = "/usr/share/backgrounds/background.jpg";
-      #displayManager.lightdm.greeter.package = "lightdm-gtk-greeter";
-      #displayManager.lightdm.extraSeatDefaults = ''
-        #greeter-session=lightdm-gtk-greeter
-      #'';
-    };
-  };
-
   # Allows nix to install unfree applications
   nixpkgs.config = {
     allowUnfree = true;
@@ -99,13 +54,6 @@
     automatic = true;  # Enable the automatic garbage collector
     dates = "weekly";   # When to run the garbage collector
     options = "-d";    # Arguments to pass to nix-collect-garbage
-  };
-
-  # Configure keymap in X11
-  services.xserver.xkb = {
-    layout = "us,bg";
-    variant = ",phonetic";
-    options = "grp:alt_shift_toggle";
   };
 
   # Enable CUPS to print documents.
@@ -128,17 +76,16 @@
   environment.systemPackages = with pkgs; [
     vim-full # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     wget
-    neofetch btop flameshot
+    neofetch btop
     git gh
     nodejs_21
     alacritty zsh
-    i3 polybarFull wmctrl picom pywal feh xorg.xprop
-    rofi rofi-bluetooth bluez networkmanagerapplet
+    bluez networkmanagerapplet
     pipewire pavucontrol pamixer
-    lightdm lightlocker brightnessctl lightdm-gtk-greeter
+    brightnessctl
     xfce.thunar
     firefox spotify bitwarden discord signal-desktop vlc qbittorrent-qt5
-    libinput libinput-gestures xdotool wmctrl
+    libinput libinput-gestures xdotool
 
     # Delete after this semester:
     # End of deletion
