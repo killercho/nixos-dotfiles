@@ -10,6 +10,7 @@
 
     enable = true;
     syntaxHighlighting.enable = true;
+    enableAutosuggestions = true;
 
     initExtra = ''
       cat $HOME/.cache/wal/sequences
@@ -18,12 +19,6 @@
     envExtra = ''
       export PATH="$PATH:$HOME/.local/bin"
     '';
-
-    zplug = {
-      plugins = [
-        { name = "zsh-users/zsh-autosuggestions"; }
-      ];
-    };
 
     oh-my-zsh = {
       enable = true;
