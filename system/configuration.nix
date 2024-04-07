@@ -95,6 +95,7 @@
   programs = {
     thunar.enable = true;
     steam.enable = true;
+    zsh.enable = true;
   };
 
   fonts.packages = with pkgs; [
