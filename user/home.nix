@@ -4,6 +4,7 @@
   imports = [
     ./zsh.nix
     ./git.nix
+    ./libinput-gestures.nix
   ];
 
   # Home Manager needs a bit of information about you and the paths it should

@@ -1,3 +1,22 @@
+{ config, pkgs, ... }:
+
+{
+  # Home Manager is pretty good at managing dotfiles. The primary way to manage
+  # plain files is through 'home.file'.
+  home.file = {
+    # # Building this configuration will create a copy of 'dotfiles/screenrc' in
+    # # the Nix store. Activating the configuration will then make '~/.screenrc' a
+    # # symlink to the Nix store copy.
+    # ".screenrc".source = dotfiles/screenrc;
+
+    # # You can also set the file content immediately.
+    # ".gradle/gradle.properties".text = ''
+    #   org.gradle.console=verbose
+    #   org.gradle.daemon.idletimeout=3600000
+    # '';
+
+    ".config/libinput-gestures.conf".text = ''
+
 # Configuration file for libinput-gestures.
 # Mark Blakeney, Sep 2015
 #
@@ -58,7 +77,7 @@
 # Ensure you install wmctrl if you use _internal.
 
 # Move to next workspace (works for GNOME/KDE/etc on Wayland and Xorg)
-gesture swipe up    _internal ws_up
+      gesture swipe up    _internal ws_up
 
 # NOTE ABOUT FINGER COUNT:
 # The above command will configure this command for all fingers (i.e. 3
@@ -71,14 +90,14 @@ gesture swipe up    _internal ws_up
 # gesture swipe up  xdotool key super+Page_Down
 
 # Move to prev workspace (works for GNOME/KDE/etc on Wayland and Xorg)
-gesture swipe down  _internal ws_down
+      gesture swipe down  _internal ws_down
 # gesture swipe down    xdotool key super+Page_Up
 
 # Browser go forward (works only for Xorg, and Xwayland clients)
-gesture swipe left  xdotool key Alt+Right
+      gesture swipe left  xdotool key Alt+Right
 
 # Browser go back (works only for Xorg, and Xwayland clients)
-gesture swipe right xdotool key Alt+Left
+      gesture swipe right xdotool key Alt+Left
 
 # Open new browser tag ("hold on" available since libinput 1.19)
 # gesture hold on 4 xdotool key control+t
@@ -150,8 +169,8 @@ gesture swipe right xdotool key Alt+Left
 #gesture pinch out   xdotool key super+s
 
 # Zoom in and out with a gesture
-gesture pinch in     xdotool key ctrl+minus
-gesture pinch out    xdotool key ctrl+plus
+      gesture pinch in     xdotool key ctrl+minus
+      gesture pinch out    xdotool key ctrl+plus
 
 # KDE Plasma open/close overview
 # gesture pinch in  xdotool key ctrl+F9
@@ -202,3 +221,6 @@ gesture pinch out    xdotool key ctrl+plus
 # the value commented below. It can be any value in float secs >= 0.
 # 0 = no timeout. E.g. set it to 2 secs with "timeout 2".
 # timeout 1.5
+    '';
+  };
+}

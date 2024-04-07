@@ -83,7 +83,7 @@
     neofetch btop
     git gh
     nodejs_21
-    alacritty
+    alacritty zsh
     bluez networkmanagerapplet
     pipewire pavucontrol pamixer
     brightnessctl
