@@ -20,9 +20,15 @@
   # release notes.
   home.stateVersion = "23.11"; # Please read the comment before changing.
 
+  # Allows nix to install unfree applications
+  nixpkgs.config = {
+    allowUnfree = true;
+  };
+
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = with pkgs; [
+    spotify bitwarden discord signal-desktop telegram-desktop vlc qbittorrent-qt5
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage

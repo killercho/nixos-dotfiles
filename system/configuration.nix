@@ -83,20 +83,13 @@
     neofetch btop
     git gh
     nodejs_21
-    alacritty zsh
+    alacritty
     bluez networkmanagerapplet
     pipewire pavucontrol pamixer
     brightnessctl
     xfce.thunar
-    firefox spotify bitwarden discord signal-desktop telegram-desktop vlc qbittorrent-qt5
+    firefox
     libinput libinput-gestures xdotool
-
-    # Delete after this semester:
-    # End of deletion
-
-    # Game related
-    steam
-    # End of game related
   ];
 
   programs = {
