@@ -88,7 +88,7 @@
     pipewire pavucontrol pamixer
     brightnessctl
     xfce.thunar
-    firefox spotify bitwarden discord signal-desktop vlc qbittorrent-qt5
+    firefox spotify bitwarden discord signal-desktop telegram-desktop vlc qbittorrent-qt5
     libinput libinput-gestures xdotool
 
     # Delete after this semester:
