@@ -63,6 +63,13 @@
     EDITOR = "vim";
   };
 
+  #xdg.enable = true;
+  #xdg.userDirs = {
+    #extraConfig = {
+      #XDG_CONFIG_HOME = "~/.config/";
+    #};
+  #};
+
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 }
