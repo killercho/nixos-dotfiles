@@ -73,6 +73,7 @@
   users.users.AzSamSi = {
     isNormalUser = true;
     extraGroups = [ "wheel" "audio" "input" ];
+    shell = pkgs.zsh;
   };
 
   # List packages installed in system profile. To search, run:
