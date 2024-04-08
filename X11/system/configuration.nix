@@ -7,7 +7,7 @@
 {
   imports =
     [
-      ./../machines/vivobook/hardware-configuration.nix # Include the results of the hardware scan.
+      ./../../machines/vivobook/hardware-configuration.nix # Include the results of the hardware scan.
       ./temp.nix # Include the things that are just temporary but more permanent than nix-shell
       ./i3.nix # Include the i3 and X11 configuration
     ];

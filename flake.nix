@@ -20,14 +20,14 @@
       nixos = lib.nixosSystem {
         inherit system;
         modules = [
-          ./system/configuration.nix
+          ./X11/system/configuration.nix
         ];
       };
 
-      configTest = lib.nixosSystem {
+      wayland = lib.nixosSystem {
         inherit system;
         modules = [
-          ./configTest/system/configuration.nix
+          ./wayland/system/configuration.nix
         ];
       };
 
@@ -38,14 +38,14 @@
       AzSamSi = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
         modules = [
-          ./user/home.nix
+          ./X11/user/home.nix
         ];
       };
 
-      configTest = home-manager.lib.homeManagerConfiguration {
+      wayland = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
         modules = [
-          ./configTest/user/home.nix
+          ./wayland/user/home.nix
         ];
       };
 
