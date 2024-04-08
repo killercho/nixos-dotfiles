@@ -14,16 +14,16 @@
     regreet.enable = true;
   };
 
-  services.greetd = {
-    enable = true;
-    package = pkgs.greetd.regreet;
-    settings = {
-      default_session = {
-        command = "Hyprland -- regreet";
-        user = "AzSamSi";
-      };
-    };
-  };
+  #services.greetd = {
+    #enable = true;
+    #package = pkgs.greetd.regreet;
+    #settings = {
+      #default_session = {
+        #command = "Hyprland";
+        #user = "AzSamSi";
+      #};
+    #};
+  #};
 
   #Screen share enable
   services.dbus.enable = true;
@@ -49,6 +49,7 @@
     waybar
     meson
     greetd.regreet
+    cage
   ];
 }
 
