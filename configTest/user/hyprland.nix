@@ -112,12 +112,15 @@
         sensitivity = -0.5
       }
 
+      # Executes ------------------------
+
+      exec-once = swaybg -i /usr/share/backgrounds/background.jpg
+
       # Bindings ------------------------
 
-      bind=SUPER,RETURN,exec,alacritty
-      bind = SUPER, C, killactive,
+      bind = SUPER, RETURN, exec, alacritty
+      bind = SUPER SHIFT, Q, killactive,
       bind = SUPER, M, exit,
-      bind = SUPER, E, exec, thunar,
       bind = SUPER, V, togglefloating,
       bind = SUPER, R, exec, rofi -show combi -show-icons
       bind = SUPER, P, pseudo, # dwindle
@@ -166,14 +169,14 @@
       bindm = SUPER, mouse:273, resizewindow
 
       # Brightness binds
-      #bind = XF86MonBrightnessUp, exec, brightnessctl set 2%+
-      #bindl = XF86MonBrightnessDown, exec, brightnessctl set 2%-
+      bindl = , XF86MonBrightnessUp, exec, brightnessctl s 2%+
+      bindl = , XF86MonBrightnessDown, exec, brightnessctl s 2%-
 
       # Audio binds
-      #bindl =  XF86AudioRaiseVolume, exec, pamixer -i 5
-      #bindl = XF86AudioLowerVolume, exec, pamixer -d 5
-      #bindl =  XF86AudioMute, exec, pamixer -t
-      #bindl =  XF86AudioMicMute, exec, pamixer --default-source -t
+      bindl = , XF86AudioRaiseVolume, exec, pamixer -i 5
+      bindl = , XF86AudioLowerVolume, exec, pamixer -d 5
+      bindl = , XF86AudioMute, exec, pamixer -t
+      bindl = , XF86AudioMicMute, exec, pamixer --default-source -t
     '';
   };
 }
