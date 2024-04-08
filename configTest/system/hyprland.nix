@@ -9,9 +9,14 @@
     hyprland = {
       enable = true;
       xwayland.enable = true;
-      xwayland.hidpi = true;
     };
     waybar.enable = true;
+  };
+
+  security.pam.services.swaylock = {
+    text = ''
+      auth include login
+    '';
   };
 
   #Screen share enable
@@ -36,6 +41,8 @@
     wlroots
     rofi-wayland
     waybar
+    meson
+    swaylock swaylock-effects
   ];
 }
 
