@@ -40,7 +40,7 @@
 
         gaps_in = 5
         gaps_out = 20
-        border_size = 0.5
+        border_size = 1
         col.active_border = rgba(33ccffee) rgba(00ff99ee) 45deg
         col.inactive_border = rgba(595959aa)
 
@@ -166,13 +166,13 @@
       bindm = SUPER, mouse:273, resizewindow
 
       # Brightness binds
-      bindl = XF86MonBrightnessUp, exec, brightnessctl set 2%+
-      bindl = XF86MonBrightnessDown, exec, brightnessctl set 2%-
+      #bind = XF86MonBrightnessUp, exec, brightnessctl set 2%+
+      #bindl = XF86MonBrightnessDown, exec, brightnessctl set 2%-
 
       # Audio binds
-      bindl =  XF86AudioRaiseVolume, exec, pamixer -i 5
-      bindl = XF86AudioLowerVolume, exec, pamixer -d 5
-      bindl =  XF86AudioMute, exec, pamixer -t
+      #bindl =  XF86AudioRaiseVolume, exec, pamixer -i 5
+      #bindl = XF86AudioLowerVolume, exec, pamixer -d 5
+      #bindl =  XF86AudioMute, exec, pamixer -t
       #bindl =  XF86AudioMicMute, exec, pamixer --default-source -t
     '';
   };

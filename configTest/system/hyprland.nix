@@ -39,7 +39,7 @@
     wayland-utils
     wl-clipboard
     wlroots
-    rofi-wayland
+    rofi-wayland rofi-bluetooth
     waybar
     meson
     swaylock swaylock-effects
