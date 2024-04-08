@@ -19,7 +19,9 @@
 
       nixos = lib.nixosSystem {
         inherit system;
-        modules = [ ./system/configuration.nix ];
+        modules = [
+          ./system/configuration.nix
+        ];
       };
 
     };
@@ -28,7 +30,9 @@
 
       AzSamSi = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
-        modules = [ ./user/home.nix ];
+        modules = [
+          ./user/home.nix
+        ];
       };
 
     };

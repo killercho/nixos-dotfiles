@@ -90,7 +90,7 @@
     brightnessctl
     xfce.thunar
     firefox
-    libinput libinput-gestures xdotool
+    libinput libinput-gestures xdotool libnotify
   ];
 
   programs = {
