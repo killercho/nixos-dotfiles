@@ -24,6 +24,13 @@
         ];
       };
 
+      configTest = lib.nixosSystem {
+        inherit system;
+        modules = [
+          ./configTest/system/configuration.nix
+        ];
+      };
+
     };
 
     homeConfigurations = {
@@ -32,6 +39,13 @@
         inherit pkgs;
         modules = [
           ./user/home.nix
+        ];
+      };
+
+      configTest = home-manager.lib.homeManagerConfiguration {
+        inherit pkgs;
+        modules = [
+          ./configTest/user/home.nix
         ];
       };
 
