@@ -11,12 +11,18 @@
       xwayland.enable = true;
     };
     waybar.enable = true;
+    regreet.enable = true;
   };
 
-  security.pam.services.swaylock = {
-    text = ''
-      auth include login
-    '';
+  services.greetd = {
+    enable = true;
+    package = pkgs.greetd.regreet;
+    settings = {
+      default_session = {
+        command = "Hyprland -- regreet";
+        user = "AzSamSi";
+      };
+    };
   };
 
   #Screen share enable
@@ -42,7 +48,7 @@
     rofi-wayland rofi-bluetooth
     waybar
     meson
-    swaylock swaylock-effects
+    greetd.regreet
   ];
 }
 

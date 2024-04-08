@@ -15,7 +15,7 @@
     plugins = [];
     settings = {};
     extraConfig = ''
-      env = XCURSOR_SIZE,24
+      env = XCURSOR_SIZE,16
 
       input {
         kb_layout = us
