@@ -11,19 +11,24 @@
       xwayland.enable = true;
     };
     waybar.enable = true;
-    regreet.enable = true;
+    #regreet.enable = true;
   };
 
-  #services.greetd = {
-    #enable = true;
-    #package = pkgs.greetd.regreet;
-    #settings = {
-      #default_session = {
-        #command = "Hyprland";
-        #user = "AzSamSi";
-      #};
-    #};
-  #};
+  # Configure xwayland
+  services.xserver = {
+    enable = true;
+    xkb = {
+      layout = "us,bg";
+      variant = ",phonetic";
+      options = "grp:alt_shift_toggle";
+    };
+    displayManager.sddm = {
+      enable = true;
+      wayland.enable = true;
+      enableHidpi = true;
+      theme = "chili";
+    };
+  };
 
   #Screen share enable
   services.dbus.enable = true;
@@ -48,8 +53,15 @@
     rofi-wayland rofi-bluetooth
     waybar
     meson
-    greetd.regreet
-    cage
-  ];
-}
+    sddm
+
+    (sddm-chili-theme.override {
+      themeConfig = {
+        background = "/usr/share/backgrounds/background.jpg";
+        blur = true;
+        recursiveBlurLoops = 3;
+        recursiveBlurRadius = 5;
+      };})
+    ];
+  }
 
