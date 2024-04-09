@@ -109,6 +109,15 @@
     polkit.enable = true;
   };
 
+  services.logind = {
+    extraConfig = ''
+      HandlePowerKey=suspend
+      IdleAction=suspend
+      HandlePowerKeyLongPress=poweroff
+    '';
+    lidSwitch = "suspend";
+  };
+
   services.pipewire = {
     enable = true;
     alsa.enable = true;

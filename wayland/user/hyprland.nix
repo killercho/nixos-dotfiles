@@ -18,10 +18,10 @@
       env = XCURSOR_SIZE,16
 
       input {
-        kb_layout = us
-        kb_variant =
+        kb_layout = us,bg
+        kb_variant = ,phonetic
         kb_model =
-        kb_options =
+        kb_options = grp:alt_shift_toggle
         kb_rules =
 
         follow_mouse = 1
@@ -115,11 +115,13 @@
       # Executes ------------------------
 
       exec-once = swaybg -i /usr/share/backgrounds/background.jpg
+      exec-once = hypridle
 
       # Bindings ------------------------
 
       bind = SUPER, RETURN, exec, alacritty
       bind = SUPER SHIFT, Q, killactive,
+      bind = SUPER, F, fullscreen,
       bind = SUPER, M, exit,
       bind = SUPER, V, togglefloating,
       bind = SUPER, R, exec, rofi -show combi -show-icons

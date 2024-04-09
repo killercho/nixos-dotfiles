@@ -14,14 +14,16 @@
     #regreet.enable = true;
   };
 
+  security.pam.services.swaylock = {};
+
   # Configure xwayland
   services.xserver = {
     enable = true;
-    xkb = {
-      layout = "us,bg";
-      variant = ",phonetic";
-      options = "grp:alt_shift_toggle";
-    };
+    #xkb = {
+      #layout = "us,bg";
+      #variant = ",phonetic";
+      #options = "grp:alt_shift_toggle";
+    #};
     displayManager.sddm = {
       enable = true;
       wayland.enable = true;
@@ -54,6 +56,8 @@
     waybar
     meson
     sddm
+    swaylock
+    swayidle
 
     (sddm-chili-theme.override {
       themeConfig = {
