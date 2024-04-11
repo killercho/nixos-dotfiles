@@ -6,6 +6,7 @@
     feh
     killall
     swww
+    nwg-bar
   ];
 
   wayland.windowManager.hyprland = {
@@ -138,6 +139,7 @@
       bind = SUPER, L, exec, hyprlock --immediate
       bind = SUPER, P, pseudo, # dwindle
       bind = SUPER, J, togglesplit, # dwindle
+      bind = SUPER, ESCAPE, exec, nwg-bar
 
       # Move focus with mainMod + arrow keys
       bind = SUPER, left, movefocus, l
