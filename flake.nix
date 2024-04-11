@@ -14,7 +14,10 @@
     lib = nixpkgs.lib;
     system = "x86_64-linux";
     pkgs = nixpkgs.legacyPackages.${system};
-    pkgs-unstable = nixpkgs-unstable.legacyPackages.${system};
+    overlay-unstable = final: prev: {
+      unstable = nixpkgs-unstable.legacyPackages.${prev.system};
+    };
+
   in {
 
     nixosConfigurations = {
@@ -46,8 +49,8 @@
 
       wayland = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
-        #inherit pkgs-unstable;
         modules = [
+          ({ config, pkgs, ... }: { nixpkgs.overlays = [ overlay-unstable ]; })
           ./wayland/user/home.nix
         ];
       };
