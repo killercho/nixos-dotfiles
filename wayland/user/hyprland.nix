@@ -7,6 +7,8 @@
     killall
     swww
     nwg-bar
+    grim
+    slurp
   ];
 
   wayland.windowManager.hyprland = {
@@ -141,6 +143,8 @@
       bind = SUPER, P, pseudo, # dwindle
       bind = SUPER, J, togglesplit, # dwindle
       bind = SUPER, ESCAPE, exec, nwg-bar
+      bind = SHIFT, PRINT, exec, slurp | grim -g - - | wl-copy
+      #bind = PRINTSCREEN, exec, grim
 
       # Move focus with mainMod + arrow keys
       bind = SUPER, left, movefocus, l

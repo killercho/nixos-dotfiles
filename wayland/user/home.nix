@@ -9,7 +9,6 @@
     ./hyprland.nix
     ./waybar.nix
     ./hyprlock.nix
-    #./swaylock.nix
   ];
 
   # Home Manager needs a bit of information about you and the paths it should
