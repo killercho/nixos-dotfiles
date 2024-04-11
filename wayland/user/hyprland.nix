@@ -16,7 +16,7 @@
     plugins = [];
     settings = {};
     extraConfig = ''
-      env = XCURSOR_SIZE,16
+      env = XCURSOR_SIZE,24
 
       input {
         kb_layout = us,bg
@@ -122,6 +122,7 @@
 
       exec-once = swww init
       exec-once = swww img /usr/share/backgrounds/background.jpg
+
       exec-once = hypridle
 
       # Additional ----------------------
@@ -134,7 +135,7 @@
       bind = SUPER SHIFT, Q, killactive,
       bind = SUPER, F, fullscreen,
       bind = SUPER, M, exit,
-      bind = SUPER, V, togglefloating,
+      bind = SUPER, SPACE, togglefloating,
       bind = SUPER, R, exec, rofi -show combi -show-icons
       bind = SUPER, L, exec, hyprlock --immediate
       bind = SUPER, P, pseudo, # dwindle
