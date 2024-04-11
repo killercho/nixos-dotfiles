@@ -34,6 +34,11 @@
         sensitivity = 0 # -1.0 - 1.0, 0 means no modification.
       }
 
+      # Enable touchpad gestures
+      gestures {
+        workspace_swipe = true
+        workspace_swipe_fingers = 3
+      }
 
       general {
         # See https://wiki.hyprland.org/Configuring/Variables/ for more
