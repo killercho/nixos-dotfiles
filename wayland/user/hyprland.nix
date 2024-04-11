@@ -31,16 +31,11 @@
         accel_profile = false
 
         touchpad {
-          natural_scroll = yes
+          natural_scroll = true
+          drag_lock = true;
         }
 
         sensitivity = 0 # -1.0 - 1.0, 0 means no modification.
-      }
-
-      # Enable touchpad gestures
-      gestures {
-        workspace_swipe = true
-        workspace_swipe_fingers = 3
       }
 
       general {
@@ -70,20 +65,21 @@
           passes = 1
         }
 
-        drop_shadow = yes
+        drop_shadow = true
         shadow_range = 4
         shadow_render_power = 3
         col.shadow = rgba(1a1a1aee)
+        dim_special = 0.4
       }
 
       dwindle {
         # See https://wiki.hyprland.org/Configuring/Dwindle-Layout/ for more
-        pseudotile = yes # master switch for pseudotiling. Enabling is bound to mainMod + P in the keybinds section below
-        preserve_split = yes # you probably want this
+        pseudotile = true # master switch for pseudotiling. Enabling is bound to mainMod + P in the keybinds section below
+        preserve_split = true # you probably want this
       }
 
       animations {
-        enabled = yes
+        enabled = true
 
       # Some default animations, see https://wiki.hyprland.org/Configuring/Animations/ for more
 
@@ -94,7 +90,7 @@
         animation = border, 1, 10, default
         animation = borderangle, 1, 8, default
         animation = fade, 1, 7, default
-        animation = workspaces, 1, 6, default
+        animation = workspaces, 1, 8, default
       }
 
 
@@ -103,14 +99,15 @@
         new_is_master = true
       }
 
+      # Enable touchpad gestures
       gestures {
-      # See https://wiki.hyprland.org/Configuring/Variables/ for more
-        workspace_swipe = off
+        workspace_swipe = true
+        workspace_swipe_fingers = 3
       }
 
       misc {
       # See https://wiki.hyprland.org/Configuring/Variables/ for more
-        force_default_wallpaper = -1 # Set to 0 to disable the anime mascot wallpapers
+        force_default_wallpaper = 0 # Set to 0 to disable the anime mascot wallpapers
       }
 
       # Example per-device config
