@@ -8,6 +8,7 @@
 
     ./hyprland.nix
     ./waybar.nix
+    #./hyprlock.nix
     ./swaylock.nix
   ];
 

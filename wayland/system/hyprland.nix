@@ -11,19 +11,13 @@
       xwayland.enable = true;
     };
     waybar.enable = true;
-    #regreet.enable = true;
   };
 
-  security.pam.services.swaylock = {};
+  #security.pam.services.swaylock = {};
 
   # Configure xwayland
   services.xserver = {
     enable = true;
-    #xkb = {
-      #layout = "us,bg";
-      #variant = ",phonetic";
-      #options = "grp:alt_shift_toggle";
-    #};
     displayManager.sddm = {
       enable = true;
       wayland.enable = true;
@@ -55,10 +49,8 @@
     rofi-wayland rofi-bluetooth
     waybar
     meson
-    sddm
-    swaylock
-    swayidle
 
+    sddm
     (sddm-chili-theme.override {
       themeConfig = {
         background = "/usr/share/backgrounds/background.jpg";

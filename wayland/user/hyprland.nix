@@ -117,6 +117,8 @@
       exec-once = swaybg -i /usr/share/backgrounds/background.jpg
       exec-once = hypridle
 
+      # Additional ----------------------
+
       # Bindings ------------------------
 
       bind = SUPER, RETURN, exec, alacritty
