@@ -5,7 +5,7 @@
   home.packages = with pkgs; [
     feh
     killall
-    swaybg
+    swww
   ];
 
   wayland.windowManager.hyprland = {
@@ -119,7 +119,8 @@
 
       # Executes ------------------------
 
-      exec-once = swaybg -i /usr/share/backgrounds/background.jpg
+      exec-once = swww init
+      exec-once = swww img /usr/share/backgrounds/background.jpg
       exec-once = hypridle
 
       # Additional ----------------------
