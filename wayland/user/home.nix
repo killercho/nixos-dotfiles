@@ -9,6 +9,8 @@
     ./hyprland.nix
     ./waybar.nix
     ./hyprlock.nix
+    ./notifications.nix
+    ../../scripts/volume.nix
   ];
 
   # Home Manager needs a bit of information about you and the paths it should

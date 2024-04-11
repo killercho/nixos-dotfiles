@@ -1,11 +1,18 @@
+# User zsh config
+{ config, pkgs, ... }:
+
+{
+  home.file.".config/hypr/scripts/volume.sh".text = ''
+
 #!/usr/bin/env bash
 
-iDIR="$HOME/.config/mako/icons"
+    iDIR="$HOME/.config/mako/icons"
 
-if [ ! -d "$iDIR" ]
-then
+    if [ ! -d "$iDIR" ]
+    then
     cd ~/.config
     mkdir -p mako/icons
+    cd mako/icons
     wget https://github.com/SolDoesTech/HyprV4/blob/main/HyprV/mako/icons/brightness-100.png
     wget https://github.com/SolDoesTech/HyprV4/blob/main/HyprV/mako/icons/brightness-20.png
     wget https://github.com/SolDoesTech/HyprV4/blob/main/HyprV/mako/icons/brightness-40.png
@@ -17,16 +24,16 @@ then
     wget https://github.com/SolDoesTech/HyprV4/blob/main/HyprV/mako/icons/volume-low.png
     wget https://github.com/SolDoesTech/HyprV4/blob/main/HyprV/mako/icons/volume-mid.png
     wget https://github.com/SolDoesTech/HyprV4/blob/main/HyprV/mako/icons/volume-mute.png
-fi
+    fi
 
 # Get Volume
-get_volume() {
+    get_volume() {
     volume=$(pamixer --get-volume)
     echo "$volume"
-}
+    }
 
 # Get icons
-get_icon() {
+    get_icon() {
     current=$(get_volume)
     if [[ "$current" -eq "0" ]]; then
         echo "$iDIR/volume-mute.png"
@@ -37,42 +44,42 @@ get_icon() {
     elif [[ ("$current" -ge "60") && ("$current" -le "100") ]]; then
         echo "$iDIR/volume-high.png"
     fi
-}
+    }
 
 # Notify
-notify_user() {
+    notify_user() {
     notify-send -h string:x-canonical-private-synchronous:sys-notify -u low -i "$(get_icon)" "Volume : $(get_volume) %"
-}
+    }
 
 # Increase Volume
-inc_volume() {
+    inc_volume() {
     pamixer -i 5 && notify_user
-}
+    }
 
 # Decrease Volume
-dec_volume() {
+    dec_volume() {
     pamixer -d 5 && notify_user
-}
+    }
 
 # Toggle Mute
-toggle_mute() {
+    toggle_mute() {
     if [ "$(pamixer --get-mute)" == "false" ]; then
         pamixer -m && notify-send -h string:x-canonical-private-synchronous:sys-notify -u low -i "$iDIR/volume-mute.png" "Volume Switched OFF"
     elif [ "$(pamixer --get-mute)" == "true" ]; then
         pamixer -u && notify-send -h string:x-canonical-private-synchronous:sys-notify -u low -i "$(get_icon)" "Volume Switched ON"
     fi
-}
+    }
 
 # Toggle Mic
-toggle_mic() {
+    toggle_mic() {
     if [ "$(pamixer --default-source --get-mute)" == "false" ]; then
         pamixer --default-source -m && notify-send -h string:x-canonical-private-synchronous:sys-notify -u low -i "$iDIR/microphone-mute.png" "Microphone Switched OFF"
     elif [ "$(pamixer --default-source --get-mute)" == "true" ]; then
         pamixer -u --default-source u && notify-send -h string:x-canonical-private-synchronous:sys-notify -u low -i "$iDIR/microphone.png" "Microphone Switched ON"
     fi
-}
+    }
 # Get icons
-get_mic_icon() {
+    get_mic_icon() {
     current=$(pamixer --default-source --get-volume)
     if [[ "$current" -eq "0" ]]; then
         echo "$iDIR/microphone.png"
@@ -83,41 +90,43 @@ get_mic_icon() {
     elif [[ ("$current" -ge "60") && ("$current" -le "100") ]]; then
         echo "$iDIR/microphone.png"
     fi
-}
+    }
 # Notify
-notify_mic_user() {
+    notify_mic_user() {
     notify-send -h string:x-canonical-private-synchronous:sys-notify -u low -i "$(get_mic_icon)" "Mic-Level : $(pamixer --default-source --get-volume) %"
-}
+    }
 
 # Increase MIC Volume
-inc_mic_volume() {
+    inc_mic_volume() {
     pamixer --default-source -i 5 && notify_mic_user
-}
+    }
 
 # Decrease MIC Volume
-dec_mic_volume() {
+    dec_mic_volume() {
     pamixer --default-source -d 5 && notify_mic_user
-}
+    }
 
 # Execute accordingly
-if [[ "$1" == "--get" ]]; then
+    if [[ "$1" == "--get" ]]; then
     get_volume
-elif [[ "$1" == "--inc" ]]; then
+    elif [[ "$1" == "--inc" ]]; then
     inc_volume
-elif [[ "$1" == "--dec" ]]; then
+    elif [[ "$1" == "--dec" ]]; then
     dec_volume
-elif [[ "$1" == "--toggle" ]]; then
+    elif [[ "$1" == "--toggle" ]]; then
     toggle_mute
-elif [[ "$1" == "--toggle-mic" ]]; then
+    elif [[ "$1" == "--toggle-mic" ]]; then
     toggle_mic
-elif [[ "$1" == "--get-icon" ]]; then
+    elif [[ "$1" == "--get-icon" ]]; then
     get_icon
-elif [[ "$1" == "--get-mic-icon" ]]; then
+    elif [[ "$1" == "--get-mic-icon" ]]; then
     get_mic_icon
-elif [[ "$1" == "--mic-inc" ]]; then
+    elif [[ "$1" == "--mic-inc" ]]; then
     inc_mic_volume
-elif [[ "$1" == "--mic-dec" ]]; then
+    elif [[ "$1" == "--mic-dec" ]]; then
     dec_mic_volume
-else
+    else
     get_volume
-fi
+    fi
+  '';
+}
