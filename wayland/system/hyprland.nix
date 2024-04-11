@@ -13,7 +13,9 @@
     waybar.enable = true;
   };
 
-  #security.pam.services.swaylock = {};
+  services.dbus.packages = [
+    pkgs.libnotify
+  ];
 
   # Configure xwayland
   services.xserver = {

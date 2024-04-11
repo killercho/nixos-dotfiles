@@ -190,6 +190,12 @@
       bindl = , XF86AudioLowerVolume, exec, pamixer -d 5
       bindl = , XF86AudioMute, exec, pamixer -t
       bindl = , XF86AudioMicMute, exec, pamixer --default-source -t
+
+      # Audio binds with icons
+      #bindl = , XF86AudioRaiseVolume, exec, ../../scripts/volume.sh --inc
+      #bindl = , XF86AudioLowerVolume, exec, ../../scripts/volume.sh --dec
+      #bindl = , XF86AudioMicMute, exec, ../../scripts/volume.sh --toggle-mic
+      #bindl = , XF86AudioMute, exec, ../../scripts/volume.sh --toggle
     '';
   };
 }
