@@ -63,7 +63,7 @@
           "on-click" = "activate";
           "on-scroll-up" = "hyprctl dispatch workspace e+1";
           "on-scroll-down" = "hyprctl dispatch workspace e-1";
-          "active-only" = true;
+          "active-only" = false;
         };
 
         "idle_inhibitor" = {
