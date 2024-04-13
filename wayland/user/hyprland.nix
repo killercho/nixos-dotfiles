@@ -123,6 +123,7 @@
       exec-once = swww img /usr/share/backgrounds/background.jpg
 
       exec-once = hypridle
+      exec-once = nm-applet
 
       # Additional ----------------------
 
