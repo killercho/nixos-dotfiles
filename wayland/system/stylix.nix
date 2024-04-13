@@ -2,5 +2,8 @@
 { config, pkgs, stylix, ... }:
 
 {
-  stylix.image = /usr/share/backgrounds/background.jpg;
+  stylix = {
+    image = /usr/share/backgrounds/background.jpg;
+    polarity = "dark";
+  };
 }

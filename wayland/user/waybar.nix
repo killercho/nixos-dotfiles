@@ -12,7 +12,7 @@
         margin = "7 7 3 7";
         spacing = 2;
 
-        modules-left = [ "battery" "idle_inhibitor" ];
+        modules-left = [ "battery" ];
         modules-center = [ "hyprland/workspaces" "tray" ];
         modules-right = [ "pulseaudio" "backlight" "hyprland/language" "clock" ];
 
@@ -66,17 +66,9 @@
           "active-only" = false;
         };
 
-        "idle_inhibitor" = {
-          format = "{icon}";
-          format-icons = {
-            activated = "󰅶";
-            deactivated = "󰾪";
-          };
-        };
-
         tray = {
           #"icon-size" = 21;
-          "spacing" = 10;
+          "spacing" = 20;
         };
 
         memory = { "format" = "{}% "; };

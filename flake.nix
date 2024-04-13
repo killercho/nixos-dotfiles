@@ -7,10 +7,10 @@
     nixpkgs-unstable.url = "nixpkgs/nixos-unstable";
     home-manager.url = "github:nix-community/home-manager/release-23.11";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
-    #stylix.url = "github:danth/stylix";
+    stylix.url = "github:danth/stylix";
   };
 
-  outputs = {self, nixpkgs, nixpkgs-unstable, home-manager, ...}:
+  outputs = {self, nixpkgs, nixpkgs-unstable, home-manager, stylix, ...}:
   let
     lib = nixpkgs.lib;
     system = "x86_64-linux";
@@ -33,7 +33,7 @@
       wayland = lib.nixosSystem {
         inherit system;
         modules = [
-          #stylix.nixosModules.stylix
+          stylix.nixosModules.stylix
           ./wayland/system/configuration.nix
         ];
       };
