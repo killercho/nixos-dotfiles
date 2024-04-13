@@ -33,9 +33,13 @@
       wayland = lib.nixosSystem {
         inherit system;
         modules = [
-          stylix.nixosModules.stylix
+          #stylix.nixosModules.stylix
+          home-manager.nixosModules.home-manager
           ./wayland/system/configuration.nix
         ];
+        specialArgs = {
+          inherit stylix;
+        };
       };
 
     };
@@ -52,10 +56,12 @@
       wayland = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
         modules = [
-          #stylix.homeManagerModules.stylix
           ({ config, pkgs, ... }: { nixpkgs.overlays = [ overlay-unstable ]; })
           ./wayland/user/home.nix
         ];
+        extraSpecialArgs = {
+          inherit stylix;
+        };
       };
 
     };

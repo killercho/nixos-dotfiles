@@ -6,6 +6,10 @@
     ./git.nix
     ./alacritty.nix
 
+    # TODO: Fix the Stylix module
+    #       issue with bemenu not being recognised as a noninstalled program
+    #./stylix.nix
+
     ./hyprland.nix
     ./waybar.nix
     ./hyprlock.nix
@@ -77,4 +81,5 @@
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
+
 }

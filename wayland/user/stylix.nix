@@ -2,10 +2,9 @@
 { config, pkgs, stylix, ... }:
 
 {
-  imports = [ stylix.nixosModules.stylix ];
-
+  imports = [ stylix.homeManagerModules.stylix ];
   stylix = {
     image = /usr/share/backgrounds/background.jpg;
-    polarity = "dark";
+    targets.bemenu.enable = false;
   };
 }
