@@ -12,9 +12,9 @@
         margin = "7 7 3 7";
         spacing = 2;
 
-        modules-left = [ "battery" ];
-        modules-center = [ "hyprland/workspaces" "tray" ];
-        modules-right = [ "pulseaudio" "backlight" "hyprland/language" "clock" ];
+        modules-left = [ "battery" "backlight" ];
+        modules-center = [ "hyprland/workspaces" ];
+        modules-right = [ "pulseaudio" "hyprland/language" "tray" "clock" ];
 
         clock = {
           "interval" = 1;
@@ -50,15 +50,17 @@
         "hyprland/workspaces" = {
           "format" = "{icon}";
           "format-icons" = {
-            "1" = "󱚌";
-            "2" = "󰖟";
-            "3" = "";
-            "4" = "󰎄";
-            "5" = "󰋩";
-            "6" = "";
-            "7" = "󰄖";
-            "8" = "󰑴";
-            "9" = "󱎓";
+            #"1" = "󱚌";
+            #"2" = "󰖟";
+            #"3" = "";
+            #"4" = "󰎄";
+            #"5" = "󰋩";
+            #"6" = "";
+            #"7" = "󰄖";
+            #"8" = "󰑴";
+            #"9" = "󱎓";
+            "active" = "";
+            "default" = "";
           };
           "on-click" = "activate";
           "on-scroll-up" = "hyprctl dispatch workspace e+1";
