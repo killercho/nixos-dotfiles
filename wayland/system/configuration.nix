@@ -10,6 +10,7 @@
       ./../../machines/vivobook/hardware-configuration.nix # Include the results of the hardware scan.
       ./hyprland.nix
       ./stylix.nix
+      ./temp.nix
     ];
 
   # Use the GRUB 2 boot loader.
