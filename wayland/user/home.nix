@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, stylix, ... }:
 
 {
   imports = [
@@ -8,7 +8,7 @@
 
     # TODO: Fix the Stylix module
     #       issue with bemenu not being recognised as a noninstalled program
-    #./stylix.nix
+    ./stylix.nix
 
     ./hyprland.nix
     ./waybar.nix
