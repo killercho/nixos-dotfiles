@@ -2,8 +2,12 @@
 { config, pkgs, stylix, ... }:
 
 {
-  #imports = [ stylix.homeManagerModules.stylix ];
-  lib.stylix = {
+  stylix = {
     image = /usr/share/backgrounds/background.jpg;
+    polarity = "dark";
+    opacity = {
+      applications = 0.8;
+      terminal = 0.7;
+    };
   };
 }

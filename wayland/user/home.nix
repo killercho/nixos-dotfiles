@@ -1,4 +1,4 @@
-{ config, pkgs, stylix, ... }:
+{ config, pkgs, ... }:
 
 {
   imports = [
@@ -6,8 +6,6 @@
     ./git.nix
     ./alacritty.nix
 
-    # TODO: Fix the Stylix module
-    #       issue with bemenu not being recognised as a noninstalled program
     ./stylix.nix
 
     ./hyprland.nix
