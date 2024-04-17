@@ -6,7 +6,7 @@
     ./git.nix
     ./alacritty.nix
 
-    ./stylix.nix
+    #./stylix.nix
 
     ./hyprland.nix
     ./waybar.nix

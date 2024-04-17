@@ -10,7 +10,7 @@
     stylix.url = "github:danth/stylix";
   };
 
-  outputs = inputs@{self, nixpkgs, nixpkgs-unstable, home-manager, stylix, ...}:
+  outputs = {self, nixpkgs, nixpkgs-unstable, home-manager, stylix, ...}:
   let
     lib = nixpkgs.lib;
     system = "x86_64-linux";
@@ -23,48 +23,43 @@
 
     nixosConfigurations = {
 
-      nixos = nixpkgs.lib.nixosSystem {
+      nixos = lib.nixosSystem {
         inherit system;
         modules = [
           ./X11/system/configuration.nix
         ];
       };
 
-      wayland = nixpkgs.lib.nixosSystem {
+      wayland = lib.nixosSystem {
         inherit system;
         modules = [
-          ./wayland/system/configuration.nix
-
           stylix.nixosModules.stylix
           home-manager.nixosModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.AzSamSi = import ./wayland/user/home.nix;
-            home-manager.extraSpecialArgs = { inherit inputs; }; # allows access to flake inputs in hm modules
-            # Optionally, use home-manager.extraSpecialArgs to pass
-            # arguments to home.nix
-          }
+
+          ./wayland/system/configuration.nix
         ];
       };
 
     };
 
-    #homeConfigurations = {
-      #AzSamSi = home-manager.lib.homeManagerConfiguration {
-        #inherit pkgs;
-        #modules = [
-          #./X11/user/home.nix
-        #];
-      #};
-      #wayland = home-manager.lib.homeManagerConfiguration {
-        #inherit pkgs;
-        #modules = [
-          #({ config, pkgs, ... }: { nixpkgs.overlays = [ overlay-unstable ]; })
-          #./wayland/user/home.nix
-        #];
-      #};
-    #};
+    homeConfigurations = {
+
+      AzSamSi = home-manager.lib.homeManagerConfiguration {
+        inherit pkgs;
+        modules = [
+          ./X11/user/home.nix
+        ];
+      };
+
+      wayland = home-manager.lib.homeManagerConfiguration {
+        inherit pkgs;
+        modules = [
+          ({ config, pkgs, ... }: { nixpkgs.overlays = [ overlay-unstable ]; })
+          ./wayland/user/home.nix
+        ];
+      };
+
+    };
 
   };
 }
