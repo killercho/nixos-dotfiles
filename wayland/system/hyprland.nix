@@ -20,12 +20,11 @@
   # Configure xwayland
   services.xserver = {
     enable = true;
-    displayManager.sddm = {
-      enable = true;
-      wayland.enable = true;
-      enableHidpi = true;
-      theme = "chili";
-    };
+  };
+  services.displayManager.sddm = {
+    enable = true;
+    wayland.enable = true;
+    theme = "chili";
   };
 
   #Screen share enable

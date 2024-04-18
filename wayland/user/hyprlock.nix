@@ -2,9 +2,9 @@
 { config, pkgs, ... }:
 
 {
-  home.packages = [
-    pkgs.unstable.hyprlock
-    pkgs.unstable.hypridle
+  home.packages = with pkgs; [
+    hyprlock
+    hypridle
   ];
 
   home.file = {

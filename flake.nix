@@ -3,20 +3,20 @@
   description = "Main system flake";
 
   inputs = {
-    nixpkgs.url = "nixpkgs/nixos-23.11";
-    nixpkgs-unstable.url = "nixpkgs/nixos-unstable";
-    home-manager.url = "github:nix-community/home-manager/release-23.11";
+    nixpkgs-23-11.url = "nixpkgs/nixos-23.11";
+    nixpkgs.url = "nixpkgs/nixos-unstable";
+    home-manager.url = "github:nix-community/home-manager/master";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     stylix.url = "github:danth/stylix";
   };
 
-  outputs = {self, nixpkgs, nixpkgs-unstable, home-manager, stylix, ...}:
+  outputs = {self, nixpkgs, nixpkgs-23-11, home-manager, stylix, ...}:
   let
     lib = nixpkgs.lib;
     system = "x86_64-linux";
     pkgs = nixpkgs.legacyPackages.${system};
-    overlay-unstable = final: prev: {
-      unstable = nixpkgs-unstable.legacyPackages.${prev.system};
+    overlay-old = final: prev: {
+      old-23-11 = nixpkgs-23-11.legacyPackages.${prev.system};
     };
 
   in {
@@ -56,7 +56,7 @@
         modules = [
           #stylix.homeManagerModules.stylix
 
-          ({ config, pkgs, ... }: { nixpkgs.overlays = [ overlay-unstable ]; })
+          ({ config, pkgs, ... }: { nixpkgs.overlays = [ overlay-old ]; })
 
           ./wayland/user/home.nix
         ];

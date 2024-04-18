@@ -10,7 +10,7 @@
 
     enable = true;
     syntaxHighlighting.enable = true;
-    enableAutosuggestions = true;
+    autosuggestion.enable = true;
 
     initExtra = ''
       cat $HOME/.cache/wal/sequences
