@@ -4,6 +4,7 @@
 {
   home.packages = with pkgs; [
     zsh
+    zplug
   ];
 
   programs.zsh = {
@@ -11,10 +12,14 @@
     enable = true;
     syntaxHighlighting.enable = true;
     autosuggestion.enable = true;
+    dotDir = ".config/zsh";
 
     initExtra = ''
       # Enable to use wal colors from the cache
       #cat $HOME/.cache/wal/sequences
+
+      bindkey '' insert-cycledleft
+      bindkey '' insert-cycledright
     '';
 
     envExtra = ''
@@ -24,7 +29,14 @@
     oh-my-zsh = {
       enable = true;
       theme = "agnoster";
-      plugins = [ "git" "sudo" ];
+      plugins = [ "git" "sudo" "dircycle" ];
+    };
+
+    zplug = {
+      enable = true;
+      plugins = [
+        { name = "hlissner/zsh-autopair"; }
+      ];
     };
   };
 }
