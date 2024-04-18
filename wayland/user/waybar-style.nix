@@ -12,7 +12,7 @@
             window#waybar {
             background-color: #'' + config.lib.stylix.colors.base00 + '';
               opacity: 0.75;
-              border-radius: 8px;
+              border-radius: 16px;
               color: #'' + config.lib.stylix.colors.base07 + '';
                 transition-property: background-color;
                 transition-duration: .2s;
@@ -30,15 +30,6 @@
                 button {
                 border: none;
                 }
-
-      #custom-hyprprofile {
-                color: #'' + config.lib.stylix.colors.base0D + '';
-                  }
-
-                  /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
-                  button:hover {
-                  background: inherit;
-                  }
 
       #workspaces button {
                   padding: 0 7px;
