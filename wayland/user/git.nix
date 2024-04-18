@@ -1,4 +1,4 @@
-# User zsh config
+# User git config
 { config, pkgs, ... }:
 
 {

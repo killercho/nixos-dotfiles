@@ -113,14 +113,15 @@
       # Example per-device config
       # See https://wiki.hyprland.org/Configuring/Keywords/#executing for more
 
-      device:epic-mouse-v1 {
+      device {
+        name = epic-mouse-v1
         sensitivity = -0.5
       }
 
       # Executes ------------------------
 
-      exec-once = swww init
-      exec-once = swww img /usr/share/backgrounds/background.jpg
+      #exec-once = swww init
+      #exec-once = swww img /usr/share/backgrounds/background.jpg
 
       exec-once = hypridle
       exec-once = nm-applet
