@@ -18,7 +18,7 @@
 
         clock = {
           "interval" = 1;
-          "format" = "{: %H:%M 󰥔}";
+          "format" = "{:%H:%M }󰥔";
           "timezone" = "Europe/Sofia";
           "tooltip-format" = ''
             <big>{:%Y %B %D}</big>
