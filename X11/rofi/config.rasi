@@ -187,4 +187,8 @@ configuration {
 @import "~/.cache/wal/colors-rofi-light"
 
 //@theme "/nix/store/27fvjv5qqm8zhwkanv3a6lllh62xpzap-rofi-1.7.5/share/rofi/themes/android_notification.rasi"
-@theme "/home/AzSamSi/.local/share/rofi/themes/squared-nord.rasi"
+//@theme "/home/AzSamSi/.local/share/rofi/themes/squared-nord.rasi"
+
+//@theme "/home/AzSamSi/.local/share/rofi/themes/rounded-nord-dark.rasi"
+
+@theme "/nix/store/41ps1c4mdm14fh93hhgf03byan57qr4z-rofi-1.7.5+wayland3/share/rofi/themes/DarkBlue.rasi"
