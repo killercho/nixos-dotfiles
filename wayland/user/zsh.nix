@@ -13,7 +13,8 @@
     autosuggestion.enable = true;
 
     initExtra = ''
-      cat $HOME/.cache/wal/sequences
+      # Enable to use wal colors from the cache
+      #cat $HOME/.cache/wal/sequences
     '';
 
     envExtra = ''
