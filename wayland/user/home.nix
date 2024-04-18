@@ -10,6 +10,7 @@
 
     ./hyprland.nix
     ./waybar.nix
+    ./waybar-modules.nix
     ./hyprlock.nix
     ./notifications.nix
     ../../scripts/volume.nix

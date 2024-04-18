@@ -15,6 +15,7 @@
       applications = 0.9;
       terminal = 0.7;
       popups = 0.4;
+      desktop = 0.9;
     };
 
     fonts = {

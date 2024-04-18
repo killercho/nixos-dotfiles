@@ -1,4 +1,4 @@
-# User swaylock config
+# User hyprlock config
 { config, pkgs, ... }:
 
 {
