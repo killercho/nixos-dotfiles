@@ -7,12 +7,13 @@
       * {
           /* `otf-font-awesome` is required to be installed for icons */
 
+            background-color: transparent;
+              border-radius: 0;
             }
 
             window#waybar {
-            background-color: #'' + config.lib.stylix.colors.base00 + '';
-              opacity: 0.75;
-              border-radius: 16px;
+            background-color: transparent;
+              border-radius: 0;
               color: #'' + config.lib.stylix.colors.base07 + '';
                 transition-property: background-color;
                 transition-duration: .2s;
@@ -33,28 +34,33 @@
 
       #workspaces button {
                   padding: 0 7px;
-                  background-color: transparent;
-                  color: #'' + config.lib.stylix.colors.base04 + '';
+                  background-color: #'' + config.lib.stylix.colors.base04 + '';
+                    color: #000000;
                     }
 
       #workspaces button:hover {
-                    color: #'' + config.lib.stylix.colors.base07 + '';
+                    background-color: #'' + config.lib.stylix.colors.base07 + '';
+                      color: #000000;
                       }
 
       #workspaces button.active {
-                      color: #'' + config.lib.stylix.colors.base08 + '';
+                      background-color: #'' + config.lib.stylix.colors.base08 + '';
+                        color: #000000;
                         }
 
       #workspaces button.focused {
-                        color: #'' + config.lib.stylix.colors.base0A + '';
+                        background-color: #'' + config.lib.stylix.colors.base0A + '';
+                          color: #000000;
                           }
 
       #workspaces button.visible {
-                          color: #'' + config.lib.stylix.colors.base05 + '';
+                          background-color: #'' + config.lib.stylix.colors.base05 + '';
+                            color: #000000;
                             }
 
       #workspaces button.urgent {
-                            color: #'' + config.lib.stylix.colors.base09 + '';
+                            background-color: #'' + config.lib.stylix.colors.base09 + '';
+                              color: #ffffff;
                               }
 
       #clock,
@@ -74,107 +80,101 @@
       #scratchpad,
       #mpd {
                               padding: 0 10px;
-                              color: #'' + config.lib.stylix.colors.base07 + '';
-                                border: none;
-                                border-radius: 8px;
-                                }
+                                background-color: #'' + config.lib.stylix.colors.base07 + '';
+                                  color: #000000;
+                                  border: 0px;
+                                  border-radius: 16px;
+                                  }
 
       #window,
       #workspaces {
-                                margin: 0 4px;
-                                }
-
-                                /* If workspaces is the leftmost module, omit left margin */
-                                .modules-left > widget:first-child > #workspaces {
-                                margin-left: 0;
-                                }
-
-                                /* If workspaces is the rightmost module, omit right margin */
-                                .modules-right > widget:last-child > #workspaces {
-                                margin-right: 0;
-                                }
-
-      #clock {
-                                color: #'' + config.lib.stylix.colors.base0D + '';
+                                  margin: 0 4px;
                                   }
 
-      #battery {
-                                  color: #'' + config.lib.stylix.colors.base0B + '';
+                                  /* If workspaces is the leftmost module, omit left margin */
+                                  .modules-left > widget:first-child > #workspaces {
+                                  margin-left: 0;
+                                  }
+
+                                  /* If workspaces is the rightmost module, omit right margin */
+                                  .modules-right > widget:last-child > #workspaces {
+                                  margin-right: 0;
+                                  }
+
+      #clock {
+                                  color: #000000;
+                                  background-color: #'' + config.lib.stylix.colors.base0D + '';
                                     }
 
-      #battery.charging, #battery.plugged {
-                                    color: #'' + config.lib.stylix.colors.base0C + '';
+      #battery {
+                                    color: #000000;
+                                    background-color: #'' + config.lib.stylix.colors.base0B + '';
                                       }
 
-                                      @keyframes blink {
-                                      to {
-                                      background-color: #'' + config.lib.stylix.colors.base07 + '';
-                                        color: #'' + config.lib.stylix.colors.base00 + '';
-                                          }
-                                          }
+      #battery.charging, #battery.plugged {
+                                      color: #ffffff;
+                                      background-color: #'' + config.lib.stylix.colors.base0C + '';
+                                        }
+
+                                        @keyframes blink {
+                                        to {
+                                        background-color: #'' + config.lib.stylix.colors.base07 + '';
+                                          color: #ffffff;
+                                            }
+                                            }
 
       #battery.critical:not(.charging) {
-                                          background-color: #'' + config.lib.stylix.colors.base08 + '';
-                                            color: #'' + config.lib.stylix.colors.base07 + '';
-                                              animation-name: blink;
-                                              animation-duration: 0.5s;
-                                              animation-timing-function: linear;
-                                              animation-iteration-count: infinite;
-                                              animation-direction: alternate;
-                                              }
-
-                                              label:focus {
-                                              background-color: #'' + config.lib.stylix.colors.base00 + '';
+                                            background-color: #'' + config.lib.stylix.colors.base08 + '';
+                                              color: #ffffff;
+                                                animation-name: blink;
+                                                animation-duration: 0.5s;
+                                                animation-timing-function: linear;
+                                                animation-iteration-count: infinite;
+                                                animation-direction: alternate;
                                                 }
 
-      #cpu {
-                                                color: #'' + config.lib.stylix.colors.base0D + '';
+                                                label:focus {
+                                                background-color: #'' + config.lib.stylix.colors.base00 + '';
                                                   }
 
-      #memory {
-                                                  color: #'' + config.lib.stylix.colors.base0E + '';
+      #cpu {
+                                                  background-color: #'' + config.lib.stylix.colors.base0D + '';
+                                                    color: #000000;
                                                     }
 
-      #disk {
-                                                    color: #'' + config.lib.stylix.colors.base0F + '';
+      #memory {
+                                                    background-color: #'' + config.lib.stylix.colors.base0E + '';
+                                                      color: #000000;
                                                       }
 
-      #backlight {
-                                                      color: #'' + config.lib.stylix.colors.base0A + '';
+      #disk {
+                                                      background-color: #'' + config.lib.stylix.colors.base0F + '';
+                                                        color: #000000;
                                                         }
 
-                                                        label.numlock {
-                                                        color: #'' + config.lib.stylix.colors.base04 + '';
+      #backlight {
+                                                        background-color: #'' + config.lib.stylix.colors.base0A + '';
+                                                          color: #000000;
                                                           }
 
-                                                          label.numlock.locked {
-                                                          color: #'' + config.lib.stylix.colors.base0F + '';
-                                                            }
-
       #pulseaudio {
-                                                            color: #'' + config.lib.stylix.colors.base0C + '';
-                                                              }
+                                                          background-color: #'' + config.lib.stylix.colors.base0C + '';
+                                                            color: #000000;
+                                                                }
 
       #pulseaudio.muted {
-                                                              color: #'' + config.lib.stylix.colors.base04 + '';
-                                                                }
-
-      #tray > .passive {
-                                                                -gtk-icon-effect: dim;
-                                                                }
-
-      #tray > .needs-attention {
-                                                                -gtk-icon-effect: highlight;
-                                                                }
-
-      #idle_inhibitor {
-                                                                color: #'' + config.lib.stylix.colors.base04 + '';
+                                                            background-color: #'' + config.lib.stylix.colors.base04 + '';
+                                                              color: #000000;
                                                                   }
 
-      #idle_inhibitor.activated {
-                                                                  color: #'' + config.lib.stylix.colors.base0F + '';
-                                                                    }
+      #tray > .passive {
+                                                                  -gtk-icon-effect: dim;
+                                                                  }
 
-                                                                  '';
-                                                                };
-                                                              }
+      #tray > .needs-attention {
+                                                                  -gtk-icon-effect: highlight;
+                                                                  }
+
+                                                            '';
+                                                          };
+                                                        }
