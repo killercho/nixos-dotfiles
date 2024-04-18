@@ -1,5 +1,5 @@
 # User notifications config
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 {
   home.packages = with pkgs; [
@@ -16,13 +16,13 @@
         origin = "top-right";
         transparency = 10;
         frame_color = "#eceff1";
-        font = "Droid Sans 9";
+        font = lib.mkDefault "Droid Sans 9";
       };
 
       urgency_normal = {
-        background = "#37474f";
-        foreground = "#eceff1";
-        timeout = 5;
+        background = lib.mkDefault "#37474f";
+        foreground = lib.mkDefault "#eceff1";
+        timeout = lib.mkDefault 5;
       };
 
     };

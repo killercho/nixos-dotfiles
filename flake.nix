@@ -54,7 +54,7 @@
       wayland = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
         modules = [
-          #stylix.homeManagerModules.stylix
+          stylix.homeManagerModules.stylix
 
           ({ config, pkgs, ... }: { nixpkgs.overlays = [ overlay-old ]; })
 

@@ -10,11 +10,11 @@
     enable = true;
     settings = {
       env.TERM = "xterm-256color";
-      font.size = 10.5;
-      font.normal.family = "JetBrains Mono";
-      font.normal.style = "Regular";
+      font.size = lib.mkDefault 10;
+      font.normal.family = lib.mkDefault "JetBrains Mono";
+      font.normal.style = lib.mkDefault "Regular";
       mouse.hide_when_typing = true;
-      window.opacity = 0.9;
+      window.opacity = lib.mkDefault 0.9;
     };
   };
 
