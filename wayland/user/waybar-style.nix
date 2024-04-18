@@ -32,38 +32,43 @@
                 border: none;
                 }
 
-      #workspaces button {
-                  padding: 0 7px;
+      #workspaces {
                   background-color: #'' + config.lib.stylix.colors.base04 + '';
-                    color: #000000;
-                    }
-
-      #workspaces button:hover {
-                    background-color: #'' + config.lib.stylix.colors.base07 + '';
-                      color: #000000;
+                    color: #'' + config.lib.stylix.colors.base02 + '';
+                      border-radius: 16px;
                       }
 
-      #workspaces button.active {
-                      background-color: #'' + config.lib.stylix.colors.base08 + '';
+      #workspaces button:hover {
+                      background-color: #'' + config.lib.stylix.colors.base07 + '';
                         color: #000000;
+                          border-radius: 16px;
                         }
 
-      #workspaces button.focused {
-                        background-color: #'' + config.lib.stylix.colors.base0A + '';
+      #workspaces button.active {
+                        background-color: #'' + config.lib.stylix.colors.base08 + '';
                           color: #000000;
+                          border-radius: 16px;
                           }
 
-      #workspaces button.visible {
-                          background-color: #'' + config.lib.stylix.colors.base05 + '';
+      #workspaces button.focused {
+                          background-color: #'' + config.lib.stylix.colors.base0A + '';
                             color: #000000;
                             }
 
-      #workspaces button.urgent {
-                            background-color: #'' + config.lib.stylix.colors.base09 + '';
-                              color: #ffffff;
+      #workspaces button.visible {
+                            background-color: #'' + config.lib.stylix.colors.base05 + '';
+                              color: #000000;
+                              border-radius: 16px;
                               }
 
+      #workspaces button.urgent {
+                              background-color: #'' + config.lib.stylix.colors.base09 + '';
+                                color: #ffffff;
+                                border-radius: 16px;
+                                }
+
       #clock,
+      #language,
       #battery,
       #cpu,
       #memory,
@@ -79,7 +84,7 @@
       #idle_inhibitor,
       #scratchpad,
       #mpd {
-                              padding: 0 10px;
+                                padding: 0 10px;
                                 background-color: #'' + config.lib.stylix.colors.base07 + '';
                                   color: #000000;
                                   border: 0px;
@@ -100,32 +105,36 @@
                                   .modules-right > widget:last-child > #workspaces {
                                   margin-right: 0;
                                   }
-
-      #clock {
-                                  color: #000000;
-                                  background-color: #'' + config.lib.stylix.colors.base0D + '';
-                                    }
-
-      #battery {
-                                    color: #000000;
-                                    background-color: #'' + config.lib.stylix.colors.base0B + '';
+      #language {
+                                  color: #'' + config.lib.stylix.colors.base07 + '';
+                                    background-color: #'' + config.lib.stylix.colors.base02 + '';
                                       }
 
-      #battery.charging, #battery.plugged {
-                                      color: #ffffff;
-                                      background-color: #'' + config.lib.stylix.colors.base0C + '';
+      #clock {
+                                      color: #000000;
+                                      background-color: #'' + config.lib.stylix.colors.base0D + '';
                                         }
 
-                                        @keyframes blink {
-                                        to {
-                                        background-color: #'' + config.lib.stylix.colors.base07 + '';
+      #battery {
+                                        color: #000000;
+                                        background-color: #'' + config.lib.stylix.colors.base0B + '';
+                                          }
+
+      #battery.charging, #battery.plugged {
                                           color: #ffffff;
-                                            }
+                                          background-color: #'' + config.lib.stylix.colors.base0C + '';
                                             }
 
-      #battery.critical:not(.charging) {
-                                            background-color: #'' + config.lib.stylix.colors.base08 + '';
+                                            @keyframes blink {
+                                            to {
+                                            background-color: #'' + config.lib.stylix.colors.base07 + '';
                                               color: #ffffff;
+                                              }
+                                              }
+
+      #battery.critical:not(.charging) {
+                                              background-color: #'' + config.lib.stylix.colors.base08 + '';
+                                                color: #ffffff;
                                                 animation-name: blink;
                                                 animation-duration: 0.5s;
                                                 animation-timing-function: linear;
