@@ -119,8 +119,8 @@
 
       # Executes ------------------------
 
-      #exec-once = swww init
-      #exec-once = swww img /usr/share/backgrounds/background.jpg
+      exec-once = swww init
+      exec-once = swww img /usr/share/backgrounds/background.jpg
 
       exec-once = hypridle
       exec-once = nm-applet
@@ -149,6 +149,12 @@
       bind = SUPER, right, movefocus, r
       bind = SUPER, up, movefocus, u
       bind = SUPER, down, movefocus, d
+
+      # Move window in a workspace
+      bind = SUPER SHIFT, left, movewindow, l
+      bind = SUPER SHIFT, right, movewindow, r
+      bind = SUPER SHIFT, up, movewindow, u
+      bind = SUPER SHIFT, down, movewindow, d
 
       # Switch workspaces with mainMod + [0-9]
       bind = SUPER, 1, workspace, 1
