@@ -11,6 +11,7 @@
     ./hyprland.nix
     ./waybar.nix
     ./waybar-modules.nix
+    ./waybar-style.nix
     ./hyprlock.nix
     ./notifications.nix
     ../../scripts/volume.nix

@@ -43,8 +43,8 @@
     },
 
     "tray" : {
-      "icon-size" : 20,
-      "spacing" : 20
+      "icon-size" : 18,
+      "spacing" : 12
     },
 
     "memory" : { "format" : "{}% " },
