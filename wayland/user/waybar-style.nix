@@ -33,7 +33,7 @@
                 }
 
       #workspaces {
-                  background-color: #'' + config.lib.stylix.colors.base04 + '';
+                  background-color: #'' + config.lib.stylix.colors.base00 + '';
                     color: #'' + config.lib.stylix.colors.base02 + '';
                       border-radius: 16px;
                       }
