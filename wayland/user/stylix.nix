@@ -7,6 +7,10 @@
     image = /usr/share/backgrounds/background.jpg;
     polarity = "dark";
 
+    targets = {
+      fuzzel.enable = false;
+    };
+
     cursor = {
       size = 16;
     };
@@ -22,6 +26,7 @@
       sizes = {
         terminal = 11;
         desktop = 9;
+        applications = 12;
       };
     };
 
