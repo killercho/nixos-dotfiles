@@ -137,7 +137,7 @@
       bind = SUPER, F, fullscreen,
       bind = SUPER, M, exit,
       bind = SUPER, SPACE, togglefloating,
-      bind = SUPER, R, exec, rofi -show combi -show-icons
+      bind = SUPER, R, exec, fuzzel
       bind = SUPER, L, exec, hyprlock --immediate
       bind = SUPER, P, pseudo, # dwindle
       bind = SUPER, J, togglesplit, # dwindle
