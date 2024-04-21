@@ -5,6 +5,7 @@
     ./zsh.nix
     ./git.nix
     ./alacritty.nix
+    ./rofi.nix
 
     ./stylix.nix
 
