@@ -41,7 +41,6 @@
   # environment.
   home.packages = with pkgs; [
     spotify bitwarden discord signal-desktop telegram-desktop vlc qbittorrent-qt5
-    fuzzel
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage

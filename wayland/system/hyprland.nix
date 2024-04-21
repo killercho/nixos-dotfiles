@@ -47,7 +47,7 @@
     wayland-utils
     wl-clipboard
     wlroots
-    rofi-wayland rofi-bluetooth
+    fuzzel
     waybar
     meson
 
