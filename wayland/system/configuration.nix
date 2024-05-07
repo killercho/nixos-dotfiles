@@ -84,7 +84,7 @@
     wget
     neofetch btop
     git gh
-    nodejs_21
+    nodejs
     alacritty zsh
     bluez networkmanagerapplet
     pipewire pavucontrol pamixer

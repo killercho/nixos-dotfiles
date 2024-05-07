@@ -19,6 +19,11 @@
     settings = {};
     extraConfig = ''
       env = XCURSOR_SIZE,16
+      env = GDK_SCALE,2
+
+      xwayland {
+        #force_zero_scaling = true
+      }
 
       input {
         kb_layout = us,bg
