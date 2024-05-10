@@ -7,6 +7,7 @@
     ./alacritty.nix
     ./fuzzel.nix
     ./neovim.nix
+    ./dev.nix
 
     ./stylix.nix
 
