@@ -6,6 +6,7 @@
     ./git.nix
     ./alacritty.nix
     ./fuzzel.nix
+    ./neovim.nix
 
     ./stylix.nix
 
@@ -70,7 +71,7 @@
   #  /etc/profiles/per-user/AzSamSi/etc/profile.d/hm-session-vars.sh
   #
   home.sessionVariables = {
-    EDITOR = "vim";
+    #EDITOR = "vim";
   };
 
   #xdg.enable = true;
