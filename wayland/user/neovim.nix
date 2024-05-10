@@ -2,10 +2,6 @@
 { config, pkgs, ... }:
 
 {
-  #home.packages = with pkgs; [
-    #neovim
-  #];
-
   programs.neovim = {
     enable = true;
     defaultEditor = true;
@@ -14,13 +10,21 @@
 
     coc.enable = true;
     coc.settings = {
-      # JSON values
+        languageserver = {
+          nixd = {
+            command = "nixd";
+            rootPatterns = [ ".nixd.json" ];
+            filetypes = [ "nix" ];
+          };
+        };     
     };
     coc.pluginConfig = ''
     '';
 
     plugins = with pkgs.vimPlugins; [
       # Customise this theme with better colors from stylix and blur and transparancy
+      
+      # Add rainbow brackets plugin for better visualisation
 
       # Apply the autoformat when saving feature
 
