@@ -31,6 +31,9 @@
       # vim-polyglot - check what even is this
       # telescope - check if thats the fuzzy search neovim app
       nerdcommenter
+
+      # Coc lpss
+      coc-clangd
     ];
 
     extraConfig = ''
