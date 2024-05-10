@@ -72,6 +72,7 @@
   #
   home.sessionVariables = {
     #EDITOR = "vim";
+    EDITOR = "nvim";
   };
 
   #xdg.enable = true;
