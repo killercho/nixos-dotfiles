@@ -66,7 +66,7 @@
 
         blur {
           enabled = true
-          size = 3
+          size = 8
           passes = 1
         }
 
@@ -113,6 +113,7 @@
       misc {
       # See https://wiki.hyprland.org/Configuring/Variables/ for more
         force_default_wallpaper = 0 # Set to 0 to disable the anime mascot wallpapers
+        disable_hyprland_logo = true
       }
 
       # Example per-device config
