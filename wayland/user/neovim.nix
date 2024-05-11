@@ -1,6 +1,9 @@
 # User neovim config
 { config, pkgs, ... }:
 
+let
+  lualine_config = (import ./lualine.nix).lualine_config;
+in
 {
   programs.neovim = {
     enable = true;
@@ -50,7 +53,8 @@
       # Rainbow brackets plugin for better visualisation
       rainbow-delimiters-nvim
 
-      # lualine - a replacement for airline, check the docs and mynixos on how to install
+      # lualine - a replacement for airline
+      lualine-nvim
 
       # NERDTree and it's plugins
       nerdtree
@@ -199,6 +203,12 @@
       vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
       vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
       vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
+
+      -- Initializing lualine
+    '' + lualine_config +
+    ''
+      -- Additional settings
     '';
   };
 }
+
