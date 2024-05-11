@@ -69,6 +69,9 @@
       # Commenter plugin
       nerdcommenter
 
+      # Plugin to remember the last place the cursor was
+      nvim-lastplace
+
       # Coc lpss
       coc-clangd
     ];
@@ -183,6 +186,12 @@
 
       -- Symbol renaming
       vim.keymap.set('n', '<leader>rn', '<Plug>(coc-rename)', {silent = true})
+
+      require'nvim-lastplace'.setup {
+          lastplace_ignore_buftype = {"quickfix", "nofile", "help"},
+          lastplace_ignore_filetype = {"gitcommit", "gitrebase", "svn", "hgcommit"},
+          lastplace_open_folds = true
+      }
 
       -- Telescope configuration
       local builtin = require('telescope.builtin')
