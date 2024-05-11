@@ -26,6 +26,9 @@
     '';
 
     plugins = with pkgs.vimPlugins; [
+      # Treesitter plugin with all grammars
+      nvim-treesitter
+      nvim-treesitter.withAllGrammars
       # Customise this theme with better colors from stylix and blur and transparency
       # Use the site https://github.com/roobert/palette.nvim to finish the setup for the custom theme
       # Use the commands in https://blog.chaitanyashahare.com/posts/how-to-make-nvim-backround-transparent/ to make the background transparent
@@ -43,7 +46,8 @@
       #'';
       #}
 
-      # Add rainbow brackets plugin for better visualisation
+      # Rainbow brackets plugin for better visualisation
+      rainbow-delimiters-nvim
 
       # lualine - a replacement for airline, check the docs and mynixos on how to install
       # NERDTree
@@ -51,6 +55,8 @@
       # autoformat - check if neovim has it by default
       # vim-polyglot - check what even is this
       # telescope - check if thats the fuzzy search neovim app
+
+      # Commenter plugin
       nerdcommenter
 
       # Coc lpss

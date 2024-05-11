@@ -24,7 +24,7 @@
   networking.hostName = "nixos"; # Define your hostname.
   # Pick only one of the below networking options.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-  networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
+  networking.networkmanager.enable = true; # Easiest to use and most distros use this by default.
 
   # Set your time zone.
   time.timeZone = "Europe/Sofia";
@@ -52,9 +52,9 @@
   nix.settings.auto-optimise-store = true;
 
   nix.gc = {
-    automatic = true;  # Enable the automatic garbage collector
-    dates = "weekly";   # When to run the garbage collector
-    options = "-d";    # Arguments to pass to nix-collect-garbage
+    automatic = true; # Enable the automatic garbage collector
+    dates = "weekly"; # When to run the garbage collector
+    options = "-d"; # Arguments to pass to nix-collect-garbage
   };
 
   # Enable CUPS to print documents.
@@ -65,10 +65,10 @@
   hardware.bluetooth.powerOnBoot = false; # powers up the default Bluetooth controller on boot
   services.blueman.enable = true;
 
-  swapDevices = [ {
+  swapDevices = [{
     device = "/var/lib/swapfile";
-    size = 16*1024;
-  } ];
+    size = 16 * 1024;
+  }];
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.AzSamSi = {
@@ -83,16 +83,25 @@
     #vim-full # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     neovim
     wget
-    fastfetch btop
-    git gh
+    fastfetch
+    btop
+    git
+    gh
     nodejs
-    alacritty zsh
-    bluez networkmanagerapplet
-    pipewire pavucontrol pamixer
+    alacritty
+    zsh
+    bluez
+    networkmanagerapplet
+    pipewire
+    pavucontrol
+    pamixer
     brightnessctl
     xfce.thunar
     firefox
-    libinput libinput-gestures xdotool libnotify
+    libinput
+    libinput-gestures
+    xdotool
+    libnotify
   ];
 
   programs = {
