@@ -58,7 +58,8 @@
       vim-devicons
       vim-nerdtree-syntax-highlight
 
-      # vim-polyglot - check what even is this
+      # A group of popular language packs with features for them
+      polyglot
       # telescope - check if thats the fuzzy search neovim app
 
       # Commenter plugin
