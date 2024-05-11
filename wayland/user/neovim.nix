@@ -61,6 +61,9 @@
       # A group of popular language packs with features for them
       polyglot
       # telescope - check if thats the fuzzy search neovim app
+      telescope-nvim
+      plenary-nvim
+      telescope-fzf-native-nvim
 
       # Commenter plugin
       nerdcommenter
@@ -69,118 +72,121 @@
       coc-clangd
     ];
 
-    extraConfig = ''
-      	  let mapLeader = "'"
+    extraLuaConfig = ''
+      vim.g.mapleader = ";"
 
-            set number relativenumber
-            set tabstop=4
-            set shiftwidth=4
-            set expandtab
-            set termguicolors
-            set background=dark
+      vim.opt.number = true;
+      vim.opt.relativenumber = true;
+      vim.opt.autoindent = true;
+      vim.opt.tabstop = 4;
+      vim.opt.shiftwidth = 4;
+      vim.opt.expandtab = true;
+      vim.opt.termguicolors = true;
+      vim.opt.background = dark
 
-            " colorscheme <colorscheme>
+      vim.opt.ttimeout = true;
+      vim.opt.ttimeoutlen = 50;
+      vim.opt.wildmode = 'list:longest,full';
+      vim.opt.splitbelow = true;
+      vim.opt.splitright = true;
 
-            set ttimeout
-            set ttimeoutlen=50
-            set wildmode=list:longest,full
-            set splitbelow
-            set splitright
+      vim.opt.foldmethod = 'indent';
+      vim.opt.foldlevel = 99;
 
-            set foldmethod=indent
-            set foldlevel=99
+      -- Movement binds
+      vim.keymap.set({'n', 'x'}, 'j', 'gj')
+      vim.keymap.set({'n', 'x'}, 'k', 'gk')
 
-            "Movement binds
-            nnoremap j gj
-            nnoremap k gk
-            xnoremap j gj
-            xnoremap k gk
+      vim.keymap.set({'n', 'x'}, 'J', '5j')
+      vim.keymap.set({'n', 'x'}, 'K', '5k')
 
-            nnoremap J 5j
-            nnoremap K 5k
-            xnoremap J 5j
-            xnoremap K 5k
+      -- Yank in '+' register
+      vim.keymap.set('v', '<C-y>', '"+y')
 
-            "Yank in '+' register
-            vnoremap <C-y> "+y
+      -- Copy and paste text under or over the cursor
+      vim.keymap.set('n', 'zj', 'mayyp`aj')
+      vim.keymap.set('n', 'zk', 'mayyP`ak')
 
-            "Copy and paste text under or over the cursor
-            nnoremap zj mayyp`aj
-            nnoremap zk mayyP`ak
+      -- Paste in different modes
+      vim.keymap.set('i', '<C-p>', '<Esc>pa')
+      vim.keymap.set('c', '<C-p>', '<C-r>')
+      vim.keymap.set('n', '<C-p>', '"+p')
 
-            "Paste in different modes
-            inoremap <C-p> <Esc>pa
-            cnoremap <C-p> <C-r>"
-            nnoremap <C-p> "+p
+      -- Save/Exit bindings
+      vim.keymap.set('n', '<C-w>', ':w<CR>')
+      vim.keymap.set('n', '<C-q>', ':q<CR>')
 
-            "Save/Exit bindings
-            nnoremap <C-w> :w<CR>
-            nnoremap <C-q> :q<CR>
+      -- Tab bindings
+      vim.keymap.set('n', '<C-l>', 'gt<CR>')
+      vim.keymap.set('n', '<C-h>', 'gT<CR>')
+      vim.keymap.set('n', '<C-n>', ':tabnew<CR>')
 
-            "Tab bindings
-            nnoremap <C-l> gt<CR>
-            nnoremap <C-h> gT<CR>
-            nnoremap <C-n> :tabnew<CR>
+      -- Moving text around bindings
+      vim.keymap.set('n', '<C-j>', ':m +1<CR>')
+      vim.keymap.set('n', '<C-k>', ':m -2<CR>')
 
-            "Moving text around bindings
-            nnoremap <C-j> :m +1<CR>
-            nnoremap <C-k> :m -2<CR>
+      -- Arrows moving splitted windows
+      vim.keymap.set('n', '<up>', '<c-w>k')
+      vim.keymap.set('n', '<down>', '<c-w>j')
+      vim.keymap.set('n', '<right>', '<c-w>l')
+      vim.keymap.set('n', '<left>', '<c-w>h')
 
-            "Arrows moving splitted windows
-            nnoremap <up> <c-w>k
-            nnoremap <down> <c-w>j
-            nnoremap <right> <c-w>l
-            nnoremap <left> <c-w>h
+      -- Arrows with <C> to resize splits
+      vim.keymap.set('n', '<c-up>', '5<c-w>+')
+      vim.keymap.set('n', '<c-down>', '5<c-w>-')
+      vim.keymap.set('n', '<c-right>', '5<c-w>>')
+      vim.keymap.set('n', '<c-left>', '5<c-w><')
 
-            "Arrows with <C> to resize splits
-            nnoremap <c-up> 5<c-w>+
-            nnoremap <c-down> 5<c-w>-
-            nnoremap <c-left> 5<c-w><
-            nnoremap <c-right> 5<c-w>>
+      -- Open NERDTree on the right
+      vim.g.NERDTreeWinPos = "right"
 
-            "Filetype options
-            let g:filetype_pl="prolog"
+      -- NERDTree bindings
+      vim.keymap.set('n', '<C-f>', ':NERDTreeFocus<CR>')
+      vim.keymap.set('n', '<C-t>', ':NERDTreeToggle<CR>')
 
-            " Open NERDTree on the right
-            let g:NERDTreeWinPos = "right"
+      -- Comenter binds
+      vim.keymap.set({'n', 'x'}, '<C-c>', ':call nerdcommenter#Comment(0, "toggle")<CR>')
 
-            "NERDTree bindings
-            nnoremap <C-f> :NERDTreeFocus<CR>
-            nnoremap <C-t> :NERDTreeToggle<CR>
+      -- Coc binds and functions
+      vim.keymap.set('n', 'gd', '<Plug>(coc-definition)', { silent = true })
+      vim.keymap.set('n', 'gy', '<Plug>(coc-type-definition)', { silent = true })
+      vim.keymap.set('n', 'gi', '<Plug>(coc-implementation)', { silent = true })
+      vim.keymap.set('n', 'gr', '<Plug>(coc-reference)', { silent = true })
 
-            "Comenter binds
-            nnoremap <C-c> :call nerdcommenter#Comment(0, 'toggle')<CR>
-            xnoremap <C-c> :call nerdcommenter#Comment(0, 'toggle')<CR>
+      function _G.show_docs()
+        local cw = vim.fn.expand('<cword>')
+        if vim.fn.index({'vim', 'help'}, vim.bo.filetype) >= 0 then
+            vim.api.nvim_command('h ' .. cw)
+        elseif vim.api.nvim_eval('coc#rpc#ready()') then
+            vim.fn.CocActionAsync('doHover')
+        else
+            vim.api.nvim_command('!' .. vim.o.keywordprg .. ' ' .. cw)
+        end
+      end
+      vim.keymap.set('n', '<C-d>', '<CMD>lua _G.show_docs()<CR>', { silent = true })
 
-            "Coc binds and functions
-            nnoremap <silent> gd <Plug>(coc-definition)
-            nnoremap <silent> gy <Plug>(coc-type-definition)
-            nnoremap <silent> gi <Plug>(coc-implementation)
-            nnoremap <silent> gr <Plug>(coc-reference)
-            nnoremap <silent> <C-d> :call ShowDocumentation()<CR>
+      vim.keymap.set('i', '<CR>', [[coc#pum#visible() ? coc#pum#confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"]], opts)     
 
-            inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
-                  \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
-        
-            function! ShowDocumentation()
-              if CocAction('hasProvider', 'hover')
-                call CocActionAsync('doHover')
-              else
-                call feedkeys('K', 'in')
-              endif
-            endfunction
+      -- Highlight the symbol and its references when holding the cursor
+      vim.api.nvim_create_augroup("CocGroup", {})
+      vim.api.nvim_create_autocmd("CursorHold", {
+          group = "CocGroup",
+          command = "silent call CocActionAsync('highlight')",
+          desc = "Highlight symbol under cursor on CursorHold"
+      })
 
-            " Highlight the symbol and its references when holding the cursor
-            autocmd CursorHold * silent call CocActionAsync('highlight')
+      -- Formatting selected code
+      vim.keymap.set({'x', 'n'}, '<leader>f', '<Plug>(coc-format-selected)', {silent = true})
 
-            " Formatting selected code
-            xmap <Leader>f  <Plug>(coc-format-selected)
-            nmap <Leader>f  <Plug>(coc-format-selected)
+      -- Symbol renaming
+      vim.keymap.set('n', '<leader>rn', '<Plug>(coc-rename)', {silent = true})
 
-            " Symbol renaming
-            nmap <Leader>rn <Plug>(coc-rename)
+      -- Telescope configuration
+      local builtin = require('telescope.builtin')
+      vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
+      vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
+      vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
+      vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
     '';
-
-    extraLuaConfig = "";
   };
 }
