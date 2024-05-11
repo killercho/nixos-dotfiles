@@ -29,6 +29,7 @@
       # Treesitter plugin with all grammars
       nvim-treesitter
       nvim-treesitter.withAllGrammars
+
       # Customise this theme with better colors from stylix and blur and transparency
       # Use the site https://github.com/roobert/palette.nvim to finish the setup for the custom theme
       # Use the commands in https://blog.chaitanyashahare.com/posts/how-to-make-nvim-backround-transparent/ to make the background transparent
@@ -50,9 +51,13 @@
       rainbow-delimiters-nvim
 
       # lualine - a replacement for airline, check the docs and mynixos on how to install
-      # NERDTree
-      # NERDTree git plugin
-      # autoformat - check if neovim has it by default
+
+      # NERDTree and it's plugins
+      nerdtree
+      nerdtree-git-plugin
+      vim-devicons
+      vim-nerdtree-syntax-highlight
+
       # vim-polyglot - check what even is this
       # telescope - check if thats the fuzzy search neovim app
 
@@ -134,6 +139,9 @@
 
             "Filetype options
             let g:filetype_pl="prolog"
+
+            " Open NERDTree on the right
+            let g:NERDTreeWinPos = "right"
 
             "NERDTree bindings
             nnoremap <C-f> :NERDTreeFocus<CR>
