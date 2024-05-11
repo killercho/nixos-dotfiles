@@ -9,7 +9,7 @@
     userEmail = "ggeorgi60@gmail.com";
 
     extraConfig = {
-      core.editor = "vim";
+      core.editor = "nvim";
     };
   };
 }
