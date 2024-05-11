@@ -2,8 +2,9 @@
 { config, pkgs, ... }:
 
 {
-    home.packages = with pkgs; [
-        nixd nixfmt
-        clang-tools
-    ];
+  home.packages = with pkgs; [
+    nixd
+    nixpkgs-fmt
+    clang-tools
+  ];
 }

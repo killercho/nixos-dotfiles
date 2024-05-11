@@ -17,8 +17,13 @@
           filetypes = [ "nix" ];
         };
       };
+      "coc.preferences.formatOnType" = true;
+      "coc.preferences.formatOnSaveFiletypes" = [ "*" ];
+      "prettier.tabwidth" = "4";
     };
-    coc.pluginConfig = "";
+    coc.pluginConfig = ''
+      let g:coc_global_extensions = ['coc-prettier', 'coc-clangd']
+    '';
 
     plugins = with pkgs.vimPlugins; [
       # Customise this theme with better colors from stylix and blur and transparency
@@ -40,10 +45,6 @@
 
       # Add rainbow brackets plugin for better visualisation
 
-      # Apply the autoformat when saving feature
-
-      neoformat
-
       # lualine - a replacement for airline, check the docs and mynixos on how to install
       # NERDTree
       # NERDTree git plugin
@@ -57,98 +58,112 @@
     ];
 
     extraConfig = ''
-      set number relativenumber
-      set tabstop=4
-      set shiftwidth=4
-      set expandtab
-      set termguicolors
-      set background=dark
+      	  let mapLeader = "'"
 
-      " colorscheme <colorscheme>
+            set number relativenumber
+            set tabstop=4
+            set shiftwidth=4
+            set expandtab
+            set termguicolors
+            set background=dark
 
-      set ttimeout
-      set ttimeoutlen=50
-      set wildmode=list:longest,full
-      set splitbelow
-      set splitright
+            " colorscheme <colorscheme>
 
-      set foldmethod=indent
-      set foldlevel=99
+            set ttimeout
+            set ttimeoutlen=50
+            set wildmode=list:longest,full
+            set splitbelow
+            set splitright
 
-      "Movement binds
-      nnoremap j gj
-      nnoremap k gk
-      xnoremap j gj
-      xnoremap k gk
+            set foldmethod=indent
+            set foldlevel=99
 
-      nnoremap J 5j
-      nnoremap K 5k
-      xnoremap J 5j
-      xnoremap K 5k
+            "Movement binds
+            nnoremap j gj
+            nnoremap k gk
+            xnoremap j gj
+            xnoremap k gk
 
-      "Yank in '+' register
-      vnoremap <C-y> "+y
+            nnoremap J 5j
+            nnoremap K 5k
+            xnoremap J 5j
+            xnoremap K 5k
 
-      "Copy and paste text under or over the cursor
-      nnoremap zj mayyp`aj
-      nnoremap zk mayyP`ak
+            "Yank in '+' register
+            vnoremap <C-y> "+y
 
-      "Paste in different modes
-      inoremap <C-p> <Esc>pa
-      cnoremap <C-p> <C-r>"
-      nnoremap <C-p> "+p
+            "Copy and paste text under or over the cursor
+            nnoremap zj mayyp`aj
+            nnoremap zk mayyP`ak
 
-      "Save/Exit bindings
-      nnoremap <C-w> :w<CR>
-      nnoremap <C-q> :q<CR>
+            "Paste in different modes
+            inoremap <C-p> <Esc>pa
+            cnoremap <C-p> <C-r>"
+            nnoremap <C-p> "+p
 
-      "Tab bindings
-      nnoremap <C-l> gt<CR>
-      nnoremap <C-h> gT<CR>
-      nnoremap <C-n> :tabnew<CR>
+            "Save/Exit bindings
+            nnoremap <C-w> :w<CR>
+            nnoremap <C-q> :q<CR>
 
-      "Moving text around bindings
-      nnoremap <C-j> :m +1<CR>
-      nnoremap <C-k> :m -2<CR>
+            "Tab bindings
+            nnoremap <C-l> gt<CR>
+            nnoremap <C-h> gT<CR>
+            nnoremap <C-n> :tabnew<CR>
 
-      "Arrows moving splitted windows
-      nnoremap <up> <c-w>k
-      nnoremap <down> <c-w>j
-      nnoremap <right> <c-w>l
-      nnoremap <left> <c-w>h
+            "Moving text around bindings
+            nnoremap <C-j> :m +1<CR>
+            nnoremap <C-k> :m -2<CR>
 
-      "Arrows with <C> to resize splits
-      nnoremap <c-up> 5<c-w>+
-      nnoremap <c-down> 5<c-w>-
-      nnoremap <c-left> 5<c-w><
-      nnoremap <c-right> 5<c-w>>
+            "Arrows moving splitted windows
+            nnoremap <up> <c-w>k
+            nnoremap <down> <c-w>j
+            nnoremap <right> <c-w>l
+            nnoremap <left> <c-w>h
 
-      "Filetype options
-      let g:filetype_pl="prolog"
+            "Arrows with <C> to resize splits
+            nnoremap <c-up> 5<c-w>+
+            nnoremap <c-down> 5<c-w>-
+            nnoremap <c-left> 5<c-w><
+            nnoremap <c-right> 5<c-w>>
 
-      "NERDTree bindings
-      nnoremap <C-f> :NERDTreeFocus<CR>
-      nnoremap <C-t> :NERDTreeToggle<CR>
+            "Filetype options
+            let g:filetype_pl="prolog"
 
-      "Comenter binds
-      nnoremap <C-c> :call nerdcommenter#Comment(0, 'toggle')<CR>
-      xnoremap <C-c> :call nerdcommenter#Comment(0, 'toggle')<CR>
+            "NERDTree bindings
+            nnoremap <C-f> :NERDTreeFocus<CR>
+            nnoremap <C-t> :NERDTreeToggle<CR>
 
-      "Coc binds
-      nnoremap <silent> gd <Plug>(coc-definition)
-      nnoremap <silent> gy <Plug>(coc-type-definition)
-      nnoremap <silent> gi <Plug>(coc-implementation)
-      nnoremap <silent> gr <Plug>(coc-reference)
-      nnoremap <silent> <C-d> :call cocconf#ShowDocumentation()<CR>
+            "Comenter binds
+            nnoremap <C-c> :call nerdcommenter#Comment(0, 'toggle')<CR>
+            xnoremap <C-c> :call nerdcommenter#Comment(0, 'toggle')<CR>
 
-      inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
-            \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+            "Coc binds and functions
+            nnoremap <silent> gd <Plug>(coc-definition)
+            nnoremap <silent> gy <Plug>(coc-type-definition)
+            nnoremap <silent> gi <Plug>(coc-implementation)
+            nnoremap <silent> gr <Plug>(coc-reference)
+            nnoremap <silent> <C-d> :call ShowDocumentation()<CR>
 
-      " Autoformat on save with Neoformat
-      augroup fmt
-        autocmd!
-        autocmd BufWritePre * undojoin | Neoformat
-      augroup END
+            inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
+                  \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+        
+            function! ShowDocumentation()
+              if CocAction('hasProvider', 'hover')
+                call CocActionAsync('doHover')
+              else
+                call feedkeys('K', 'in')
+              endif
+            endfunction
+
+            " Highlight the symbol and its references when holding the cursor
+            autocmd CursorHold * silent call CocActionAsync('highlight')
+
+            " Formatting selected code
+            xmap <Leader>f  <Plug>(coc-format-selected)
+            nmap <Leader>f  <Plug>(coc-format-selected)
+
+            " Symbol renaming
+            nmap <Leader>rn <Plug>(coc-rename)
     '';
 
     extraLuaConfig = "";
