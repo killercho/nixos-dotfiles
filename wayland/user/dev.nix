@@ -3,7 +3,7 @@
 
 {
     home.packages = with pkgs; [
-        nixd
+        nixd nixfmt
         clang-tools
     ];
 }

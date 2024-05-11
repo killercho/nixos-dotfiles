@@ -10,23 +10,39 @@
 
     coc.enable = true;
     coc.settings = {
-        languageserver = {
-          nixd = {
-            command = "nixd";
-            rootPatterns = [ ".nixd.json" ];
-            filetypes = [ "nix" ];
-          };
-        };     
+      languageserver = {
+        nixd = {
+          command = "nixd";
+          rootPatterns = [ ".nixd.json" ];
+          filetypes = [ "nix" ];
+        };
+      };
     };
-    coc.pluginConfig = ''
-    '';
+    coc.pluginConfig = "";
 
     plugins = with pkgs.vimPlugins; [
-      # Customise this theme with better colors from stylix and blur and transparancy
-      
+      # Customise this theme with better colors from stylix and blur and transparency
+      # Use the site https://github.com/roobert/palette.nvim to finish the setup for the custom theme
+      # Use the commands in https://blog.chaitanyashahare.com/posts/how-to-make-nvim-backround-transparent/ to make the background transparent
+      #{ plugin = palette-nvim;
+      #lazy = false;
+      #priority = 1000;
+      #config = ''function() 
+      #require("palette").setup({
+      #palettes = {
+      #main = "stylix_main"
+      #},
+      #})
+      #vim.cmd([[colorscheme palette]])
+      #end
+      #'';
+      #}
+
       # Add rainbow brackets plugin for better visualisation
 
       # Apply the autoformat when saving feature
+
+      neoformat
 
       # lualine - a replacement for airline, check the docs and mynixos on how to install
       # NERDTree
@@ -128,9 +144,13 @@
       inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
             \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
+      " Autoformat on save with Neoformat
+      augroup fmt
+        autocmd!
+        autocmd BufWritePre * undojoin | Neoformat
+      augroup END
     '';
 
-    extraLuaConfig = ''
-    '';
+    extraLuaConfig = "";
   };
 }

@@ -16,10 +16,10 @@
     };
 
     opacity = {
-      applications = 0.9;
+      applications = 0.8;
       terminal = 0.7;
       popups = 0.4;
-      desktop = 0.9;
+      desktop = 0.8;
     };
 
     fonts = {
