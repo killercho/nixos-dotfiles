@@ -60,6 +60,7 @@
 
       # A group of popular language packs with features for them
       polyglot
+
       # telescope - check if thats the fuzzy search neovim app
       telescope-nvim
       plenary-nvim
@@ -165,7 +166,9 @@
       end
       vim.keymap.set('n', '<C-d>', '<CMD>lua _G.show_docs()<CR>', { silent = true })
 
-      vim.keymap.set('i', '<CR>', [[coc#pum#visible() ? coc#pum#confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"]], opts)     
+
+      local coc_opts = {silent = true, noremap = true, expr = true, replace_keycodes = false}
+      vim.keymap.set('i', '<CR>', [[coc#pum#visible() ? coc#pum#confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"]], coc_opts)     
 
       -- Highlight the symbol and its references when holding the cursor
       vim.api.nvim_create_augroup("CocGroup", {})
