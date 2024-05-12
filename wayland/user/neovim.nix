@@ -3,6 +3,8 @@
 
 let
   lualine_config = (import ./lualine.nix).lualine_config;
+  formatter_config = (import ./formatter.nix).formatter_config;
+  completion_config = (import ./completion.nix).completion_config;
 in
 {
   programs.neovim = {
@@ -10,22 +12,6 @@ in
     defaultEditor = true;
     viAlias = true;
     vimAlias = true;
-
-    coc.enable = true;
-    coc.settings = {
-      languageserver = {
-        nixd = {
-          command = "nixd";
-          rootPatterns = [ ".nixd.json" ];
-          filetypes = [ "nix" ];
-        };
-      };
-      "coc.preferences.formatOnType" = true;
-      "coc.preferences.formatOnSaveFiletypes" = [ "*" ];
-    };
-    coc.pluginConfig = ''
-      let g:coc_global_extensions = ['coc-clangd']
-    '';
 
     plugins = with pkgs.vimPlugins; [
       # Treesitter plugin with all grammars
@@ -38,7 +24,7 @@ in
       #{ plugin = palette-nvim;
       #lazy = false;
       #priority = 1000;
-      #config = ''function() 
+      #config = ''function()
       #require("palette").setup({
       #palettes = {
       #main = "stylix_main"
@@ -75,6 +61,31 @@ in
       # Plugin to remember the last place the cursor was
       nvim-lastplace
 
+      # Package manager to install and manage LSP and DAP servers, linters and formatters
+      # TODO: Check the settings and commands for all things mason related
+      mason-nvim
+
+      # Third party plugins managed by mason:
+      nvim-lspconfig # Configs for Nvim LSPs
+      mason-lspconfig-nvim # Bridge between mason and lspconfig # Bridge between mason and lspconfig
+      nvim-dap # Debug client
+      nvim-dap-ui # UI for the debugger
+      nvim-lint # Lightweigth linter using the LSPs
+      formatter-nvim # Formatter plugin
+      # End of the plugins managed by mason
+
+      # Plugin for hover/definitions/symbol search
+      # TODO: Check the plugin modules and how to map them (https://nvimdev.github.io/lspsaga/)
+      lspsaga-nvim
+
+      # Completion and snippets plugins
+      cmp-nvim-lsp
+      cmp-buffer
+      cmp-path
+      cmp-cmdline
+      nvim-cmp
+      UltiSnips
+      cmp-nvim-ultisnips
     ];
 
     extraLuaConfig = ''
@@ -159,42 +170,6 @@ in
       -- Comenter binds
       vim.keymap.set({'n', 'x'}, '<C-c>', ':call nerdcommenter#Comment(0, "toggle")<CR>')
 
-      -- Coc binds and functions
-      vim.keymap.set('n', 'gd', '<Plug>(coc-definition)', { silent = true })
-      vim.keymap.set('n', 'gy', '<Plug>(coc-type-definition)', { silent = true })
-      vim.keymap.set('n', 'gi', '<Plug>(coc-implementation)', { silent = true })
-      vim.keymap.set('n', 'gr', '<Plug>(coc-reference)', { silent = true })
-
-      function _G.show_docs()
-        local cw = vim.fn.expand('<cword>')
-        if vim.fn.index({'vim', 'help'}, vim.bo.filetype) >= 0 then
-            vim.api.nvim_command('h ' .. cw)
-        elseif vim.api.nvim_eval('coc#rpc#ready()') then
-            vim.fn.CocActionAsync('doHover')
-        else
-            vim.api.nvim_command('!' .. vim.o.keywordprg .. ' ' .. cw)
-        end
-      end
-      vim.keymap.set('n', '<C-d>', '<CMD>lua _G.show_docs()<CR>', { silent = true })
-
-
-      local coc_opts = {silent = true, noremap = true, expr = true, replace_keycodes = false}
-      vim.keymap.set('i', '<CR>', [[coc#pum#visible() ? coc#pum#confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"]], coc_opts)     
-
-      -- Highlight the symbol and its references when holding the cursor
-      vim.api.nvim_create_augroup("CocGroup", {})
-      vim.api.nvim_create_autocmd("CursorHold", {
-          group = "CocGroup",
-          command = "silent call CocActionAsync('highlight')",
-          desc = "Highlight symbol under cursor on CursorHold"
-      })
-
-      -- Formatting selected code
-      vim.keymap.set({'x', 'n'}, '<leader>f', '<Plug>(coc-format-selected)', {silent = true})
-
-      -- Symbol renaming
-      vim.keymap.set('n', '<leader>rn', '<Plug>(coc-rename)', {silent = true})
-
       require'nvim-lastplace'.setup {
           lastplace_ignore_buftype = {"quickfix", "nofile", "help"},
           lastplace_ignore_filetype = {"gitcommit", "gitrebase", "svn", "hgcommit"},
@@ -208,11 +183,53 @@ in
       vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
       vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
 
-      -- Initializing lualine
-    '' + lualine_config +
+    '' + lualine_config
+    + formatter_config
+    + completion_config +
     ''
       -- Additional settings
+
+      -- Mason settings
+      require("mason").setup({
+          ui = {
+              icons = {
+                  package_installed = "✓",
+                  package_pending = "➜",
+                  package_uninstalled = "✗"
+              }
+          }
+      })
+      require("mason-lspconfig").setup {
+          -- Automatic install
+          ensure_installed = { "lua_ls" },
+          -- TODO: Check how to make the hooks to the LSPs through mason (from git)
+      }
+      -- After setting up mason-lspconfig servers via lspconfig may be set
+
+      -- DAP and its UI setup
+      require("dapui").setup()
+
+      -- Linter setup
+      require('lint').linters_by_ft = {
+        -- Setup linters by filetype
+        markdown = {'vale',}
+      }
+      -- Setup to trigger linting automatically
+      vim.api.nvim_create_autocmd({ "BufWritePost" }, {
+        callback = function()
+
+          -- try_lint without arguments runs the linters defined in `linters_by_ft`
+          -- for the current filetype
+          require("lint").try_lint()
+
+          -- You can call `try_lint` with a linter name or a list of names to always
+          -- run specific linters, independent of the `linters_by_ft` configuration
+          require("lint").try_lint("cspell")
+        end,
+      })
+
+      -- Lspsaga configuration
+      require('lspsaga').setup({})
     '';
   };
 }
-

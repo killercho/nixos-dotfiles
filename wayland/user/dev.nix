@@ -3,6 +3,8 @@
 
 {
   home.packages = with pkgs; [
+    unzip
+    python3
     ripgrep
     nixd
     nixpkgs-fmt

@@ -1,5 +1,6 @@
 {
   lualine_config = ''
+        -- Initializing lualine --------------------------------------------------
         -- Eviline config for lualine
         -- Author: shadmansaleh
         -- Credit: glepnir
@@ -207,5 +208,6 @@
 
     -- Initialising the lualine
     lualine.setup(config)
+    -- End of Lualine config --------------------------------------------------
   '';
 }
