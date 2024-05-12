@@ -22,13 +22,9 @@ in
       };
       "coc.preferences.formatOnType" = true;
       "coc.preferences.formatOnSaveFiletypes" = [ "*" ];
-
-      "prettier.tabWidth" = "4";
-      "prettier.useTabs" = false;
-      "prettier.formatterPriority" = "0";
     };
     coc.pluginConfig = ''
-      let g:coc_global_extensions = ['coc-prettier', 'coc-clangd']
+      let g:coc_global_extensions = ['coc-clangd']
     '';
 
     plugins = with pkgs.vimPlugins; [
@@ -79,8 +75,6 @@ in
       # Plugin to remember the last place the cursor was
       nvim-lastplace
 
-      # Coc lpss
-      coc-clangd
     ];
 
     extraLuaConfig = ''
@@ -89,9 +83,13 @@ in
       vim.opt.number = true;
       vim.opt.relativenumber = true;
       vim.opt.autoindent = true;
+
       vim.opt.tabstop = 4;
+      vim.opt.smarttab = false;
       vim.opt.shiftwidth = 4;
+      vim.opt.softtabstop = 0;
       vim.opt.expandtab = true;
+
       vim.opt.termguicolors = true;
       vim.opt.background = dark
 
