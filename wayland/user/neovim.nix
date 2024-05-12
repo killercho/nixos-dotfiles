@@ -62,10 +62,10 @@ in
       nvim-lastplace
 
       # Package manager to install and manage LSP and DAP servers, linters and formatters
-      # TODO: Check the settings and commands for all things mason related
       mason-nvim
 
       # Third party plugins managed by mason:
+      mason-tool-installer-nvim # Tool for automatic install of every Mason package
       nvim-lspconfig # Configs for Nvim LSPs
       mason-lspconfig-nvim # Bridge between mason and lspconfig # Bridge between mason and lspconfig
       nvim-dap # Debug client
@@ -199,12 +199,41 @@ in
               }
           }
       })
-      require("mason-lspconfig").setup {
-          -- Automatic install
-          ensure_installed = { "lua_ls" },
-          -- TODO: Check how to make the hooks to the LSPs through mason (from git)
+      require("mason-lspconfig").setup()
+      require('mason-tool-installer').setup {
+        -- a list of all tools you want to ensure are installed upon
+        -- start
+        ensure_installed = {
+          -- LSPs
+          "lua_ls",
+          "clangd",
+          "cmake",
+          "nil_ls",
+          "pyright",
+          "bashls",
+          -- Linters
+          "vale",
+          "cpplint",
+          "pylint",
+          "shellcheck",
+        },
+        auto_update = false,
+        run_on_start = true,
+        start_delay = 3000, -- 3 second delay
+        debounce_hours = 2, -- at least 5 hours between attempts to install/update
+        integrations = {
+          ["mason-lspconfig"] = true,
+          ["mason-null-ls"] = false,
+          ["mason-nvim-dap"] = false,
+        }
       }
       -- After setting up mason-lspconfig servers via lspconfig may be set
+      require'lspconfig'.lua_ls.setup{}
+      require'lspconfig'.clangd.setup{}
+      require'lspconfig'.cmake.setup{}
+      require'lspconfig'.nil_ls.setup{}
+      require'lspconfig'.pyright.setup{}
+      require'lspconfig'.bashls.setup{}
 
       -- DAP and its UI setup
       require("dapui").setup()
@@ -212,7 +241,12 @@ in
       -- Linter setup
       require('lint').linters_by_ft = {
         -- Setup linters by filetype
-        markdown = {'vale',}
+        markdown = {'vale',},
+        cpp = {'cpplint',},
+        c = {'cpplint',},
+        -- nix = {'nix',},
+        py = {'pylint',},
+        sh = {'shellcheck',},
       }
       -- Setup to trigger linting automatically
       vim.api.nvim_create_autocmd({ "BufWritePost" }, {
@@ -224,7 +258,7 @@ in
 
           -- You can call `try_lint` with a linter name or a list of names to always
           -- run specific linters, independent of the `linters_by_ft` configuration
-          require("lint").try_lint("cspell")
+          -- require("lint").try_lint("cspell")
         end,
       })
 

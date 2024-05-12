@@ -4,6 +4,7 @@
 {
   home.packages = with pkgs; [
     unzip
+    cargo
     python3
     ripgrep
     nixd
