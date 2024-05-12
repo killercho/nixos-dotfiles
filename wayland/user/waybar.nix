@@ -8,9 +8,9 @@
       mainBar = {
         layer = "top";
         position = "top";
-        height = 36;
+        height = 34;
         margin = "7 7 3 7";
-        spacing = 4;
+        spacing = 6;
         reload_style_on_change = true;
 
         include = [ "~/.config/waybar/waybar-modules.json" ];

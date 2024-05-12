@@ -22,6 +22,7 @@ in
       };
       "coc.preferences.formatOnType" = true;
       "coc.preferences.formatOnSaveFiletypes" = [ "*" ];
+
       "prettier.tabwidth" = "4";
     };
     coc.pluginConfig = ''

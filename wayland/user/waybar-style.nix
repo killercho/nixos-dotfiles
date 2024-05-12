@@ -9,6 +9,8 @@
 
             background-color: transparent;
               border-radius: 0;
+              font-size: 11px;
+              min-height: 0;
             }
 
             window#waybar {
@@ -199,5 +201,5 @@
                                                                           }
 
                                                                         '';
-                                                                      };
-                                                                    }
+  };
+}
