@@ -23,7 +23,9 @@ in
       "coc.preferences.formatOnType" = true;
       "coc.preferences.formatOnSaveFiletypes" = [ "*" ];
 
-      "prettier.tabwidth" = "4";
+      "prettier.tabWidth" = "4";
+      "prettier.useTabs" = false;
+      "prettier.formatterPriority" = "0";
     };
     coc.pluginConfig = ''
       let g:coc_global_extensions = ['coc-prettier', 'coc-clangd']
@@ -101,6 +103,9 @@ in
 
       vim.opt.foldmethod = 'indent';
       vim.opt.foldlevel = 99;
+
+      vim.opt.undofile = true;
+      vim.opt.undodir = vim.fn.expand('~/.config/nvim/undodir')
 
       -- Movement binds
       vim.keymap.set({'n', 'x'}, 'j', 'gj')
