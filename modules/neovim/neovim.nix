@@ -1,10 +1,11 @@
 # User neovim config
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 let
   lualine_config = (import ./lualine.nix).lualine_config;
   formatter_config = (import ./formatter.nix).formatter_config;
   completion_config = (import ./completion.nix).completion_config;
+  tokyonight_config = (import ./tokyonight.nix).tokyonight_config;
 in
 {
   programs.neovim = {
@@ -170,7 +171,8 @@ in
 
     '' + lualine_config
     + formatter_config
-    + completion_config +
+    + completion_config
+    + tokyonight_config +
     ''
       -- Additional settings
 
