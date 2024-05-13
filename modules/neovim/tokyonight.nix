@@ -1,4 +1,7 @@
 {
+  # If the colors need to be changed with stylix check out the github links to tokyonight:
+  # (https://github.com/folke/tokyonight.nvim) -> main page
+  # (https://github.com/folke/tokyonight.nvim/blob/main/extras/lua/tokyonight_storm.lua) -> name definitions of the colors
   tokyonight_config = ''
     require("tokyonight").setup({
       -- your configuration comes here
@@ -11,7 +14,7 @@
         -- Style to be applied to different syntax groups
         -- Value is any valid attr-list value for `:help nvim_set_hl`
         comments = { italic = true },
-        keywords = { italic = false },
+        keywords = { italic = true },
         functions = {},
         variables = {},
         -- Background styles. Can be "dark", "transparent" or "normal"
