@@ -13,6 +13,8 @@
 
     ../../modules/hyprland/hyprland.nix
     ../../modules/waybar/waybar.nix
+    ../../modules/waybar/waybar-modules.nix
+    ../../modules/waybar/waybar-style.nix
     ../../modules/notifications.nix
     ../../scripts/volume.nix
   ];
