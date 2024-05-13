@@ -191,13 +191,14 @@ in
 
       -- Mason settings
       require("mason").setup({
+          PATH = "append",
           ui = {
               icons = {
                   package_installed = "✓",
                   package_pending = "➜",
                   package_uninstalled = "✗"
               }
-          }
+          },
       })
       require("mason-lspconfig").setup()
       require("mason-tool-installer").setup {
@@ -219,7 +220,7 @@ in
           "shellcheck",
 
           -- Formatters
-          "clang-formatter",
+          "clang-format",
           "doctoc",
           "black",
           "shfmt",
@@ -228,7 +229,7 @@ in
         auto_update = true,
         run_on_start = true,
         start_delay = 0,
-        debounce_hours = 2, -- at least 5 hours between attempts to install/update
+        debounce_hours = 0, -- at least 0 hours between attempts to install/update
         integrations = {
           ["mason-lspconfig"] = true,
           ["mason-null-ls"] = false,

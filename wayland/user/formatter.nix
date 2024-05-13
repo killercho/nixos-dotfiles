@@ -47,7 +47,7 @@
         },
 
         cpp = {
-          require("formatter.filetypes.markdown").clangformat,
+          require("formatter.filetypes.cpp").clangformat,
         },
 
         python = {

@@ -9,7 +9,7 @@
     ripgrep
     nixd
     nixpkgs-fmt
-    clang-tools
+    libclang
   ];
 
   programs.ripgrep.enable = true;
