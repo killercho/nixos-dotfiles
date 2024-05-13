@@ -2,6 +2,10 @@
 { config, pkgs, stylix, ... }:
 
 {
+  imports = [
+    ./waybar-modules.nix
+    ./waybar-style.nix
+  ];
   programs.waybar = {
     enable = true;
     settings = {

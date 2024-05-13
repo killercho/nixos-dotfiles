@@ -2,6 +2,10 @@
 { config, pkgs, ... }:
 
 {
+  imports = [
+    ./hyprlock.nix
+  ];
+
   home.packages = with pkgs; [
     feh
     killall
@@ -15,8 +19,8 @@
     xwayland.enable = true;
     systemd.enable = true;
     enable = true;
-    plugins = [];
-    settings = {};
+    plugins = [ ];
+    settings = { };
     extraConfig = ''
       env = XCURSOR_SIZE,16
       env = GDK_SCALE,2

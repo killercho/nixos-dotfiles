@@ -2,21 +2,18 @@
 
 {
   imports = [
-    ./zsh.nix
-    ./git.nix
-    ./alacritty.nix
-    ./fuzzel.nix
-    ./neovim.nix
-    ./dev.nix
+    ../../modules/zsh.nix
+    ../../modules/git.nix
+    ../../modules/alacritty.nix
+    ../../modules/fuzzel.nix
+    ../../modules/neovim/neovim.nix
+    ../../modules/dev.nix
 
-    ./stylix.nix
+    ../../modules/stylix.nix
 
-    ./hyprland.nix
-    ./waybar.nix
-    ./waybar-modules.nix
-    ./waybar-style.nix
-    ./hyprlock.nix
-    ./notifications.nix
+    ../../modules/hyprland/hyprland.nix
+    ../../modules/waybar/waybar.nix
+    ../../modules/notifications.nix
     ../../scripts/volume.nix
   ];
 
@@ -42,7 +39,13 @@
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = with pkgs; [
-    spotify bitwarden discord signal-desktop telegram-desktop vlc qbittorrent-qt5
+    spotify
+    bitwarden
+    discord
+    signal-desktop
+    telegram-desktop
+    vlc
+    qbittorrent-qt5
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -78,9 +81,9 @@
 
   #xdg.enable = true;
   #xdg.userDirs = {
-    #extraConfig = {
-      #XDG_CONFIG_HOME = "~/.config/";
-    #};
+  #extraConfig = {
+  #XDG_CONFIG_HOME = "~/.config/";
+  #};
   #};
 
   # Let Home Manager install and manage itself.
