@@ -67,4 +67,5 @@
 
 ## Others
 
+ - `<leader>??` - open this file as a vsplit
  - `Ctrl + c` - comment the current line or a selection of lines

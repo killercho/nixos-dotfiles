@@ -102,6 +102,9 @@ in
       vim.opt.undofile = true;
       vim.opt.undodir = vim.fn.expand('~/.config/nvim/undodir')
 
+      -- Open cheatsheet in vsplit
+      vim.keymap.set('n', '<leader>??', '<cmd>vsplit ~/nixos-dotfiles/modules/neovim/cheatsheet.md<CR>')
+
       -- Movement binds
       vim.keymap.set({'n', 'x'}, 'j', 'gj')
       vim.keymap.set({'n', 'x'}, 'k', 'gk')
