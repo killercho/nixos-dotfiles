@@ -37,7 +37,7 @@ in
       # A group of popular language packs with features for them
       polyglot
 
-      # telescope - check if thats the fuzzy search neovim app
+      # telescope related plugins
       telescope-nvim
       plenary-nvim
       telescope-fzf-native-nvim
@@ -201,7 +201,7 @@ in
           "pyright",
           "bashls",
           "sqlls",
-          "grammarly-languageserver",
+          "ltex-ls",
 
           -- Linters
           "vale",
@@ -231,7 +231,7 @@ in
       require'lspconfig'.lua_ls.setup{
         capabilities = capabilities
       }
-      require'lspconfig'.grammarly.setup{
+      require'lspconfig'.ltex.setup{
         capabilities = capabilities
       }
       require'lspconfig'.clangd.setup{
