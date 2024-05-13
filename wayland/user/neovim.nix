@@ -75,7 +75,6 @@ in
       # End of the plugins managed by mason
 
       # Plugin for hover/definitions/symbol search
-      # TODO: Check the plugin modules and how to map them (https://nvimdev.github.io/lspsaga/)
       lspsaga-nvim
 
       # Completion and snippets plugins
@@ -237,13 +236,28 @@ in
         }
       }
       -- After setting up mason-lspconfig servers via lspconfig may be set
-      require'lspconfig'.lua_ls.setup{}
-      require'lspconfig'.grammarly.setup{}
-      require'lspconfig'.clangd.setup{}
-      require'lspconfig'.cmake.setup{}
-      require'lspconfig'.nil_ls.setup{}
-      require'lspconfig'.pyright.setup{}
-      require'lspconfig'.bashls.setup{}
+      local capabilities = require('cmp_nvim_lsp').default_capabilities()
+      require'lspconfig'.lua_ls.setup{
+        capabilities = capabilities
+      }
+      require'lspconfig'.grammarly.setup{
+        capabilities = capabilities
+      }
+      require'lspconfig'.clangd.setup{
+        capabilities = capabilities
+      }
+      require'lspconfig'.cmake.setup{
+        capabilities = capabilities
+      }
+      require'lspconfig'.nil_ls.setup{
+        capabilities = capabilities
+      }
+      require'lspconfig'.pyright.setup{
+        capabilities = capabilities
+      }
+      require'lspconfig'.bashls.setup{
+        capabilities = capabilities
+      }
 
       -- DAP and its UI setup
       require("dapui").setup()
