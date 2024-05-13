@@ -7,13 +7,12 @@
 echo "      WARNING!      "
 echo "All of the files corresponding to the configurations in this repo will be deleted from the $HOME/.config folder."
 echo "Also the files in /etc/nixos/ will be deleted with no turning back."
-while true
-do
+while true; do
     read -p "Are you sure you want to continue? " yn
     case $yn in
-        [Yy]* ) break;;
-        [Nn]* ) exit;;
-        * ) echo "Please answer yes or no.";;
+    [Yy]*) break ;;
+    [Nn]*) exit ;;
+    *) echo "Please answer yes or no." ;;
     esac
 done
 echo "Continuing..."
@@ -26,50 +25,43 @@ DOTFILES_FOLDER="$(dirname "$FULL_SCRIPT_PATH")"
 
 echo "Linking the dotfiles folder to /etc/nixos"
 mv /etc/nixos/hardware-configuration.nix $DOTFILES_FOLDER/
-if [ -d /etc/nixos ]
-then
+if [ -d /etc/nixos ]; then
     rm -rf /etc/nixos
 fi
 ln -sf $DOTFILES_FOLDER /etc/nixos
 
 echo "Linking the i3 configuration to ~/.config/i3"
-if [ -d ~/.config/i3 ]
-then
+if [ -d ~/.config/i3 ]; then
     rm -rf ~/.config/i3
 fi
 ln -sf $DOTFILES_FOLDER/i3 ~/.config/i3
 
 echo "Linking the alacritty configuration to ~/.config/alacritty"
-if [ -d ~/.config/alacritty ]
-then
+if [ -d ~/.config/alacritty ]; then
     rm -rf ~/.config/alacritty
 fi
 ln -sf $DOTFILES_FOLDER/alacritty ~/.config/alacritty
 
 echo "Linking the polybar configuration to ~/.config/polybar"
-if [ -d ~/.config/polybar ]
-then
+if [ -d ~/.config/polybar ]; then
     rm -rf ~/.config/polybar
 fi
 ln -sf $DOTFILES_FOLDER/polybar ~/.config/polybar
 
 echo "Linking the rofi configuration to ~/.config/rofi"
-if [ -d ~/.config/rofi ]
-then
+if [ -d ~/.config/rofi ]; then
     rm -rf ~/.config/rofi
 fi
 ln -sf $DOTFILES_FOLDER/rofi ~/.config/rofi
 
 echo "Linking the vim configuration to ~/.vim"
-if [ -d ~/.vim ]
-then
+if [ -d ~/.vim ]; then
     rm -rf ~/.vim
 fi
 ln -sf $DOTFILES_FOLDER/vim-dotfiles/.vim ~/.vim
 
 echo "Linking the zsh configuration to ~/.zsh"
-if [ -d ~/.zsh ]
-then
+if [ -d ~/.zsh ]; then
     rm -rf ~/.zsh
 fi
 ln -sf $DOTFILES_FOLDER/zsh ~/.zsh
