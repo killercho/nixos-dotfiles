@@ -200,9 +200,7 @@ in
           }
       })
       require("mason-lspconfig").setup()
-      require('mason-tool-installer').setup {
-        -- a list of all tools you want to ensure are installed upon
-        -- start
+      require("mason-tool-installer").setup {
         ensure_installed = {
           -- LSPs
           "lua_ls",
@@ -211,15 +209,25 @@ in
           "nil_ls",
           "pyright",
           "bashls",
+          "sqlls",
+          "grammarly-languageserver",
+
           -- Linters
           "vale",
           "cpplint",
           "pylint",
           "shellcheck",
+
+          -- Formatters
+          "clang-formatter",
+          "doctoc",
+          "black",
+          "shfmt",
+          "nixpkgs-fmt",
         },
-        auto_update = false,
+        auto_update = true,
         run_on_start = true,
-        start_delay = 3000, -- 3 second delay
+        start_delay = 0,
         debounce_hours = 2, -- at least 5 hours between attempts to install/update
         integrations = {
           ["mason-lspconfig"] = true,
@@ -229,6 +237,7 @@ in
       }
       -- After setting up mason-lspconfig servers via lspconfig may be set
       require'lspconfig'.lua_ls.setup{}
+      require'lspconfig'.grammarly.setup{}
       require'lspconfig'.clangd.setup{}
       require'lspconfig'.cmake.setup{}
       require'lspconfig'.nil_ls.setup{}
