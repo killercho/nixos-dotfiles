@@ -1,6 +1,6 @@
 # Cheat sheet for my configuration
 
-** Leader is _;_. **
+**Leader is `;`.**
 
 ## Movement
 
@@ -36,10 +36,10 @@
 
 ## Telescope
 
- - `<leader>ff` - open Telescope to search for files in the current directory
- - `<leader>fg` - open Telescope to search for strings in the files in the current directory
- - `<leader>fb` - open Telescope to search for open buffers in neovim
- - `<leader>fn` - open Telescope to search for available help tags
+ - `<leader>ff` - open `Telescope` to search for files in the current directory
+ - `<leader>fg` - open `Telescope` to search for strings in the files in the current directory
+ - `<leader>fb` - open `Telescope` to search for open buffers in neovim
+ - `<leader>fn` - open `Telescope` to search for available help tags
 
 ## Mason
 
