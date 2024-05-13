@@ -18,22 +18,8 @@ in
       nvim-treesitter
       nvim-treesitter.withAllGrammars
 
-      # Customise this theme with better colors from stylix and blur and transparency
-      # Use the site https://github.com/roobert/palette.nvim to finish the setup for the custom theme
-      # Use the commands in https://blog.chaitanyashahare.com/posts/how-to-make-nvim-backround-transparent/ to make the background transparent
-      #{ plugin = palette-nvim;
-      #lazy = false;
-      #priority = 1000;
-      #config = ''function()
-      #require("palette").setup({
-      #palettes = {
-      #main = "stylix_main"
-      #},
-      #})
-      #vim.cmd([[colorscheme palette]])
-      #end
-      #'';
-      #}
+      # Theme customised with stylix colors
+      tokyonight-nvim
 
       # Rainbow brackets plugin for better visualisation
       rainbow-delimiters-nvim
@@ -187,6 +173,9 @@ in
     + completion_config +
     ''
       -- Additional settings
+
+      -- Setting colorscheme
+      vim.cmd[[colorscheme tokyonight]]
 
       -- Mason settings
       require("mason").setup({
