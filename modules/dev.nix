@@ -10,6 +10,7 @@
     nixd
     nixpkgs-fmt
     libclang
+    ltex-ls
   ];
 
   programs.ripgrep.enable = true;
