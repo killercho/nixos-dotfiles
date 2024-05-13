@@ -204,7 +204,6 @@ in
           "ltex-ls",
 
           -- Linters
-          "vale",
           "cpplint",
           "pylint",
           "shellcheck",
@@ -256,7 +255,6 @@ in
       -- Linter setup
       require('lint').linters_by_ft = {
         -- Setup linters by filetype
-        markdown = {'vale',},
         cpp = {'cpplint',},
         c = {'cpplint',},
         -- nix = {'nix',},
