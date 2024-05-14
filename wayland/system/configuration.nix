@@ -11,6 +11,8 @@
       ./hyprland.nix
       ./stylix.nix
       ./temp.nix
+
+      ../../scripts/battery_notifier.nix
     ];
 
   # Use the GRUB 2 boot loader.
@@ -76,6 +78,9 @@
     extraGroups = [ "wheel" "audio" "input" ];
     shell = pkgs.zsh;
   };
+
+  # Modules for services
+  modules.battery_notifier.enable = true;
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget

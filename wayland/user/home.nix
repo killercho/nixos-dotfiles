@@ -17,6 +17,7 @@
     ../../modules/waybar/waybar-style.nix
     ../../modules/notifications.nix
     ../../scripts/volume.nix
+    #../../scripts/battery_notifier.nix
   ];
 
   # Home Manager needs a bit of information about you and the paths it should
@@ -48,6 +49,7 @@
     telegram-desktop
     vlc
     qbittorrent-qt5
+    acpi
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
