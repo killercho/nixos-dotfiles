@@ -27,6 +27,7 @@
         terminal = 11;
         desktop = 9;
         applications = 12;
+        popups = 10;
       };
     };
 
