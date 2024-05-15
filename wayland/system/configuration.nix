@@ -108,7 +108,17 @@
     xdotool
     libnotify
     tlp
+
+    # Usb tools and services
+    usbutils
+    udiskie
+    udisks
   ];
+
+  # Enable usbs
+  services.gvfs.enable = true;
+  services.udisks2.enable = true;
+  services.udiskie.enable = true;
 
   programs = {
     thunar.enable = true;
