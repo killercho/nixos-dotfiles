@@ -165,8 +165,8 @@
   services.tlp = {
     enable = true;
     settings = {
-      STOP_CHARGE_THRESH_BAT0 = 90;
-      START_CHARGE_THRESH_BAT0 = 85;
+      STOP_CHARGE_THRESH_BAT0 = 85;
+      START_CHARGE_THRESH_BAT0 = 80;
       MEM_SLEEP_ON_AC = "s2idle";
       MEM_SLEEP_ON_BAT = "deep";
       CPU_SCALING_GOVERNOR_ON_AC = "performance";
