@@ -22,13 +22,21 @@
     plugins = [ ];
     settings = { };
     extraConfig = ''
-      monitor=,highres,auto,2
-      env = XCURSOR_SIZE,16
-      env = GDK_SCALE,1
+      monitor=eDP-1,highres,auto,2
+      # Setup any other monitor to be default on the right as extention
+      monitor=,preferred,auto,1
+
+      # Environmental variables
+      env = XCURSOR_SIZE,8
+      env = GDK_SCALE,2
+
+      # Force backends to try and use wayland
+      env = GDK_BACKEND,wayland,x11
+      env = QT_QPA_PLATFORM,"wayland;xcb"
 
       xwayland {
         # Remove pixelation from xwayland apps
-        #force_zero_scaling = true
+        force_zero_scaling = true
       }
 
       input {
