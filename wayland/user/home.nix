@@ -17,7 +17,7 @@
     ../../modules/waybar/waybar-style.nix
     ../../modules/notifications.nix
     ../../scripts/volume.nix
-    #../../scripts/battery_notifier.nix
+    ../../scripts/battery_notifier.nix
   ];
 
   # Home Manager needs a bit of information about you and the paths it should
