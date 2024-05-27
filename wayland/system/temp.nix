@@ -7,6 +7,8 @@
   services.mysql.package = pkgs.mysql;
 
   environment.systemPackages = with pkgs; [
-    R rstudio rPackages.rmarkdown
+    R
+    rstudio
+    rPackages.rmarkdown
   ];
 }
