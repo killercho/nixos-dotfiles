@@ -1,5 +1,5 @@
 # This is a module configuring all the things that are in the configuration temporarily
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   # MySQL for the Databases course
@@ -8,7 +8,6 @@
 
   environment.systemPackages = with pkgs; [
     R
-    rstudio
     rPackages.rmarkdown
   ];
 }
