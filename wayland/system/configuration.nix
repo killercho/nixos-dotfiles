@@ -104,6 +104,8 @@
     libnotify
     tlp
 
+    kdeconnect
+
     # Usb tools and services
     usbutils
     udiskie
