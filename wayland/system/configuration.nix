@@ -120,6 +120,7 @@
     thunar.enable = true;
     steam.enable = true;
     zsh.enable = true;
+    kdeconnect.enable = true;
   };
 
   fonts.packages = with pkgs; [
