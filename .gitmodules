@@ -1,3 +1,0 @@
-[submodule "vim-dotfiles"]
-    path = vim-dotfiles
-    url = https://github.com/killercho/vim-dotfiles.git

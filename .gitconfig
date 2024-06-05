@@ -8,4 +8,4 @@
 	helper = 
 	helper = !/usr/bin/gh auth git-credential
 [core]
-	editor = vim
+	editor = nvim
