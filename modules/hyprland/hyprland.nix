@@ -32,7 +32,7 @@
 
       # Force backends to try and use wayland
       env = GDK_BACKEND,wayland,x11
-      env = QT_QPA_PLATFORM,"wayland;xcb"
+      env = QT_QPA_PLATFORM,wayland;xcb
 
       xwayland {
         # Remove pixelation from xwayland apps
