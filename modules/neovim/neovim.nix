@@ -94,7 +94,9 @@ in
       vim.opt.background = dark
 
       vim.opt.ttimeout = true;
+      vim.opt.timeout = true;
       vim.opt.ttimeoutlen = 50;
+      vim.opt.timeoutlen = 50;
       vim.opt.wildmode = 'list:longest,full';
       vim.opt.splitbelow = true;
       vim.opt.splitright = true;
