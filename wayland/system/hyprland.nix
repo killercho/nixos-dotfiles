@@ -2,7 +2,7 @@
 # your system. Help is available in the configuration.nix(5) man page, on
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
 
-{ config, lib, pkgs, ... }:
+{ lib, pkgs, ... }:
 
 {
   programs = {
@@ -31,7 +31,7 @@
   services.dbus.enable = true;
   xdg.portal = {
     enable = true;
-    wlr.enable = true;
+    wlr.enable = lib.mkForce true;
     extraPortals = [
       pkgs.xdg-desktop-portal-gtk
     ];
@@ -58,7 +58,7 @@
         blur = true;
         recursiveBlurLoops = 3;
         recursiveBlurRadius = 5;
-      };})
-    ];
-  }
-
+      };
+    })
+  ];
+}
