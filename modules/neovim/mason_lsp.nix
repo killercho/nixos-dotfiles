@@ -21,7 +21,6 @@
         "nil_ls",
         "pyright",
         "bashls",
-        "sqlls",
         "ltex-ls",
 
         -- Linters
