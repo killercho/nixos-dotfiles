@@ -13,13 +13,19 @@
       ./temp.nix
     ];
 
-  # Use the GRUB 2 boot loader.
-  boot.loader.grub.enable = true;
-  boot.loader.grub.efiSupport = true;
-  boot.loader.grub.efiInstallAsRemovable = true;
-  # boot.loader.efi.efiSysMountPoint = "/boot/efi";
-  # Define on which hard drive you want to install Grub.
-  boot.loader.grub.device = "nodev"; # or "nodev" for efi only
+  boot.loader = {
+    grub = {
+      # Use the GRUB 2 boot loader.
+      enable = true;
+      efiSupport = true;
+      efiInstallAsRemovable = true;
+      # boot.loader.efi.efiSysMountPoint = "/boot/efi";
+      # Define on which hard drive you want to install Grub.
+      device = "nodev";
+    }; # or "nodev" for efi only
+    timeout = 1;
+  };
+
 
   networking.hostName = "nixos"; # Define your hostname.
   # Pick only one of the below networking options.
