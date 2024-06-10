@@ -2,10 +2,6 @@
 { pkgs, ... }:
 
 {
-  # MySQL for the Databases course
-  services.mysql.enable = true;
-  services.mysql.package = pkgs.mysql;
-
   environment.systemPackages = with pkgs; [
   ];
 }
