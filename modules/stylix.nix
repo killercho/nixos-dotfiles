@@ -1,8 +1,9 @@
 # User stylix config
-{ config, pkgs, stylix, ... }:
+{ ... }:
 
 {
   stylix = {
+    enable = true;
     autoEnable = true;
     image = /usr/share/backgrounds/background.jpg;
     polarity = "dark";
