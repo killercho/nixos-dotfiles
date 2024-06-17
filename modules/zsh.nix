@@ -1,5 +1,5 @@
 # User zsh config
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   home.packages = with pkgs; [
@@ -37,6 +37,12 @@
       plugins = [
         { name = "hlissner/zsh-autopair"; }
       ];
+    };
+
+    shellAliases = {
+      "nix-update-wayland" = "nix flake update ~/nixos-dotfiles &&
+                              sudo nixos-rebuild switch --flake ~/nixos-dotfiles#wayland &&
+                              home-manager switch --flake ~/nixos-dotfiles#wayland";
     };
   };
 }
