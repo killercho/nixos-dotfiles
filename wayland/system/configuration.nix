@@ -93,6 +93,7 @@
     btop
     git
     gh
+    gcc
     nodejs
     alacritty
     zsh
