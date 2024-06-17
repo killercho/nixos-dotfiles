@@ -13,7 +13,7 @@
     };
 
     cursor = {
-      size = 16;
+      size = 12;
     };
 
     opacity = {
