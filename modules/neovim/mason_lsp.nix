@@ -57,7 +57,9 @@
       capabilities = capabilities
     }
     require'lspconfig'.clangd.setup{
-      capabilities = capabilities
+      capabilities = capabilities,
+      cmd = { "clangd", "--query-driver=/nix/store/*gcc-wrapper*/bin/g++" },
+      on_attach = on_attach,
     }
     require'lspconfig'.cmake.setup{
       capabilities = capabilities
