@@ -55,6 +55,13 @@
           ./hosts/vivobook/user_imports.nix
         ];
       };
+
+      neovim = home-manager.lib.homeManagerConfiguration {
+        inherit pkgs;
+        modules = [
+          ./hosts/neovim/neovim.nix
+        ];
+      };
     };
   };
 }
