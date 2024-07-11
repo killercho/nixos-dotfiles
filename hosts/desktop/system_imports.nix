@@ -10,7 +10,10 @@
     ./../../modules/system/system_packages.nix
 
     # Hyperland enable and default setup
-    ./../../modules/system/hyprland.nix
+    #./../../modules/system/hyprland.nix
+
+    # KDE enable and default setup
+    ./../../modules/system/kde.nix
 
     # Stylix enable and global settings
     ./../../modules/system/stylix.nix

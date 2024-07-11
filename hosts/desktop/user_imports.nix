@@ -28,7 +28,7 @@
     ./../../modules/user/stylix.nix
 
     # User hyprland configuration
-    ./../../modules/user/hyprland/hyprland.nix
+    #./../../modules/user/hyprland/hyprland.nix
 
     # Notification popups configuration
     ./../../modules/user/notifications.nix
