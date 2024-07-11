@@ -1,7 +1,7 @@
 {
   mappings = ''
     -- Open cheatsheet in vsplit
-    vim.keymap.set('n', '<leader>??', '<cmd>vsplit ~/nixos-dotfiles/modules/neovim/cheatsheet.md<CR>')
+    vim.keymap.set('n', '<leader>??', '<cmd>vsplit ~/nixos-dotfiles/modules/user/neovim/cheatsheet.md<CR>')
 
     -- Movement binds
     vim.keymap.set({'n', 'x'}, 'j', 'gj')
