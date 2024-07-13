@@ -3,7 +3,7 @@
 {
   imports = [
     # Hardware configuration for the laptop
-    ./../../machines/vivobook/hardware-configuration.nix
+    ./../../machines/desktop/hardware-configuration.nix
 
     # Configuration.nix split into two files
     ./../../modules/system/system_settings.nix

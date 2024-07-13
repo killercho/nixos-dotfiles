@@ -37,6 +37,15 @@
           ./hosts/vivobook/system_imports.nix
         ];
       };
+
+      desktop = lib.nixosSystem {
+        inherit system;
+        modules = [
+          stylix.nixosModules.stylix
+          home-manager.nixosModules.home-manager
+          ./hosts/desktop/system_imports.nix
+        ];
+      };
     };
 
     homeConfigurations = {
@@ -53,6 +62,15 @@
           stylix.homeManagerModules.stylix
           ({ config, pkgs, ... }: { nixpkgs.overlays = [ overlay-old ]; })
           ./hosts/vivobook/user_imports.nix
+        ];
+      };
+
+      desktop = home-manager.lib.homeManagerConfiguration {
+        inherit pkgs;
+        modules = [
+          stylix.homeManagerModules.stylix
+          ({ config, pkgs, ... }: { nixpkgs.overlays = [ overlay-old ]; })
+          ./hosts/desktop/user_imports.nix
         ];
       };
 

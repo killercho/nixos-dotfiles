@@ -16,7 +16,7 @@
     ./../../modules/user/alacritty.nix
 
     # User app launcher configuration
-    ./../../modules/user/fuzzel.nix
+    #./../../modules/user/fuzzel.nix
 
     # User neovim configuration
     ./../../modules/user/neovim/neovim.nix
@@ -34,14 +34,14 @@
     ./../../modules/user/notifications.nix
 
     # User waybar configuration
-    ./../../modules/user/waybar/waybar.nix
-    ./../../modules/user/waybar/waybar-modules.nix
-    ./../../modules/user/waybar/waybar-style.nix
+    #./../../modules/user/waybar/waybar.nix
+    #./../../modules/user/waybar/waybar-modules.nix
+    #./../../modules/user/waybar/waybar-style.nix
 
     # Volume popup script
     ./../../scripts/volume.nix
 
     # Battery low warning
-    ./../../scripts/battery_notifier.nix
+    #./../../scripts/battery_notifier.nix
   ];
 }
