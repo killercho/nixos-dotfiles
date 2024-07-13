@@ -11,7 +11,7 @@
       enable = true;
       efiSupport = true;
       efiInstallAsRemovable = true;
-      # boot.loader.efi.efiSysMountPoint = "/boot/efi";
+      # boot.loader.efi.efiSysMountPoint = "/boot/EFI";
       # Define on which hard drive you want to install Grub.
       device = "nodev";
     }; # or "nodev" for efi only
