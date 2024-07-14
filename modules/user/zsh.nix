@@ -47,6 +47,14 @@
                               git add . &&
                               git commit -m \"Updated system \" &&
                               git push";
+
+      "nix-update-desktop" = "nix flake update ~/nixos-dotfiles &&
+                              sudo nixos-rebuild switch --flake ~/nixos-dotfiles#desktop &&
+                              home-manager switch --flake ~/nixos-dotfiles#desktop &&
+                              cd ~/nixos-dotfiles &&
+                              git add . &&
+                              git commit -m \"Updated system \" &&
+                              git push";
     };
   };
 }
