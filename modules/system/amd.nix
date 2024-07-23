@@ -7,4 +7,8 @@
   environment.systemPackages = with pkgs; [
     microcodeAmd
   ];
+
+  hardware.graphics.extraPackages = with pkgs; [
+    amdvlk
+  ];
 }
