@@ -28,6 +28,8 @@
 
     kdeconnect
 
+    lutris
+
     # Usb tools and services
     usbutils
     udiskie
