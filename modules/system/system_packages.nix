@@ -28,8 +28,6 @@
 
     kdeconnect
 
-    lutris
-
     # Usb tools and services
     usbutils
     udiskie
@@ -42,7 +40,6 @@
 
   programs = {
     thunar.enable = true;
-    steam.enable = true;
     zsh.enable = true;
     kdeconnect.enable = true;
   };

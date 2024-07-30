@@ -21,6 +21,10 @@
     # Global temporary packages and settings
     ./../../modules/system/temp.nix
 
+    # Amd settings and packages
     ./../../modules/system/amd.nix
+
+    # Gaming related system packages
+    ./../../modules/system/gaming.nix
   ];
 }
