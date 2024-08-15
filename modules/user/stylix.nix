@@ -10,6 +10,7 @@
 
     targets = {
       fuzzel.enable = false;
+      neovim.enable = false;
     };
 
     cursor = {

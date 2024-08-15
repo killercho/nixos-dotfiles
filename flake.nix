@@ -78,6 +78,7 @@
         neovim = home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
           modules = [
+            ({ config, pkgs, ... }: { nixpkgs.overlays = [ overlay-old ]; })
             ./hosts/neovim/neovim.nix
           ];
         };
