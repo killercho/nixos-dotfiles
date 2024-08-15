@@ -12,74 +12,75 @@
 
   outputs = { self, nixpkgs, nixpkgs-23-11, home-manager, stylix, ... }:
 
-  let
-    lib = nixpkgs.lib;
-    system = "x86_64-linux";
-    pkgs = nixpkgs.legacyPackages.${system};
-    overlay-old = final: prev: {
-      old-23-11 = nixpkgs-23-11.legacyPackages.${prev.system};
+    let
+      lib = nixpkgs.lib;
+      system = "x86_64-linux";
+      pkgs = nixpkgs.legacyPackages.${system};
+      overlay-old = final: prev: {
+        old-23-11 = nixpkgs-23-11.legacyPackages.${prev.system};
+      };
+    in
+    {
+      nixosConfigurations = {
+        nixos = lib.nixosSystem {
+          inherit system;
+          modules = [
+            ./X11/system/configuration.nix
+          ];
+        };
+
+        wayland = lib.nixosSystem {
+          inherit system;
+          modules = [
+            stylix.nixosModules.stylix
+            home-manager.nixosModules.home-manager
+            ./hosts/vivobook/system_imports.nix
+          ];
+        };
+
+        desktop = lib.nixosSystem {
+          inherit system;
+          modules = [
+            stylix.nixosModules.stylix
+            ({ config, pkgs, ... }: { nixpkgs.overlays = [ overlay-old ]; })
+            home-manager.nixosModules.home-manager
+            ./hosts/desktop/system_imports.nix
+          ];
+        };
+      };
+
+      homeConfigurations = {
+        AzSamSi = home-manager.lib.homeManagerConfiguration {
+          inherit pkgs;
+          modules = [
+            ./X11/user/home.nix
+          ];
+        };
+
+        wayland = home-manager.lib.homeManagerConfiguration {
+          inherit pkgs;
+          modules = [
+            stylix.homeManagerModules.stylix
+            ({ config, pkgs, ... }: { nixpkgs.overlays = [ overlay-old ]; })
+            ./hosts/vivobook/user_imports.nix
+          ];
+        };
+
+        desktop = home-manager.lib.homeManagerConfiguration {
+          inherit pkgs;
+          modules = [
+            stylix.homeManagerModules.stylix
+            ({ config, pkgs, ... }: { nixpkgs.overlays = [ overlay-old ]; })
+            ./hosts/desktop/user_imports.nix
+          ];
+        };
+
+        neovim = home-manager.lib.homeManagerConfiguration {
+          inherit pkgs;
+          modules = [
+            ./hosts/neovim/neovim.nix
+          ];
+        };
+      };
     };
-  in
-  {
-    nixosConfigurations = {
-      nixos = lib.nixosSystem {
-        inherit system;
-        modules = [
-          ./X11/system/configuration.nix
-        ];
-      };
-
-      wayland = lib.nixosSystem {
-        inherit system;
-        modules = [
-          stylix.nixosModules.stylix
-          home-manager.nixosModules.home-manager
-          ./hosts/vivobook/system_imports.nix
-        ];
-      };
-
-      desktop = lib.nixosSystem {
-        inherit system;
-        modules = [
-          stylix.nixosModules.stylix
-          home-manager.nixosModules.home-manager
-          ./hosts/desktop/system_imports.nix
-        ];
-      };
-    };
-
-    homeConfigurations = {
-      AzSamSi = home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
-        modules = [
-          ./X11/user/home.nix
-        ];
-      };
-
-      wayland = home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
-        modules = [
-          stylix.homeManagerModules.stylix
-          ({ config, pkgs, ... }: { nixpkgs.overlays = [ overlay-old ]; })
-          ./hosts/vivobook/user_imports.nix
-        ];
-      };
-
-      desktop = home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
-        modules = [
-          stylix.homeManagerModules.stylix
-          ({ config, pkgs, ... }: { nixpkgs.overlays = [ overlay-old ]; })
-          ./hosts/desktop/user_imports.nix
-        ];
-      };
-
-      neovim = home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
-        modules = [
-          ./hosts/neovim/neovim.nix
-        ];
-      };
-    };
-  };
 }

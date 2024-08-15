@@ -19,7 +19,8 @@
     pamixer
     brightnessctl
     xfce.thunar
-    firefox
+    #firefox
+    old-23-11.firefox
     libinput
     libinput-gestures
     xdotool
