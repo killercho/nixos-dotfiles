@@ -3,6 +3,13 @@
     -- Open cheatsheet in vsplit
     vim.keymap.set('n', '<leader>//', '<cmd>vsplit ~/nixos-dotfiles/modules/user/neovim/cheatsheet.md<CR>')
 
+    -- Jump to back in a stack
+    vim.keymap.set('n', '<C-b>', '<C-o>')
+
+    -- Jump to a tag in another tab
+    -- nnoremap <silent><Leader><C-]> <C-w><C-]><C-w>T
+    vim.keymap.set('n', '<leader><c-]>', '<C-w><C-]><C-w>T')
+
     -- Movement binds
     vim.keymap.set({'n', 'x'}, 'j', 'gj')
     vim.keymap.set({'n', 'x'}, 'k', 'gk')
@@ -65,6 +72,7 @@
     vim.keymap.set('n', '<leader>fi', '<cmd>Lspsaga finder def+ref+imp<CR>')   -- Show references in a window
     vim.keymap.set('n', '<leader>dn', '<cmd>Lspsaga diagnostic_jump_next<CR>') -- Show the error messages with actions for them
     vim.keymap.set('n', '<leader>gd', '<cmd>Lspsaga goto_definition<CR>')      -- Jump to the definition
+    vim.keymap.set('n', '<leader>pd', '<cmd>Lspsaga peek_definition<CR>')      -- Peek the definition
     vim.keymap.set('n', '<leader>rn', '<cmd>Lspsaga rename<CR>')               -- Rename a symbol in the file
     vim.keymap.set('n', '<leader>tt', '<cmd>Lspsaga term_toggle<CR>')          -- Toggle a terminal
     vim.keymap.set('n', '<C-d>', '<cmd>Lspsaga hover_doc<CR>')                 -- Hover documentation for cursor location

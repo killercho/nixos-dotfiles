@@ -18,22 +18,22 @@
         "lua_ls",
         "clangd",
         "cmake",
-        "nil_ls",
-        "pyright",
-        "bashls",
+        -- "nil_ls",
+        -- "pyright",
+        -- "bashls",
         "ltex-ls",
 
         -- Linters
         "cpplint",
-        "pylint",
-        "shellcheck",
+        -- "pylint",
+        -- "shellcheck",
 
         -- Formatters
-        "clang-format",
-        "doctoc",
-        "black",
-        "shfmt",
-        "nixpkgs-fmt",
+        -- "clang-format",
+        -- "doctoc",
+        -- "black",
+        -- "shfmt",
+        -- "nixpkgs-fmt",
       },
       auto_update = true,
       run_on_start = true,
@@ -58,21 +58,21 @@
     }
     require'lspconfig'.clangd.setup{
       capabilities = capabilities,
-      cmd = { "clangd", "--query-driver=/nix/store/*gcc-wrapper*/bin/g++" },
+      cmd = { "clangd", "--compile-commands-dir=~/ --background-index" },
       on_attach = on_attach,
     }
     require'lspconfig'.cmake.setup{
       capabilities = capabilities
     }
-    require'lspconfig'.nil_ls.setup{
-      capabilities = capabilities
-    }
-    require'lspconfig'.pyright.setup{
-      capabilities = capabilities
-    }
-    require'lspconfig'.bashls.setup{
-      capabilities = capabilities
-    }
+    --require'lspconfig'.nil_ls.setup{
+      --capabilities = capabilities
+    --}
+    --require'lspconfig'.pyright.setup{
+      --capabilities = capabilities
+    --}
+    --require'lspconfig'.bashls.setup{
+      --capabilities = capabilities
+    --}
 
     -- DAP and its UI setup
     require("dapui").setup()
@@ -83,8 +83,8 @@
       cpp = {'cpplint',},
       c = {'cpplint',},
       -- nix = {'nix',},
-      py = {'pylint',},
-      sh = {'shellcheck',},
+      --py = {'pylint',},
+      --sh = {'shellcheck',},
     }
     -- Setup to trigger linting automatically
     vim.api.nvim_create_autocmd({ "BufWritePost" }, {

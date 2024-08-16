@@ -42,13 +42,13 @@
           require("formatter.filetypes.markdown").doctoc,
         },
 
-        c = {
-          require("formatter.filetypes.c").clangformat,
-        },
+        -- c = {
+          -- require("formatter.filetypes.c").clangformat,
+        -- },
 
-        cpp = {
-          require("formatter.filetypes.cpp").clangformat,
-        },
+        -- cpp = {
+          -- require("formatter.filetypes.cpp").clangformat,
+        -- },
 
         python = {
           require("formatter.filetypes.python").black,
