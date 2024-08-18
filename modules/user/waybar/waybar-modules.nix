@@ -1,5 +1,5 @@
 # User defined modules for waybar
-{ config, pkgs, ... }:
+{ lib, pkgs, config, ... }:
 
 {
   home.file.".config/waybar/waybar-modules.json".text = ''
@@ -28,6 +28,12 @@
       "format-en" : "EN",
       "format-bg" : "BG",
       "keyboard-name" : "at-translated-set-2-keyboard"
+    },
+
+    "custom/language" : {
+      "format" : "Lang: {}",
+      "exec" : "${lib.getExe' config.wayland.windowManager.hyprland.package "hyprctl"} devices -j | ${lib.getExe pkgs.jq} -r '.keyboards[] | select(.main==true).active_keymap'  | sed 's/ .*$//;s/Bulgarian/BG/;s/English/EN/'",
+      "restart-interval" : 1
     },
 
     "hyprland/workspaces" : {

@@ -2,6 +2,7 @@
 { config, pkgs, stylix, ... }:
 
 {
+  programs.jq.enable = true;
   programs.waybar = {
     enable = true;
     settings = {
@@ -17,7 +18,7 @@
 
         modules-left = [ "battery" "backlight" ];
         modules-center = [ "hyprland/workspaces" ];
-        modules-right = [ "pulseaudio" "hyprland/language" "tray" "clock" ];
+        modules-right = [ "pulseaudio" "custom/language" "tray" "clock" ];
 
       };
     };
