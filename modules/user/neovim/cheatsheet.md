@@ -4,9 +4,12 @@
 
 ## Movement
 
- - `J`/`K` - moves up/down with 5 lines instead of 1;
+ - `J`/`K` - moves up/down with 5 lines instead of 1
  - `Ctrl + j` - moves the current line with one up
  - `Ctrl + k` - moves the current line with one down
+ - `Ctrl + b` - jump back in the tag stack
+ - `<leader>(Ctrl + ])` - opens the first tag in a new tab
+ - `g]` - opens the tag menu to jump to a specific tag
 
 ## Registers
 
