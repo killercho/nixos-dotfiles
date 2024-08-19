@@ -57,6 +57,7 @@
  - `<leader>fi` - open _LSPsaga_ finder to search for definitions, references and implementations of the cursor position
  - `<leader>dn` - open _LSPsaga_ diagnostic jump next window to see where the lsp is crying for something wrong
  - `<leader>gd` - go to definition with the help of _LSPsaga_
+ - `<leader>pd` - peek definition with the help of _LSPsaga_
  - `<leader>rn` - rename all occurences of this symbol in the buffer with _LSPsaga_
  - `<leader>tt` - open a terminal
  - `Ctrl + d` - open hover documentation window for current cursor position
