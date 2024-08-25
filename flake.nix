@@ -33,6 +33,7 @@
           inherit system;
           modules = [
             stylix.nixosModules.stylix
+            ({ config, pkgs, ... }: { nixpkgs.overlays = [ overlay-old ]; })
             home-manager.nixosModules.home-manager
             ./hosts/vivobook/system_imports.nix
           ];
