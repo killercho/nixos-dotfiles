@@ -110,7 +110,7 @@
     -- autocmd("BufWritePost", {
     --     group = "__formatter__",
     --     command = ":FormatWrite",
-    })
+    -- })
     -- End of Formatter configuration --------------------------------------------------
   '';
 }
