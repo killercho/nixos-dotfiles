@@ -42,13 +42,24 @@
           require("formatter.filetypes.markdown").doctoc,
         },
 
-        -- c = {
-          -- require("formatter.filetypes.c").clangformat,
-        -- },
+        c = {
+          require("formatter.filetypes.c").clangformat,
+        },
 
-        -- cpp = {
-          -- require("formatter.filetypes.cpp").clangformat,
-        -- },
+        cpp = {
+          require("formatter.filetypes.cpp").clangformat,
+          function()
+            if util.get_current_buffer_file_name() == "special.cpp" then
+              return nil
+            end
+           return {
+              exe = "clang-format",
+              args = {"-style='{IndentWidth: 4, PointerAlignment: Left, ColumnLimit: 80}'"},
+              stdin = true,
+            }
+          end
+
+        },
 
         python = {
           require("formatter.filetypes.python").black,
@@ -93,12 +104,12 @@
     }
 
     -- Format on save
-    local augroup = vim.api.nvim_create_augroup
-    local autocmd = vim.api.nvim_create_autocmd
-    augroup("__formatter__", { clear = true })
-    autocmd("BufWritePost", {
-        group = "__formatter__",
-        command = ":FormatWrite",
+    -- local augroup = vim.api.nvim_create_augroup
+    -- local autocmd = vim.api.nvim_create_autocmd
+    -- augroup("__formatter__", { clear = true })
+    -- autocmd("BufWritePost", {
+    --     group = "__formatter__",
+    --     command = ":FormatWrite",
     })
     -- End of Formatter configuration --------------------------------------------------
   '';
