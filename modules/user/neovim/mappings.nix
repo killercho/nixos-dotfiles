@@ -77,5 +77,8 @@
     vim.keymap.set('n', '<leader>tt', '<cmd>Lspsaga term_toggle<CR>')          -- Toggle a terminal
     vim.keymap.set('n', '<C-d>', '<cmd>Lspsaga hover_doc<CR>')                 -- Hover documentation for cursor location
     vim.keymap.set('n', '<C-a>', '<cmd>Lspsaga code_action<CR>')               -- Invoke code action window
+
+    -- Format the code 
+    vim.keymap.set('n', '<C-i>', '<cmd>Format<CR>')
   '';
 }
