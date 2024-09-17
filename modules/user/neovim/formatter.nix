@@ -54,7 +54,8 @@
             end
            return {
               exe = "clang-format",
-              args = {"-style='{IndentWidth: 4, PointerAlignment: Left, ColumnLimit: 80}'"},
+              args = {"-style=file"},
+              -- args = {"-style='{IndentWidth: 4, PointerAlignment: Left, ColumnLimit: 80}'"},
               stdin = true,
             }
           end
