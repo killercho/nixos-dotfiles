@@ -9,7 +9,7 @@
     signal-desktop
     telegram-desktop
     vlc
-    qbittorrent-qt5
+    qbittorrent
     acpi
   ];
 }
