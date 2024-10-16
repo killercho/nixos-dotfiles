@@ -19,8 +19,8 @@
     pamixer
     brightnessctl
     xfce.thunar
-    #firefox
-    old-23-11.firefox
+    firefox
+    #old-23-11.firefox # If the discord is needed again
     libinput
     libinput-gestures
     xdotool

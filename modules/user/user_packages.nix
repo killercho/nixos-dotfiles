@@ -5,7 +5,7 @@
   home.packages = with pkgs; [
     spotify
     bitwarden
-    discord
+    webcord
     signal-desktop
     telegram-desktop
     vlc
