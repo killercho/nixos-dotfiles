@@ -40,7 +40,7 @@
     };
 
     shellAliases = {
-      "nix-update-wayland" = "nix flake update ~/nixos-dotfiles &&
+      "nix-update-wayland" = "nix flake update --flake ~/nixos-dotfiles &&
                               sudo nixos-rebuild switch --flake ~/nixos-dotfiles#wayland &&
                               home-manager switch --flake ~/nixos-dotfiles#wayland &&
                               cd ~/nixos-dotfiles &&
@@ -48,7 +48,7 @@
                               git commit -m \"Updated system \" &&
                               git push";
 
-      "nix-update-desktop" = "nix flake update ~/nixos-dotfiles &&
+      "nix-update-desktop" = "nix flake update --flake ~/nixos-dotfiles &&
                               sudo nixos-rebuild switch --flake ~/nixos-dotfiles#desktop &&
                               home-manager switch --flake ~/nixos-dotfiles#desktop &&
                               cd ~/nixos-dotfiles &&
