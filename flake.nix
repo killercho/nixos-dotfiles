@@ -22,13 +22,6 @@
     in
     {
       nixosConfigurations = {
-        nixos = lib.nixosSystem {
-          inherit system;
-          modules = [
-            ./X11/system/configuration.nix
-          ];
-        };
-
         wayland = lib.nixosSystem {
           inherit system;
           modules = [
@@ -51,13 +44,6 @@
       };
 
       homeConfigurations = {
-        AzSamSi = home-manager.lib.homeManagerConfiguration {
-          inherit pkgs;
-          modules = [
-            ./X11/user/home.nix
-          ];
-        };
-
         wayland = home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
           modules = [
