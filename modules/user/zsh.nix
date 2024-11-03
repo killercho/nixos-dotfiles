@@ -41,7 +41,9 @@
 
     shellAliases = {
       "nix-update-wayland" = "nix flake update --flake ~/nixos-dotfiles &&
+                              echo 'Starting the system rebuild' &&
                               sudo nixos-rebuild switch --flake ~/nixos-dotfiles#wayland --impure &&
+                              echo 'Starting the home rebuild' &&
                               home-manager switch --flake ~/nixos-dotfiles#wayland --impure &&
                               cd ~/nixos-dotfiles &&
                               git add . &&
@@ -49,7 +51,9 @@
                               git push";
 
       "nix-update-desktop" = "nix flake update --flake ~/nixos-dotfiles &&
+                              echo 'Starting the system rebuild' &&
                               sudo nixos-rebuild switch --flake ~/nixos-dotfiles#desktop --impure &&
+                              echo 'Starting the home rebuild' &&
                               home-manager switch --flake ~/nixos-dotfiles#desktop --impure &&
                               cd ~/nixos-dotfiles &&
                               git add . &&
