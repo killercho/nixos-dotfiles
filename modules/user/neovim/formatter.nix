@@ -48,6 +48,19 @@
 
         cpp = {
           require("formatter.filetypes.cpp").clangformat,
+
+          function()
+            if util.get_current_buffer_file_name() == "special.cpp" then
+              return nil
+            end
+
+            return {
+              exe = "clang-format",
+              args = {
+                "-style=file",
+              },
+            }
+          end
         },
 
         python = {
