@@ -29,7 +29,7 @@
         -- "shellcheck",
 
         -- Formatters
-        -- "clang-format",
+        "clang-format",
         -- "doctoc",
         -- "black",
         -- "shfmt",
@@ -75,7 +75,7 @@
     --}
 
     -- DAP and its UI setup
-    require("dapui").setup()
+    --require("dapui").setup()
 
     -- Linter setup
     require('lint').linters_by_ft = {
@@ -87,18 +87,18 @@
       --sh = {'shellcheck',},
     }
     -- Setup to trigger linting automatically
-    vim.api.nvim_create_autocmd({ "BufWritePost" }, {
-      callback = function()
+    -- vim.api.nvim_create_autocmd({ "BufWritePost" }, {
+    --   callback = function()
 
-        -- try_lint without arguments runs the linters defined in `linters_by_ft`
-        -- for the current filetype
-        require("lint").try_lint()
+    --     -- try_lint without arguments runs the linters defined in `linters_by_ft`
+    --     -- for the current filetype
+    --     require("lint").try_lint()
 
-        -- You can call `try_lint` with a linter name or a list of names to always
-        -- run specific linters, independent of the `linters_by_ft` configuration
-        -- require("lint").try_lint("cspell")
-      end,
-    })
+    --     -- You can call `try_lint` with a linter name or a list of names to always
+    --     -- run specific linters, independent of the `linters_by_ft` configuration
+    --     -- require("lint").try_lint("cspell")
+    --   end,
+    -- })
 
     -- Lspsaga configuration
     require('lspsaga').setup({
@@ -108,5 +108,6 @@
         }
       },
     })
+    vim.lsp.set_log_level("off");
   '';
 }

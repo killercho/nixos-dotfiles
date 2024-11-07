@@ -80,5 +80,8 @@
 
     -- Format the code 
     vim.keymap.set('n', '<C-i>', '<cmd>Format<CR>')
+
+    -- Lint the code 
+    vim.keymap.set('n', '<leader>ll', '<cmd>lua require("lint").try_lint()<CR>')
   '';
 }
