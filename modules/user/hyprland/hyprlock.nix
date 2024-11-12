@@ -1,5 +1,5 @@
 # User hyprlock config
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 
 {
   home.packages = with pkgs; [
@@ -18,6 +18,11 @@
       listener {
         timeout = 300 # in seconds
         on-timeout = loginctl lock-session
+      }
+
+      listener {
+        timeout = 600 # in seconds
+        on-timeout = systemctl suspend
       }
 
     '';
