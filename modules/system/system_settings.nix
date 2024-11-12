@@ -89,8 +89,9 @@
     extraConfig = ''
       HandlePowerKey=suspend
       IdleAction=suspend
-      HandlePowerKeyLongPress=poweroff
+      IdleActionSec=15min
     '';
+    powerKeyLongPress = "poweroff";
     lidSwitch = "suspend";
   };
 
