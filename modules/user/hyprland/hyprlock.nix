@@ -7,6 +7,12 @@
     hypridle
   ];
 
+  # Listener for turning the system off after a timeout
+  #listener {
+  #timeout = 600 # in seconds
+  #on-timeout = systemctl suspend
+  #}
+
   home.file = {
     ".config/hypr/hypridle.conf".text = ''
       general {
@@ -18,11 +24,6 @@
       listener {
         timeout = 300 # in seconds
         on-timeout = loginctl lock-session
-      }
-
-      listener {
-        timeout = 600 # in seconds
-        on-timeout = systemctl suspend
       }
 
     '';
