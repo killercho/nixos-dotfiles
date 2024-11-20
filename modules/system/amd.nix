@@ -1,6 +1,7 @@
 { pkgs, ... }:
 {
   boot.initrd.kernelModules = [ "amdgpu" ];
+  boot.kernelPackages = pkgs.linuxPackages_latest;
   services.xserver.enable = true;
   services.xserver.videoDrivers = [ "amdgpu" ];
 
