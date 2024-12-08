@@ -11,6 +11,7 @@
     targets = {
       fuzzel.enable = false;
       neovim.enable = false;
+      hyprland.enable = false;
     };
 
     cursor = {

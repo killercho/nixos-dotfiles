@@ -23,7 +23,7 @@
     settings = { };
     extraConfig = ''
       monitor=eDP-1,highres,auto,2
-      monitor=HDMI-A-1, preferred, right,
+      monitor=HDMI-A-1,highres,auto,1,transform,3
       # Setup any other monitor to be default on the right as extention
       monitor=,preferred,auto,1
 
@@ -84,11 +84,11 @@
           passes = 1
         }
 
-        shadow {
-          range = 4
-          render_power = 3
-          color = rgba(1a1a1aee)
-        }
+        #shadow {
+        #  range = 4
+        #  render_power = 3
+        #  color = rgba(1a1a1aee)
+        #}
 
         #drop_shadow = true
         #shadow_range = 4
