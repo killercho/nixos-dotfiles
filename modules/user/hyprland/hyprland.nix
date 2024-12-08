@@ -23,6 +23,7 @@
     settings = { };
     extraConfig = ''
       monitor=eDP-1,highres,auto,2
+      monitor=HDMI-A-1, preferred, right,
       # Setup any other monitor to be default on the right as extention
       monitor=,preferred,auto,1
 
