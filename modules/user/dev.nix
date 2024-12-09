@@ -11,6 +11,7 @@
     nixpkgs-fmt
     libclang
     ltex-ls
+    gh
   ];
 
   programs.ripgrep.enable = true;
