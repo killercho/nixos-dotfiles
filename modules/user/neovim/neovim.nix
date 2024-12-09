@@ -11,6 +11,9 @@ let
   tokyonight_config = (import ./tokyonight.nix).tokyonight_config;
 in
 {
+  imports = [
+    ./clangd.nix
+  ];
   programs.neovim = {
     enable = true;
     defaultEditor = true;
@@ -58,8 +61,9 @@ in
       mason-tool-installer-nvim # Tool for automatic install of every Mason package
       nvim-lspconfig # Configs for Nvim LSPs
       mason-lspconfig-nvim # Bridge between mason and lspconfig # Bridge between mason and lspconfig
-      nvim-dap # Debug client
-      nvim-dap-ui # UI for the debugger
+      #nvim-dap # Debug client
+      #nvim-dap-ui # UI for the debugger
+      nvim-gdb # Debug client for an older gdb
       nvim-lint # Lightweigth linter using the LSPs
       formatter-nvim # Formatter plugin
       # End of the plugins managed by mason
@@ -116,8 +120,7 @@ in
           lastplace_open_folds = true
       }
 
-    '' + mappings
-    + lualine_config
+    '' + lualine_config
     + formatter_config
     + completion_config
     + mason_config
@@ -129,6 +132,6 @@ in
       -- Setting colorscheme
       vim.cmd[[colorscheme tokyonight]]
 
-    '';
+    '' + mappings;
   };
 }

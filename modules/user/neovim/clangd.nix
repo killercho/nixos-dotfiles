@@ -7,6 +7,7 @@
       Add: [
         "-I/usr/include/c++/9",
         "-I/usr/include/x86_64-linux-gnu/c++/9",
+        "-ferror-limit=0",
       ]
   '';
 }
