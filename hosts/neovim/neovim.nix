@@ -10,8 +10,5 @@
 
     # Development needed tools
     ./../../modules/user/dev.nix
-
-    # Better terminal emulator
-    ./../../modules/user/alacritty.nix
   ];
 }
