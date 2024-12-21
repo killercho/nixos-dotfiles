@@ -23,7 +23,8 @@
     settings = { };
     extraConfig = ''
       monitor=eDP-1,highres,auto,2
-      monitor=HDMI-A-1,highres,auto,1,transform,3
+      #monitor=HDMI-A-1,highres,preferred,1,transform,1
+      exec-once = hyprctl keyword monitor "HDMI-A-1,auto,preferred,1,transform,1"
       # Setup any other monitor to be default on the right as extention
       monitor=,preferred,auto,1
 
@@ -147,7 +148,7 @@
 
       # Executes ------------------------
 
-      exec-once = swww init
+      exec-once = swww-daemon
       exec-once = swww img /usr/share/backgrounds/background.jpg
 
       exec-once = hypridle
