@@ -20,12 +20,17 @@
   # Configure xwayland
   services.xserver = {
     enable = true;
+    displayManager.gdm = {
+      enable = true;
+      wayland = true;
+    };
   };
-  services.displayManager.sddm = {
-    enable = true;
-    wayland.enable = true;
-    theme = "chili";
-  };
+  # Temporarily disabling the sddm window manager because of an issue with wayland
+  #services.displayManager.sddm = {
+  #enable = true;
+  #wayland.enable = true;
+  #theme = "chili";
+  #};
 
   #Screen share enable
   services.dbus.enable = true;
