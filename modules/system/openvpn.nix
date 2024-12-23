@@ -1,8 +1,5 @@
 { pkgs, ... }:
 {
-  home.packages = with pkgs; [
-  ];
-
   services.openvpn = {
     servers = {
       home_server_vpn = {

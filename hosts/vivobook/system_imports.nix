@@ -15,6 +15,9 @@
     # Stylix enable and global settings
     ./../../modules/system/stylix.nix
 
+    # OpenVPN configurations
+    ./../../modules/system/openvpn.nix
+
     # Global temporary packages and settings
     ./../../modules/system/temp.nix
   ];
