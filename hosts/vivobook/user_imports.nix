@@ -38,6 +38,9 @@
     ./../../modules/user/waybar/waybar-modules.nix
     ./../../modules/user/waybar/waybar-style.nix
 
+    # Imports specific for the laptop configuration
+    ./../../modules/user/laptop_specific.nix
+
     # Volume popup script
     ./../../scripts/volume.nix
 
