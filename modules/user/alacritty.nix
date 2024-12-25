@@ -10,7 +10,7 @@
     enable = true;
     settings = {
       env.TERM = "xterm-256color";
-      font.size = lib.mkDefault 10;
+      font.size = lib.mkDefault 9;
       font.normal.family = lib.mkDefault "JetBrains Mono";
       font.normal.style = lib.mkDefault "Regular";
       mouse.hide_when_typing = true;
