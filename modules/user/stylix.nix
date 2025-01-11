@@ -1,5 +1,5 @@
 # User stylix config
-{ ... }:
+{ additionalConfig, ... }: { ... }:
 
 {
   stylix = {
@@ -27,7 +27,7 @@
 
     fonts = {
       sizes = {
-        terminal = 9;
+        terminal = additionalConfig.terminalFontSize;
         desktop = 9;
         applications = 12;
         popups = 10;

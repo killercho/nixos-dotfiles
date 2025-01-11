@@ -1,5 +1,10 @@
 { ... }:
 
+let
+  additionalConfig = {
+    terminalFontSize = 13;
+  };
+in
 {
   imports = [
     # Home.nix split up into two files
@@ -25,7 +30,10 @@
     ./../../modules/user/dev.nix
 
     # User stylix configuration
-    ./../../modules/user/stylix.nix
+    (import ./../../modules/user/stylix.nix
+      {
+        inherit additionalConfig;
+      })
 
     # User hyprland configuration
     ./../../modules/user/hyprland/hyprland.nix
