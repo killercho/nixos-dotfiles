@@ -6,6 +6,7 @@
     unzip
     cargo
     python3
+    python312Packages.requests
     ripgrep
     nixd
     nixpkgs-fmt
