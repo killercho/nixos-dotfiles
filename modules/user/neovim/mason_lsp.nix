@@ -17,7 +17,7 @@
         -- LSPs
         "lua_ls",
         "clangd",
-        "cmake",
+        -- "cmake", -- Disabled because python3 fails to install it
         -- "nil_ls",
         -- "pyright",
         -- "bashls",
