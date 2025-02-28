@@ -1,6 +1,8 @@
 # User neovim config
 { pkgs, ... }:
 
+# TODO: Ignore all lsps in the .txt files
+
 let
   lualine_config = (import ./lualine.nix).lualine_config;
   formatter_config = (import ./formatter.nix).formatter_config;
@@ -79,6 +81,9 @@ in
       nvim-cmp
       UltiSnips
       cmp-nvim-ultisnips
+
+      # Time tracking
+      vim-wakatime
     ];
 
     extraLuaConfig = ''
