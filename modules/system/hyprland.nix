@@ -55,15 +55,5 @@
     fuzzel
     waybar
     meson
-
-    sddm
-    (sddm-chili-theme.override {
-      themeConfig = {
-        background = "/usr/share/backgrounds/background.jpg";
-        blur = true;
-        recursiveBlurLoops = 3;
-        recursiveBlurRadius = 5;
-      };
-    })
   ];
 }
