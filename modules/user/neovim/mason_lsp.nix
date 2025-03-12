@@ -21,7 +21,7 @@
         -- "nil_ls",
         -- "pyright",
         -- "bashls",
-        "ltex-ls",
+        -- "ltex-ls", -- Disabled because the text files are sometimes too big and its not worth it
 
         -- Linters
         "cpplint",
@@ -53,9 +53,9 @@
     require'lspconfig'.lua_ls.setup{
       capabilities = capabilities
     }
-    require'lspconfig'.ltex.setup{
-      capabilities = capabilities
-    }
+    -- require'lspconfig'.ltex.setup{
+    --   capabilities = capabilities
+    -- }
     require'lspconfig'.clangd.setup{
       capabilities = capabilities,
       cmd = { "clangd", "--compile-commands-dir=~/ --background-index" },
