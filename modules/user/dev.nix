@@ -13,6 +13,8 @@
     libclang
     ltex-ls
     gh
+    tree-sitter
+    go
   ];
 
   programs.ripgrep.enable = true;
