@@ -5,8 +5,8 @@
   home.packages = with pkgs; [
     unzip
     cargo
-    #python3
-    #python312Packages.requests
+    python3
+    python312Packages.requests
     ripgrep
     nixd
     nixpkgs-fmt
