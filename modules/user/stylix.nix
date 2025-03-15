@@ -14,10 +14,6 @@
       hyprland.enable = false;
     };
 
-    cursor = {
-      size = 12;
-    };
-
     opacity = {
       applications = 0.8;
       terminal = 0.7;
