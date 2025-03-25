@@ -3,6 +3,9 @@
     -- Open cheatsheet in vsplit
     vim.keymap.set('n', '<leader>//', '<cmd>vsplit ~/nixos-dotfiles/modules/user/neovim/cheatsheet.md<CR>')
 
+    -- Jump to back in a stack
+    vim.keymap.set('n', '<C-b>', '<C-o>')
+
     -- Movement binds
     vim.keymap.set({'n', 'x'}, 'j', 'gj')
     vim.keymap.set({'n', 'x'}, 'k', 'gk')
