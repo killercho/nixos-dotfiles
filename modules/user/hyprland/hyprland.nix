@@ -166,7 +166,7 @@
       bind = SUPER, M, exit,
       bind = SUPER, SPACE, togglefloating,
       bind = SUPER, R, exec, fuzzel
-      bind = SUPER, L, exec, hyprlock --immediate
+      bind = ALT, L, exec, hyprlock --immediate
       bind = SUPER, P, pseudo, # dwindle
       bind = SUPER, J, togglesplit, # dwindle
       bind = SUPER, ESCAPE, exec, nwg-bar
@@ -178,12 +178,21 @@
       bind = SUPER, right, movefocus, r
       bind = SUPER, up, movefocus, u
       bind = SUPER, down, movefocus, d
+      # Move focus with mainMod + vim movement keys keys
+      bind = SUPER, H, movefocus, l
+      bind = SUPER, L, movefocus, r
+      bind = SUPER, K, movefocus, u
+      bind = SUPER, J, movefocus, d
 
       # Move window in a workspace
       bind = SUPER SHIFT, left, movewindow, l
       bind = SUPER SHIFT, right, movewindow, r
       bind = SUPER SHIFT, up, movewindow, u
       bind = SUPER SHIFT, down, movewindow, d
+      bind = SUPER SHIFT, H, movewindow, l
+      bind = SUPER SHIFT, L, movewindow, r
+      bind = SUPER SHIFT, K, movewindow, u
+      bind = SUPER SHIFT, J, movewindow, d
 
       # Switch workspaces with mainMod + [0-9]
       bind = SUPER, 1, workspace, 1
