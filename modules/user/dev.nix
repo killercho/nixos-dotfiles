@@ -37,6 +37,7 @@
     ];
     settings = {
       column_ratios = "2,3,2";
+      show_hidden = true;
     };
     extraConfig = "";
   };
