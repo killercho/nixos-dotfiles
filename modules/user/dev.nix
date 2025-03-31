@@ -14,6 +14,7 @@
     ltex-ls
     gdb
     cmake
+    gnumake
 
     raylib
   ];
