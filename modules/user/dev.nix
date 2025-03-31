@@ -15,8 +15,6 @@
     gdb
     cmake
     gnumake
-
-    raylib
   ];
 
   programs.ripgrep.enable = true;
