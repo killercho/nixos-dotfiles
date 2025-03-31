@@ -13,6 +13,8 @@
     libclang
     ltex-ls
     gdb
+
+    raylib
   ];
 
   programs.ripgrep.enable = true;
