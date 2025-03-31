@@ -13,6 +13,7 @@
     libclang
     ltex-ls
     gdb
+    cmake
 
     raylib
   ];
