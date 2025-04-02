@@ -68,6 +68,7 @@
     vim.keymap.set('n', '<leader>fi', '<cmd>Lspsaga finder def+ref+imp<CR>')   -- Show references in a window
     vim.keymap.set('n', '<leader>dn', '<cmd>Lspsaga diagnostic_jump_next<CR>') -- Show the error messages with actions for them
     vim.keymap.set('n', '<leader>gd', '<cmd>Lspsaga goto_definition<CR>')      -- Jump to the definition
+    vim.keymap.set('n', '<leader>pd', '<cmd>Lspsaga peek_definition<CR>')      -- Peek the current definition
     vim.keymap.set('n', '<leader>rn', '<cmd>Lspsaga rename<CR>')               -- Rename a symbol in the file
     vim.keymap.set('n', '<leader>tt', '<cmd>Lspsaga term_toggle<CR>')          -- Toggle a terminal
     vim.keymap.set('n', '<C-d>', '<cmd>Lspsaga hover_doc<CR>')                 -- Hover documentation for cursor location
