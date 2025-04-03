@@ -23,8 +23,7 @@
     settings = { };
     extraConfig = ''
       monitor=eDP-1,highres,auto,2
-      #monitor=HDMI-A-1,highres,preferred,1,transform,1
-      exec-once = hyprctl keyword monitor "HDMI-A-1,auto,preferred,1,transform,1"
+      monitor=HDMI-A-1,highres,auto-right,1,transform,1
       # Setup any other monitor to be default on the right as extention
       monitor=,preferred,auto,1
 
