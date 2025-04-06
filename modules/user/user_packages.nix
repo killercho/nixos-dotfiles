@@ -7,7 +7,6 @@
     bitwarden
     discord
     teamspeak5_client
-    signal-desktop
     telegram-desktop
     vlc
     qbittorrent
