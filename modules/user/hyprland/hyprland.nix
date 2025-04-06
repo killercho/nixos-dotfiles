@@ -10,7 +10,7 @@
     feh
     killall
     swww
-    nwg-bar
+    wleave
     grim
     slurp
   ];
@@ -168,7 +168,7 @@
       bind = ALT, L, exec, hyprlock --immediate
       bind = SUPER, P, pseudo, # dwindle
       bind = SUPER, J, togglesplit, # dwindle
-      bind = SUPER, ESCAPE, exec, nwg-bar
+      bind = SUPER, ESCAPE, exec, wleave -f -k
       bind = SHIFT, PRINT, exec, slurp | grim -g - - | wl-copy
       #bind = PRINTSCREEN, exec, grim
 
