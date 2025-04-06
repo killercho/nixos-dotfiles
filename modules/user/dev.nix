@@ -15,6 +15,8 @@
     gdb
     cmake
     gnumake
+
+    pixelorama
   ];
 
   programs.ripgrep.enable = true;
