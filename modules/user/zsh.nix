@@ -14,7 +14,7 @@
     autosuggestion.enable = true;
     dotDir = ".config/zsh";
 
-    initExtra = ''
+    initContent = ''
       # Enable to use wal colors from the cache
       #cat $HOME/.cache/wal/sequences
 
