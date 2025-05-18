@@ -47,7 +47,7 @@
         wayland = home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
           modules = [
-            stylix.homeManagerModules.stylix
+            stylix.homeModules.stylix
             ({ config, pkgs, ... }: { nixpkgs.overlays = [ overlay-old ]; })
             ./hosts/vivobook/user_imports.nix
           ];
@@ -56,7 +56,7 @@
         desktop = home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
           modules = [
-            stylix.homeManagerModules.stylix
+            stylix.homeModules.stylix
             ({ config, pkgs, ... }: { nixpkgs.overlays = [ overlay-old ]; })
             ./hosts/desktop/user_imports.nix
           ];
