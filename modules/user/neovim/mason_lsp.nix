@@ -19,19 +19,19 @@
         "clangd",
         -- "cmake", -- Disabled because python3 fails to install it
         -- "nil_ls",
-        -- "pyright",
+        "pyright",
         -- "bashls",
         -- "ltex-ls", -- Disabled because the text files are sometimes too big and its not worth it
 
         -- Linters
         "cpplint",
-        -- "pylint",
+        "pylint",
         -- "shellcheck",
 
         -- Formatters
         "clang-format",
         -- "doctoc",
-        -- "black",
+        "black",
         -- "shfmt",
         -- "nixpkgs-fmt",
       },
