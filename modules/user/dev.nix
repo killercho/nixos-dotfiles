@@ -5,7 +5,7 @@
   home.packages = with pkgs; [
     unzip
     cargo
-    python3
+    #python3
     ripgrep
     nixd
     nixpkgs-fmt
