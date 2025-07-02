@@ -30,8 +30,8 @@
     vim.keymap.set('n', '<C-q>', ':q<CR>')
 
     -- Tab bindings
-    vim.keymap.set('n', '<C-l>', 'gt<CR>')
-    vim.keymap.set('n', '<C-h>', 'gT<CR>')
+    vim.keymap.set('n', '<C-l>', 'gt')
+    vim.keymap.set('n', '<C-h>', 'gT')
     vim.keymap.set('n', '<C-n>', ':tabnew<CR>')
 
     -- Moving text around bindings
