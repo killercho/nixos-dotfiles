@@ -14,6 +14,7 @@
     gh
     tree-sitter
     go
+    nodejs
   ];
 
   programs.ripgrep.enable = true;

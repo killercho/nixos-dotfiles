@@ -20,13 +20,13 @@
         -- "cmake", -- Disabled because python3 fails to install it
         -- "nil_ls",
         "pyright",
-        -- "bashls",
+        "bashls",
         -- "ltex-ls", -- Disabled because the text files are sometimes too big and its not worth it
 
         -- Linters
         "cpplint",
         "pylint",
-        -- "shellcheck",
+        "shellcheck",
 
         -- Formatters
         -- "clang-format",
@@ -35,7 +35,7 @@
         -- "shfmt",
         -- "nixpkgs-fmt",
       },
-      auto_update = true,
+      auto_update = false,
       run_on_start = true,
       start_delay = 0,
       debounce_hours = 0, -- at least 0 hours between attempts to install/update
@@ -67,12 +67,12 @@
     --require'lspconfig'.nil_ls.setup{
       --capabilities = capabilities
     --}
-    --require'lspconfig'.pyright.setup{
-      --capabilities = capabilities
-    --}
-    --require'lspconfig'.bashls.setup{
-      --capabilities = capabilities
-    --}
+    require'lspconfig'.pyright.setup{
+      capabilities = capabilities
+    }
+    require'lspconfig'.bashls.setup{
+      capabilities = capabilities
+    }
 
     -- DAP and its UI setup
     --require("dapui").setup()
@@ -83,8 +83,8 @@
       cpp = {'cpplint',},
       c = {'cpplint',},
       -- nix = {'nix',},
-      --py = {'pylint',},
-      --sh = {'shellcheck',},
+      py = {'pylint',},
+      sh = {'shellcheck',},
     }
     -- Setup to trigger linting automatically
     -- vim.api.nvim_create_autocmd({ "BufWritePost" }, {
@@ -108,6 +108,6 @@
         }
       },
     })
-    vim.lsp.set_log_level("off");
+    vim.lsp.set_log_level("ERROR");
   '';
 }
