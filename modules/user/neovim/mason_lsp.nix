@@ -29,7 +29,7 @@
         -- "shellcheck",
 
         -- Formatters
-        "clang-format",
+        -- "clang-format",
         -- "doctoc",
         "black",
         -- "shfmt",
