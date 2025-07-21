@@ -31,7 +31,7 @@
         -- Formatters
         -- "clang-format",
         -- "doctoc",
-        "black",
+        -- "black",
         -- "shfmt",
         -- "nixpkgs-fmt",
       },

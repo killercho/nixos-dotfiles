@@ -7,8 +7,8 @@
 
     -- Provides the Format, FormatWrite, FormatLock, and FormatWriteLock commands
     require("formatter").setup {
-      logging = true,
-      log_level = vim.log.levels.WARN,
+      logging = false,
+      log_level = vim.log.levels.ERROR,
       filetype = {
         -- Formatter configurations for filetype "lua" go here
         -- and will be executed in order
@@ -70,8 +70,7 @@
             end
            return {
               exe = "black",
-              args = { "-q", "--stdin-filename", util.escape_path(util.get_current_buffer_file_name()), "-" },
-              stdin = true,
+              args = { "-q", "-S", util.escape_path(util.get_current_buffer_file_name()) },
             }
           end
         },
