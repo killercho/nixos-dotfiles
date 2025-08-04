@@ -1,5 +1,5 @@
 # User zsh config
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 
 {
   home.packages = with pkgs; [
@@ -8,11 +8,10 @@
   ];
 
   programs.zsh = {
-
     enable = true;
     syntaxHighlighting.enable = true;
     autosuggestion.enable = true;
-    dotDir = ".config/zsh";
+    dotDir = "${config.home.homeDirectory}/zsh";
 
     initContent = ''
       # Enable to use wal colors from the cache
