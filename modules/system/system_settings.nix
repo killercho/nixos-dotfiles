@@ -86,12 +86,12 @@
   };
 
   services.logind = {
-    extraConfig = ''
-      HandlePowerKey=suspend
-      IdleAction=suspend
-      HandlePowerKeyLongPress=poweroff
-    '';
-    lidSwitch = "suspend";
+    settings.Login = {
+      HandlePowerKey = "suspend";
+      IdleAction = "suspend";
+      HandlePowerKeyLongPress = "poweroff";
+      HandleLidSwitch = "suspend";
+    };
   };
 
   # Enable the buttons on the headset

@@ -27,8 +27,6 @@
     libnotify
     tlp
 
-    plasma5Packages.kdeconnect-kde
-
     # Usb tools and services
     usbutils
     udiskie
