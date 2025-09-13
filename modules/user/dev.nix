@@ -7,6 +7,7 @@
     unzip
     cargo
     python3
+    black
     ripgrep
     nixd
     nixpkgs-fmt
