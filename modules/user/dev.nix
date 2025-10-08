@@ -15,6 +15,7 @@
     tree-sitter
     go
     nodejs
+    cmake-language-server
   ];
 
   programs.ripgrep.enable = true;
