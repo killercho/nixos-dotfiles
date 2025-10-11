@@ -6,5 +6,7 @@
     enable = true;
     image = /usr/share/backgrounds/background.jpg;
     polarity = "dark";
+
+    targets.plymouth.enable = false;
   };
 }
