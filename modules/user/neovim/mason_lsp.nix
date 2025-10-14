@@ -50,29 +50,42 @@
   lsps_and_saga_config = ''
     -- After setting up mason-lspconfig servers via lspconfig may be set
     local capabilities = require('cmp_nvim_lsp').default_capabilities()
-    require'lspconfig'.lua_ls.setup{
+    vim.lsp.config('lua_ls', {
       capabilities = capabilities
-    }
-    require'lspconfig'.ltex.setup{
+    })
+    vim.lsp.enable('lua_ls')
+
+    vim.lsp.config('ltex', {
       capabilities = capabilities
-    }
-    require'lspconfig'.clangd.setup{
+    })
+    vim.lsp.enable('ltex')
+
+    vim.lsp.config('clangd' ,{
       capabilities = capabilities,
       cmd = { "clangd", "--query-driver=/nix/store/*gcc-wrapper*/bin/g++" },
       on_attach = on_attach,
-    }
-    require'lspconfig'.cmake.setup{
+    })
+    vim.lsp.enable('clangd')
+
+    vim.lsp.config('cmake', {
       capabilities = capabilities
-    }
-    require'lspconfig'.nil_ls.setup{
+    })
+    vim.lsp.enable('cmake')
+
+    vim.lsp.config('nil_ls', {
       capabilities = capabilities
-    }
-    require'lspconfig'.pyright.setup{
+    })
+    vim.lsp.enable('nil_ls')
+
+    vim.lsp.config('pyright', {
       capabilities = capabilities
-    }
-    require'lspconfig'.bashls.setup{
+    })
+    vim.lsp.enable('pyright')
+
+    vim.lsp.config('bashls', {
       capabilities = capabilities
-    }
+    })
+    vim.lsp.enable('bashls')
 
     -- DAP and its UI setup
     require("dapui").setup()
