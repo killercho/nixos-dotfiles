@@ -4,9 +4,8 @@
 {
   home.packages = with pkgs; [
     spotify
-    bitwarden
+    bitwarden-desktop
     discord
-    teamspeak5_client
     telegram-desktop
     vlc
     qbittorrent
