@@ -71,7 +71,7 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.AzSamSi = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "audio" "input" ];
+    extraGroups = [ "wheel" "audio" "input" "wireshark" ];
     shell = pkgs.zsh;
   };
 

@@ -6,4 +6,5 @@
     ciscoPacketTracer8
     wireshark
   ];
+  programs.wireshark.enable = true;
 }
