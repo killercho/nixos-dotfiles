@@ -5,10 +5,9 @@
   programs.git = {
     enable = true;
 
-    userName = "Georgi Nikolov";
-    userEmail = "ggeorgi60@gmail.com";
-
-    extraConfig = {
+    settings = {
+      user.name = "Georgi Nikolov";
+      user.email = "ggeorgi60@gmail.com";
       core.editor = "nvim";
     };
   };
