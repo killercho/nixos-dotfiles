@@ -26,5 +26,8 @@
 
     # Gaming related system packages
     ./../../modules/system/gaming.nix
+
+    # Wake on lan configuration
+    ./../../modules/system/wake_on_lan.nix
   ];
 }
