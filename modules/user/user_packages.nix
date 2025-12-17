@@ -10,5 +10,6 @@
     vlc
     qbittorrent
     acpi
+    teamspeak6-client
   ];
 }
