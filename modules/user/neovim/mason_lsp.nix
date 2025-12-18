@@ -34,6 +34,9 @@
         -- "black",
         -- "shfmt",
         -- "nixpkgs-fmt",
+
+        -- Dap
+        -- "cpptools",
       },
       auto_update = false,
       run_on_start = true,
@@ -45,6 +48,7 @@
         ["mason-nvim-dap"] = false,
       }
     }
+    -- require("mason-nvim-dap").setup()
   '';
 
   lsps_and_saga_config = ''
@@ -79,7 +83,12 @@
     vim.lsp.enable('bashls')
 
     -- DAP and its UI setup
-    --require("dapui").setup()
+    -- require("dap").adapters.cpptools = {
+    --   id = "cppdbg",
+    --   type = "executable",
+    --   command = ""
+    -- }
+    -- require("dapui").setup()
 
     -- Linter setup
     require('lint').linters_by_ft = {

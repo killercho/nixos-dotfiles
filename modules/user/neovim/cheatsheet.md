@@ -63,6 +63,19 @@
  - `Ctrl + d` - open hover documentation window for current cursor position
  - `Ctrl + a` - open code action window from _LSPsaga_
 
+## Debugging with nvim-gdb
+
+ - `<leader>dd` - open the debugging command and navigate to the executable
+ - `set cwd <path>` - sets the current working dir to the path given (important for the simulators)
+ - `:GdbCreateWatch info locals` - creates a window that follows the changes of the local variables
+ - `:GdbBreakpointToggle`/`<F8>` - creates a breakpoint on the given row, the debugger needs to be active
+ - `:GdbUntil`/`<F4>` - continue execution until the line in the file
+ - `:GdbContinue`/`<F5>` - gdb continue
+ - `:GdbNext`/`<F10>` - gdb next
+ - `:GdbStep`/`<F11>` - gdb step
+ - `:GdbLopenBacktrace` - open the backtrace in another window that can be interacted with
+ - `:GdbLopenBreakpoints` - open a list of all breakpoints in another window that can be interacted with
+
 ## Completion
 
  - `Ctrl + p`/`Up arrow` - scroll up when the completion window is open

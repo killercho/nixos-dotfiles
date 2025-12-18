@@ -61,8 +61,9 @@ in
       mason-tool-installer-nvim # Tool for automatic install of every Mason package
       nvim-lspconfig # Configs for Nvim LSPs
       mason-lspconfig-nvim # Bridge between mason and lspconfig # Bridge between mason and lspconfig
-      #nvim-dap # Debug client
-      #nvim-dap-ui # UI for the debugger
+      nvim-dap # Debug client
+      # mason-nvim-dap-nvim # Debug client
+      # nvim-dap-ui # UI for the debugger
       nvim-gdb # Debug client for an older gdb
       nvim-lint # Lightweigth linter using the LSPs
       formatter-nvim # Formatter plugin
