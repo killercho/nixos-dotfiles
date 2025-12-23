@@ -53,5 +53,8 @@ in
     #./../../scripts/battery_notifier.nix
 
     ./../../modules/user/desktop_specific.nix
+
+    # Gaming user settings
+    ./../../modules/user/gaming.nix
   ];
 }

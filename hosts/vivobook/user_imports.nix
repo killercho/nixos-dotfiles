@@ -51,5 +51,8 @@ in
 
     # Battery low warning
     ./../../scripts/battery_notifier.nix
+
+    # Gaming user settings
+    ./../../modules/user/gaming.nix
   ];
 }
