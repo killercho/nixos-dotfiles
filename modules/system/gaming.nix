@@ -6,7 +6,7 @@
     gamescope
     oversteer
     protonup-ng
-    wine
+    wine64
     winetricks
   ];
 
