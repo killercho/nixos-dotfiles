@@ -8,6 +8,7 @@
     protonup-ng
     wine64
     winetricks
+    protontricks
   ];
 
   programs = {
