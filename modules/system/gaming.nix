@@ -5,6 +5,7 @@
     lutris
     gamescope
     oversteer
+    protonup-ng
   ];
 
   programs = {
