@@ -5,6 +5,7 @@
   environment.systemPackages = with pkgs; [
     ciscoPacketTracer8
     wireshark
+    zap
   ];
   programs.wireshark.enable = true;
 
