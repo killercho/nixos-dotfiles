@@ -6,6 +6,8 @@
     gamescope
     oversteer
     protonup-ng
+    wine
+    winetricks
   ];
 
   programs = {
