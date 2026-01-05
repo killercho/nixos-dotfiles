@@ -18,7 +18,7 @@
     pavucontrol
     pamixer
     brightnessctl
-    xfce.thunar
+    thunar
     firefox
     #old-23-11.firefox # If the discord is needed again
     libinput
