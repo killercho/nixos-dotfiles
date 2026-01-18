@@ -11,9 +11,20 @@
     killall
     swww
     wleave
+    flameshot
     grim
-    slurp
   ];
+
+  services.flameshot = {
+    enable = true;
+    settings = {
+      General = {
+        disabledTrayIcon = true;
+        showStartupLaunchMessage = false;
+        useGrimAdapter = true;
+      };
+    };
+  };
 
   wayland.windowManager.hyprland = {
     xwayland.enable = true;
@@ -166,8 +177,8 @@
       bind = SUPER, P, pseudo, # dwindle
       bind = SUPER, J, togglesplit, # dwindle
       bind = SUPER, ESCAPE, exec, wleave -f -k
-      bind = SHIFT, PRINT, exec, slurp | grim -g - - | wl-copy
-      #bind = PRINTSCREEN, exec, grim
+      bind = SHIFT, PRINT, exec, flameshot gui
+      #bind = PRINT, exec, flameshot full
 
       # Move focus with mainMod + arrow keys
       bind = SUPER, left, movefocus, l
