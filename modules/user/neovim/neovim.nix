@@ -77,7 +77,7 @@ in
       cmp-nvim-ultisnips
     ];
 
-    extraLuaConfig = ''
+    initLua = ''
       vim.g.mapleader = ";"
 
       vim.opt.number = true;
