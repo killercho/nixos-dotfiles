@@ -5,6 +5,8 @@
   home.packages = with pkgs; [
     zsh
     zplug
+    zsh-autosuggestions
+    zsh-syntax-highlighting
   ];
 
   programs.zsh = {
@@ -28,7 +30,7 @@
     oh-my-zsh = {
       enable = true;
       theme = "agnoster";
-      plugins = [ "git" "sudo" "dircycle" ];
+      plugins = [ "git" "sudo" "dircycle" "colored-man-pages" "vi-mode" ];
     };
 
     zplug = {
