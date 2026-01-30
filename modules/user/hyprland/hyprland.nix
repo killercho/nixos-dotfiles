@@ -163,7 +163,9 @@
 
       # Additional ----------------------
 
-      windowrulev2 = idleinhibit fullscreen, class:(.*), title:(.*)
+      # windowrule to avoid idle for fullscreen apps
+      # TODO: Add them back after an update to check if it will work
+      # windowrule = idleinhibit fullscreen, fullscreen:1
 
       # Bindings ------------------------
 
