@@ -164,8 +164,7 @@
       # Additional ----------------------
 
       # windowrule to avoid idle for fullscreen apps
-      # TODO: Add them back after an update to check if it will work
-      # windowrule = idleinhibit fullscreen, fullscreen:1
+      windowrule = match:fullscreen true, idle_inhibit fullscreen
 
       # Bindings ------------------------
 
