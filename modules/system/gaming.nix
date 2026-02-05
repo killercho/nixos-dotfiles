@@ -3,6 +3,7 @@
 {
   environment.systemPackages = with pkgs; [
     lutris
+    heroic
     gamescope
     oversteer
     protonup-ng
