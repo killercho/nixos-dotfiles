@@ -22,6 +22,6 @@
     ./../../modules/system/temp.nix
 
     # Gaming related system packages
-    ./../../modules/system/gaming.nix
+    #./../../modules/system/gaming.nix
   ];
 }
