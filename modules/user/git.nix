@@ -2,10 +2,6 @@
 { config, pkgs, ... }:
 
 {
-  home.packages = with pkgs; [
-    tea
-  ];
-
   programs.git = {
     enable = true;
 
