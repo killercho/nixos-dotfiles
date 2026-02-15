@@ -38,7 +38,7 @@ in
       vim-nerdtree-syntax-highlight
 
       # A group of popular language packs with features for them
-      polyglot
+      vim-polyglot
 
       # telescope related plugins
       telescope-nvim
@@ -73,7 +73,7 @@ in
       cmp-path
       cmp-cmdline
       nvim-cmp
-      UltiSnips
+      ultisnips
       cmp-nvim-ultisnips
     ];
 
