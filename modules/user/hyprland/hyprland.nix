@@ -11,7 +11,7 @@
     killall
     swww
     wleave
-    flameshot
+    slurp
     grim
   ];
 
@@ -19,7 +19,7 @@
     enable = true;
     settings = {
       General = {
-        disabledTrayIcon = true;
+        disabledTrayIcon = false;
         showStartupLaunchMessage = false;
         useGrimAdapter = true;
       };
@@ -178,8 +178,7 @@
       bind = SUPER, P, pseudo, # dwindle
       bind = SUPER, J, togglesplit, # dwindle
       bind = SUPER, ESCAPE, exec, wleave -f -k
-      bind = SHIFT, PRINT, exec, flameshot gui
-      #bind = PRINT, exec, flameshot full
+      bind = SHIFT, PRINT, exec, slurp | grim -g - - | wl-copy
 
       # Move focus with mainMod + arrow keys
       bind = SUPER, left, movefocus, l
