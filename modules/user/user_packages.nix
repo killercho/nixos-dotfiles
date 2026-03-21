@@ -7,6 +7,7 @@
     bitwarden-desktop
     discord
     telegram-desktop
+    viber
     vlc
     qbittorrent
     acpi
