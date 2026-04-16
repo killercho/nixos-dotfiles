@@ -121,6 +121,6 @@
         }
       },
     })
-    vim.lsp.set_log_level("ERROR");
+    vim.lsp.log.set_level("ERROR");
   '';
 }
