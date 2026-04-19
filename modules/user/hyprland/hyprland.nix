@@ -9,7 +9,7 @@
   home.packages = with pkgs; [
     feh
     killall
-    swww
+    awww
     wleave
     slurp
     grim
@@ -155,8 +155,8 @@
 
       # Executes ------------------------
 
-      exec-once = swww-daemon
-      exec-once = swww img /usr/share/backgrounds/background.jpg
+      exec-once = awww-daemon
+      exec-once = awww img /usr/share/backgrounds/background.jpg
 
       exec-once = hypridle
       exec-once = nm-applet

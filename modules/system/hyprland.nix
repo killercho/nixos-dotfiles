@@ -46,7 +46,7 @@
 
   environment.systemPackages = with pkgs; [
     hyprland
-    swww # for wallpapers
+    awww # for wallpapers
     xdg-desktop-portal-gtk
     xdg-desktop-portal-hyprland
     xwayland
