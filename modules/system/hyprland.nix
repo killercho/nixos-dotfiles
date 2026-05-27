@@ -24,7 +24,6 @@
   services = {
     displayManager.gdm = {
       enable = true;
-      wayland = true;
     };
   };
   # Temporarily disabling the sddm window manager because of an issue with wayland
