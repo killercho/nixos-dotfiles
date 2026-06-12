@@ -4,7 +4,8 @@
 {
   home.packages = with pkgs; [
     spotify
-    bitwarden-desktop
+    # Disabled because of an electron 39 compatability issue
+    #bitwarden-desktop
     discord
     telegram-desktop
     viber
