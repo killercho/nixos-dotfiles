@@ -30,6 +30,7 @@
     xwayland.enable = true;
     systemd.enable = true;
     enable = true;
+    configType = "hyprlang";
     plugins = [ ];
     settings = { };
     extraConfig = ''
