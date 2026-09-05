@@ -3,12 +3,12 @@
 
 {
   environment.systemPackages = with pkgs; [
-    ciscoPacketTracer9
-    wireshark
+    #ciscoPacketTracer9
+    #wireshark
   ];
   programs.wireshark.enable = true;
 
   nixpkgs.config.permittedInsecurePackages = [
-    "cisco-packet-tracer-9.0.1"
+    #"cisco-packet-tracer-9.0.1"
   ];
 }
