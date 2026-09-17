@@ -1,6 +1,10 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
+  environment.systemPackages = with pkgs; [
+    sleep-on-lan
+  ];
+
   networking = {
     interfaces.enp7s0.wakeOnLan = {
       enable = true;
