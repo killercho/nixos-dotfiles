@@ -9,6 +9,7 @@ let
   mason_config = (import ./mason_lsp.nix).mason_config;
   lsps_and_saga_config = (import ./mason_lsp.nix).lsps_and_saga_config;
   tokyonight_config = (import ./tokyonight.nix).tokyonight_config;
+  rsf_filetype = (import ./rsf_filetype.nix).rsf_filetype;
 in
 {
   imports = [
@@ -19,6 +20,9 @@ in
     defaultEditor = true;
     viAlias = true;
     vimAlias = true;
+
+    withRuby = true;
+    withPython3 = true;
 
     plugins = with pkgs.vimPlugins; [
       # Treesitter plugin with all grammars
@@ -136,6 +140,8 @@ in
       -- Setting colorscheme
       vim.cmd[[colorscheme tokyonight]]
 
-    '' + mappings;
+    '' 
+    + mappings
+    + rsf_filetype;
   };
 }
