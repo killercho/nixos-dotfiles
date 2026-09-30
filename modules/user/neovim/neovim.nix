@@ -45,7 +45,7 @@ in
       vim-nerdtree-syntax-highlight
 
       # A group of popular language packs with features for them
-      vim-polyglot
+      #vim-polyglot
 
       # telescope related plugins
       telescope-nvim
