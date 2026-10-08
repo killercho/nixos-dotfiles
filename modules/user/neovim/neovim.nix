@@ -11,6 +11,10 @@ let
   tokyonight_config = (import ./tokyonight.nix).tokyonight_config;
 in
 {
+  home.packages = with pkgs; [
+    tree-sitter
+  ];
+
   programs.neovim = {
     enable = true;
     defaultEditor = true;
