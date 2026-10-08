@@ -120,6 +120,11 @@
           shuttle = ' ' -- Move bettween the preview and list windows
         }
       },
+      lightbulb = {
+        sign = false,
+        virtual_text = true,
+      },
     })
+    vim.lsp.log.set_level("ERROR");
   '';
 }
