@@ -15,6 +15,7 @@
     tree-sitter
     go
     nodejs
+    cmake
     cmake-language-server
   ];
 
