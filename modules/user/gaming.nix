@@ -1,7 +1,7 @@
 { pkgs, ... }:
 {
   home.packages = with pkgs; [
-    piper
+    #piper
   ];
 
   programs.mangohud = {
