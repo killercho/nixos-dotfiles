@@ -1,5 +1,9 @@
-{ pkgs, ... }:
+{ pkgs, piper-git-nix, ... }:
 
+let
+  libratbag-git = piper-git-nix.packages.${pkgs.stdenv.hostPlatform.system}.libratbag-git;
+  piper-git = piper-git-nix.packages.${pkgs.stdenv.hostPlatform.system}.piper-git;
+in
 {
   environment.systemPackages = with pkgs; [
     lutris
@@ -12,6 +16,7 @@
     winetricks
     protontricks
 
+    piper-git
   ];
 
   programs = {
@@ -51,10 +56,18 @@
     LABEL="solaar_end"
   '';
 
+  hardware.logitech.wireless = {
+    enable = true;
+  };
+
+  services.ratbagd = {
+    enable = true;
+    package = libratbag-git;
+  };
+
   # Disabled for compatability with kernel 7.3.
   # Disabled on 21/10/2026.
   # hardware.new-lg4ff.enable = true;
 
   services.udev.packages = with pkgs; [ oversteer ];
-  #services.ratbagd.enable = true;
 }

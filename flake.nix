@@ -8,9 +8,14 @@
     home-manager.url = "github:nix-community/home-manager/master";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     stylix.url = "github:danth/stylix";
+
+    piper-git-nix = {
+      url = "git+https://codeberg.org/NixPii/piper-git-nix.git";
+      inputs.nixpkgs.follows = "nixpkgs"; # Optional: reuse system nixpkgs
+    };
   };
 
-  outputs = { self, nixpkgs, nixpkgs-23-11, home-manager, stylix, ... }:
+  outputs = { self, nixpkgs, nixpkgs-23-11, home-manager, stylix, piper-git-nix, ... }:
 
     let
       lib = nixpkgs.lib;
@@ -34,6 +39,7 @@
 
         desktop = lib.nixosSystem {
           inherit system;
+          specialArgs = { inherit piper-git-nix; };
           modules = [
             stylix.nixosModules.stylix
             ({ config, pkgs, ... }: { nixpkgs.overlays = [ overlay-old ]; })

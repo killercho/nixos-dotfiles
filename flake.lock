@@ -161,6 +161,22 @@
         "type": "github"
       }
     },
+    "libratbag-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1787073071,
+        "narHash": "sha256-8V/LIki/tI/9Wi6kuFJp6k1p+moMh8Gc8RNP1BUlZO8=",
+        "owner": "libratbag",
+        "repo": "libratbag",
+        "rev": "b8d4d3ca1f4d6b23c664ffee2888b8eb669bee21",
+        "type": "github"
+      },
+      "original": {
+        "owner": "libratbag",
+        "repo": "libratbag",
+        "type": "github"
+      }
+    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1792502884,
@@ -231,11 +247,50 @@
         "type": "github"
       }
     },
+    "piper-git-nix": {
+      "inputs": {
+        "libratbag-src": "libratbag-src",
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "piper-src": "piper-src"
+      },
+      "locked": {
+        "lastModified": 1787462422,
+        "narHash": "sha256-flHNLNam6VTJIAjvWb791rUK/RQ21w/jNjTssRQRhWE=",
+        "ref": "refs/heads/main",
+        "rev": "cab6de79f981df63663409bda2bc419b5f264c2d",
+        "revCount": 17,
+        "type": "git",
+        "url": "https://codeberg.org/NixPii/piper-git-nix.git"
+      },
+      "original": {
+        "type": "git",
+        "url": "https://codeberg.org/NixPii/piper-git-nix.git"
+      }
+    },
+    "piper-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1786558741,
+        "narHash": "sha256-oGa0NXgoiVYadCAB5cnQYrjh3KIVWhTxsSYaB4TVZSA=",
+        "owner": "libratbag",
+        "repo": "piper",
+        "rev": "5d3c8845b55643595ccb8029dfa5c7a2fb079e77",
+        "type": "github"
+      },
+      "original": {
+        "owner": "libratbag",
+        "repo": "piper",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs",
         "nixpkgs-23-11": "nixpkgs-23-11",
+        "piper-git-nix": "piper-git-nix",
         "stylix": "stylix"
       }
     },
