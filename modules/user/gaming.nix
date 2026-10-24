@@ -1,9 +1,5 @@
 { pkgs, ... }:
 {
-  home.packages = with pkgs; [
-    #piper
-  ];
-
   programs.mangohud = {
     enable = true;
     settings = {

@@ -11,7 +11,6 @@ in
     gamescope
     oversteer
     protonup-ng
-    #wine64
     wineWow64Packages.full
     winetricks
     protontricks
@@ -21,40 +20,11 @@ in
 
   programs = {
     steam.enable = true;
-    solaar.enable = true;
+    solaar = {
+      enable = true;
+      userService.enable = true;
+    };
   };
-
-  services.udev.extraRules = ''
-    # Allows non-root users to have raw access to Logitech devices.
-    # Allowing users to write to the device is potentially dangerous
-    # because they could perform firmware updates.
-    KERNEL=="uinput", SUBSYSTEM=="misc", TAG+="uaccess", OPTIONS+="static_node=uinput"
-
-    ACTION == "remove", GOTO="solaar_end"
-    SUBSYSTEM != "hidraw", GOTO="solaar_end"
-
-    # USB-connected Logitech receivers and devices
-    ATTRS{idVendor}=="046d", GOTO="solaar_apply"
-
-    # Lenovo nano receiver
-    ATTRS{idVendor}=="17ef", ATTRS{idProduct}=="6042", GOTO="solaar_apply"
-
-    # Bluetooth-connected Logitech devices
-    KERNELS == "0005:046D:*", GOTO="solaar_apply"
-
-    GOTO="solaar_end"
-
-    LABEL="solaar_apply"
-
-    # Allow any seated user to access the receiver.
-    # uaccess: modern ACL-enabled udev
-    TAG+="uaccess"
-
-    # Grant members of the "plugdev" group access to receiver (useful for SSH users)
-    #MODE="0660", GROUP="plugdev"
-
-    LABEL="solaar_end"
-  '';
 
   hardware.logitech.wireless = {
     enable = true;
@@ -64,10 +34,9 @@ in
     enable = true;
     package = libratbag-git;
   };
+  services.udev.packages = with pkgs; [ oversteer ];
 
   # Disabled for compatability with kernel 7.3.
   # Disabled on 21/10/2026.
   # hardware.new-lg4ff.enable = true;
-
-  services.udev.packages = with pkgs; [ oversteer ];
 }
