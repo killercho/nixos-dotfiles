@@ -87,6 +87,9 @@ in
 
       # Time tracking
       vim-wakatime
+
+      # Game dev with godot
+      vim-godot
     ];
 
     initLua = ''
