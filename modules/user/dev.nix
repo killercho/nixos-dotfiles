@@ -12,7 +12,7 @@
     nixd
     nixpkgs-fmt
     libclang
-    ltex-ls
+    ltex-ls-plus
     gdb
     cmake
     gnumake
