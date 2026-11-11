@@ -18,6 +18,9 @@
     gnumake
 
     pixelorama
+
+    # Access to the gitea implementation using ssh.
+    cloudflared
   ];
 
   programs.ripgrep.enable = true;
