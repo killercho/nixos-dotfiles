@@ -48,6 +48,7 @@
           specialArgs = { inherit piper-git-nix; };
           modules = [
             stylix.nixosModules.stylix
+            silentSDDM.nixosModules.default
             ({ config, pkgs, ... }: { nixpkgs.overlays = [ overlay-old ]; })
             home-manager.nixosModules.home-manager
             ./hosts/desktop/system_imports.nix
