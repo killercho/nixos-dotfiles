@@ -36,7 +36,5 @@ in
   };
   services.udev.packages = with pkgs; [ oversteer ];
 
-  # Disabled for compatability with kernel 7.3.
-  # Disabled on 21/10/2026.
-  # hardware.new-lg4ff.enable = true;
+  hardware.new-lg4ff.enable = true;
 }
