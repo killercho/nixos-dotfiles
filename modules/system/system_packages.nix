@@ -7,7 +7,6 @@
     fastfetch
     btop
     git
-    gh
     gcc
     nodejs
     alacritty
