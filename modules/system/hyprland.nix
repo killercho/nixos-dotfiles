@@ -11,30 +11,30 @@
       xwayland.enable = true;
     };
     waybar.enable = true;
-  };
 
-  services.dbus.packages = [
-    pkgs.libnotify
-  ];
-
-  # Configure xwayland
-  services.xserver = {
-    enable = true;
-  };
-  services = {
-    displayManager.gdm = {
+    silentSDDM = {
       enable = true;
+      theme = "default";
     };
   };
-  # Temporarily disabling the sddm window manager because of an issue with wayland
-  #services.displayManager.sddm = {
-  #enable = true;
-  #wayland.enable = true;
-  #theme = "chili";
-  #};
 
-  #Screen share enable
-  services.dbus.enable = true;
+  services = {
+    xserver.enable = true;
+
+    displayManager.sddm = {
+      enable = true;
+      theme = "silent";
+    };
+
+    # Screen share enable
+    dbus = {
+      enable = true;
+      packages = [
+        pkgs.libnotify
+      ];
+    };
+  };
+
   xdg.portal = {
     enable = true;
     wlr.enable = lib.mkForce true;

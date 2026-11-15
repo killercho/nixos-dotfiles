@@ -9,13 +9,18 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     stylix.url = "github:danth/stylix";
 
+    silentSDDM = {
+      url = "github:uiriansan/SilentSDDM";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     piper-git-nix = {
       url = "git+https://codeberg.org/NixPii/piper-git-nix.git";
       inputs.nixpkgs.follows = "nixpkgs"; # Optional: reuse system nixpkgs
     };
   };
 
-  outputs = { self, nixpkgs, nixpkgs-23-11, home-manager, stylix, piper-git-nix, ... }:
+  outputs = { self, nixpkgs, nixpkgs-23-11, home-manager, stylix, silentSDDM, piper-git-nix, ... }:
 
     let
       lib = nixpkgs.lib;
@@ -31,6 +36,7 @@
           inherit system;
           modules = [
             stylix.nixosModules.stylix
+            silentSDDM.nixosModules.default
             ({ config, pkgs, ... }: { nixpkgs.overlays = [ overlay-old ]; })
             home-manager.nixosModules.home-manager
             ./hosts/vivobook/system_imports.nix
